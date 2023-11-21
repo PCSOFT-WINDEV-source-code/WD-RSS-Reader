@@ -1,0 +1,3208 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : SET_Global
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x186e647f08328736
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAABPOo5wfzL5PtlmH9g6pVlcqG1md+uM4GM8B/k/aVja5R6ZseBzxTGWZbo12UeE8bWym5Rl91AKrNq9wTYnFyamg2lAMw==
+  type_code : 31
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAADTpYrx/Q5qdg9Mn1oET7DJg50MXChNoxuPcvOgCFXPDxFcLrhzEFEN2IND1Agm3X7XejoQIBSyZL69KF3Q4K6ETTFUm9Xc6LiE7kL8BoJIWmspGDOKm9bnYChNpMcxh7T1dUcxMs+WGtz+L3Q=
+     code : |1-
+      STRSSStream is Structure
+      	nStreamID is 8-byte int
+      	sAddress is string
+      	sLink is string
+      	sTitle is string
+      	bufImage is buffer
+      	bToImport is boolean
+      	sFolder is string
+      	dtPublication is datetime
+      	nVersion is int
+      	Stream is WL.XMLDocument
+      	sDescription is string
+      	nLanguage is int
+      	arrPosts is array of STPost
+      END
+      
+      STPost is Structure
+      	nPostID is 8-byte int		< mapping = "PostID">
+      	nStreamID is 8-byte int			< mapping = "RSSStreamID">	
+      	nIDFolder is 8-byte int		< mapping = "FolderID">
+      	sStreamTitle is string			< mapping = "StreamTitle">
+      	sTitle is string				< mapping = "Title">
+      	sLink is string				< mapping = "Link">
+      	dtDPublication is datetime	< mapping = "PublicationDate">
+      	dPublicationDay is date		< mapping = "PublicationDay">
+      	dtReading is datetime
+      	dtReception is datetime
+      	sAuthor is string				< mapping = "Author">
+      	sCategory is string
+      	sDescription is string			< mapping = "Description">
+      	sImage is string				< mapping = "ImagePost">
+      	sGUID is string
+      	bRead is boolean					< mapping = "Read">
+      	sContent is string				< mapping = "Content">
+      	bFavorites is boolean				< mapping = "Favorites">
+      	sTags is string
+      END
+      
+      CONSTANT
+      	// Options
+      	OPTION_ALERT_TEMPORIZATION 		= "ALERT_TEMPORIZATION"
+      	OPTION_ALERT_ONLYIFREDUCED 	= "ALERT_ONLYIFREDUCED"
+      	OPTION_ARCHIVING_NBPOSTS_ENABLED 	= "ARCHIVING_NBPOSTS_ENABLED"
+      	OPTION_ARCHIVING_NBPOSTS 			= "ARCHIVING_NBPOSTS"
+      	OPTION_ARCHIVING_NBDAYS_ENABLED 		= "ARCHIVING_NBDAYS_ENABLED"
+      	OPTION_ARCHIVING_NBDAYS 			= "ARCHIVING_NBDAYS"
+      	OPTION_GUI_EXPANDFOLDERAUTO		= "GUI_EXPANDFOLDERAUTO"
+      	OPTION_GUI_CURRENTNODE				= "GUI_CURRENTNODE"
+      	OPTION_GUI_EXPANDEDNODES			= "GUI_EXPANDEDNODES"
+      	OPTION_GUI_MODE						= "GUI_MODE"
+      	OPTION_AUTOSTART				= "AUTORUN"
+      	OPTION_CONFIRMFLAGREAD			= "CONFIRMFLAGREAD"
+      	OPTION_GUI_TAGENABLED					= "GUI_TAGENABLED"
+      	OPTION_GUI_SHAREENABLED				= "GUI_SHAREENABLED"
+      	OPTION_GUI_COLOR					= "GUI_COLOR"
+      	
+      	// ID of root nodes in the list
+      	SUBSCRIPTIONID 	= "SUBSCRIPTION"
+      	STANDBYID		= "STANDBY"
+      	NOTREADID 		= "NOTREAD"
+      	FAVORITESID 		= "FAVORITES"
+      	TODAYID	= "TODAY"
+      	YESTERDAYID			= "YESTERDAY"
+      	TAGSID 			= "TAGS"
+      	
+      	// Prefixes
+      	PREFIX_FOLDER	= "FOLD_"
+      	PREFIX_TAG		= "TAG_"
+      	
+      	// Event/Critical section for the count
+      	EVT_COUNT	= "COUNT"
+      	EVT_DELETION	= "DELETION"
+      END
+      
+      // Directory of the files
+      gsFileDirectory is string = SysDir(srAppData)+["\"]+<§@1593978800039692000a§>
+      // Cache directory
+      gsCacheDirectory 	is string = gsFileDirectory+["\"]+<§@1593978800039692000c§>
+      // Directory for post preview
+      gsPreviewDirectory is string = fTempPath+["\"]+<§@1593978800039692000b§>
+      
+      // Options
+      gaaOptions is ASSOCIATIVE ARRAY of strings
+      gaaDefaultOptions is ASSOCIATIVE ARRAY of strings
+      
+      // Identifier of rollover event
+      gnRolloverEventID is int = -1 // Positioned to -1 to find out when the mouse wheel is enabled at rollover
+      
+      // Count the unread
+      gaaCount is ASSOCIATIVE ARRAY of int
+      
+      // Handle of main window
+      gnWindowHandle is system int
+      
+      // Defines the default values
+      gaaDefaultOptions[OPTION_ALERT_TEMPORIZATION]		= 30
+      gaaDefaultOptions[OPTION_ALERT_ONLYIFREDUCED]		= true
+      gaaDefaultOptions[OPTION_ARCHIVING_NBPOSTS_ENABLED]	= True
+      gaaDefaultOptions[OPTION_ARCHIVING_NBPOSTS]			= 200
+      gaaDefaultOptions[OPTION_ARCHIVING_NBDAYS_ENABLED]	= False
+      gaaDefaultOptions[OPTION_ARCHIVING_NBDAYS]			= 30
+      gaaDefaultOptions[OPTION_GUI_EXPANDFOLDERAUTO]		= False
+      gaaDefaultOptions[OPTION_GUI_CURRENTNODE]			= ""
+      gaaDefaultOptions[OPTION_GUI_EXPANDEDNODES]			= ""
+      gaaDefaultOptions[OPTION_GUI_MODE]					= 2
+      gaaDefaultOptions[OPTION_AUTOSTART]					= false
+      gaaDefaultOptions[OPTION_CONFIRMFLAGREAD]			= True
+      gaaDefaultOptions[OPTION_GUI_TAGENABLED]			= True
+      gaaDefaultOptions[OPTION_GUI_SHAREENABLED]			= True
+      gaaDefaultOptions[OPTION_GUI_COLOR]					= "#515151"
+     type : 720896
+   -
+     code : |1-
+      
+     type : 720898
+  procedures :
+   -
+     name : rssGetStreamImage
+     internal_properties : CAAAAAgAAAAztYNBoTJfEu60gt/3idiNOWEzvVzfUTHWmhxUiuKaTAbUZ6UOfp5B8kZ1DdUu2JGX11hYSoteXR2sTRbLYWq0LDMUxh3k0s8Ojtn0yKBYBwXgQGcf5hrI5/NHRnMa25BQ12kBFTI9VAyahYAovsvIRaJdbeQMJ7ryOuA5FD2n1syum9EiPsKOLZGHwoROAj1Fxdu0dPY6QUWQhJJ0ofBfC4xO4Iph8M6vxjt+UR6xhiAIk2kFRI+ZN43PRgk7r4/4qPUCqXny2RvgM8+x5fsFDlrPBj1e+9sGz2bh/FGPFmp2+oXr0gEfwfiXIx4KF+gvsVE2up2RryUUR9JYo07me+TyvOl7Cq4QZeobmyz1LD2IfHIfXTAQ2Br454M86l4AkPLoAU0OKC9SAT/Nz4+oXGxY7Otdpg==
+     procedure_id : 1760455001109727030
+     type_code : 15
+     code : |1+
+      // Summary: Retrieves the "favicon" image associated with the stream
+      // Syntax:
+      //[ <Result> = ] rssGetStreamImage (<stMyStream> is STRSSStream)
+      //
+      // Parameters:
+      //	stMyStream (STRSSStream): Structure containing the stream information
+      // Return value:
+      // 	buffer: Image of the stream
+      //
+      
+      PROCEDURE rssGetStreamImage(stMyStream is STRSSStream) : buffer
+      
+      MyQuery 		is a httpRequest
+      MyResponse 		is a httpResponse 
+      arrURLToTest 	is array of strings
+      MyNode 		is a xmlNode
+      MyImage 		is an Image 
+      
+      // Defines the different URLs to check
+      
+      // The favicon of the link defined in "link"
+      // the stream can contain several link tags therefore we must retrieve the link tag with a content and no attribute
+      IF stMyStream.Stream.rss..Exist THEN
+      	FOR EACH MyNode of stMyStream.Stream.rss.channel
+      		// If the browsed node is "link", if its text is not empty and if it has no attribute	
+      		IF MyNode..Name ~= "link" _AND_ MyNode..Text <> "" _AND_ MyNode..Attribute..Count = 0 THEN
+      			// Stores the link
+      			stMyStream.sLink = MyNode..Text
+      			// Stores a link to the favicon of the URL of the link tag
+      			Add(arrURLToTest, URLExtractPath(MyNode..Text, urlProtocol)+"://"+URLExtractPath(MyNode..Text, urlDomain) + ["/"] + "favicon.ico")
+      			Add(arrURLToTest, URLExtractPath(MyNode..Text, urlProtocol)+"://"+URLExtractPath(MyNode..Text, urlDomain) + ["/"] + "favicon.png")
+      			
+      		END
+      	END
+      	
+      ELSE
+      	FOR EACH MyNode of stMyStream.Stream.feed
+      		IF MyNode..Name ~= "link" _AND_ MyNode..Attribute["type"] ~= "text/html" _AND_ MyNode..Attribute["href"] <> "" THEN
+      			// Stores the link
+      			stMyStream.sLink = MyNode..Attribute["href"]
+      			// Stores a link to the favicon of the URL of the link tag
+      			Add(arrURLToTest, URLExtractPath(stMyStream.sLink, urlProtocol)+"://"+URLExtractPath(stMyStream.sLink, urlDomain) + ["/"] + "favicon.ico")
+      			Add(arrURLToTest, URLExtractPath(stMyStream.sLink, urlProtocol)+"://"+URLExtractPath(stMyStream.sLink, urlDomain) + ["/"] + "favicon.png")
+      		END
+      	END
+      END
+      
+      // The favicon defined on the stream URL
+      Add(arrURLToTest, stMyStream.sAddress +["/"]+ "favicon.ico")
+      Add(arrURLToTest, stMyStream.sAddress +["/"]+ "favicon.png")
+      // The favicon defined on the domain of the stream URL
+      Add(arrURLToTest, URLExtractPath(stMyStream.sAddress, urlProtocol)+"://"+URLExtractPath(stMyStream.sAddress, urlDomain) + ["/"] + "favicon.ico")
+      Add(arrURLToTest, URLExtractPath(stMyStream.sAddress, urlProtocol)+"://"+URLExtractPath(stMyStream.sAddress, urlDomain) + ["/"] + "favicon.png")
+      
+      // Browses the URLs to check
+      sAnURL is string
+      FOR ALL ELEMENT sAnURL of arrURLToTest
+      	
+      	// Stores the URL 
+      	MyQuery..URL = sAnURL
+      	MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+      	// Interrogates the URL
+      	MyResponse = HTTPSend(MyQuery)	
+      	// If the query is OK (return code to 200), stores the image
+      	IF MyResponse..StatusCode = 200 _AND_ MyResponse..Content <> "" THEN
+      		// Saves the return in an image variable (to make sure that this return really is an image)
+      		MyImage = MyResponse..Content
+      		IF MyImage..Valid = False THEN CONTINUE
+      		// The return is an image
+      		RESULT MyResponse..Content
+      	ELSE
+      		// 301/302: Document moved permanently/temporarily
+      		IF MyResponse..StatusCode IN (301, 302) THEN
+      			// Defines the new URL
+      			sAnURL = MyResponse.Header["Location"]
+      			// Re-runs the test of the URL
+      			Add(arrURLToTest, sAnURL)
+      		END
+      		
+      	END
+      	
+      END
+      
+      // Clears the array of URLs (it will be potentially used again)
+      DeleteAll(arrURLToTest)
+      
+      // If no favicon is found, interrogate the "root" page of the domain and retrieve the image defined in the "link shortcut icon" or "link icon" tag
+      sURL is string
+      IF stMyStream.sLink <> "" THEN sURL = stMyStream.sLink ELSE sURL = stMyStream.sAddress
+      MyQuery..URL = URLExtractPath(sURL, urlProtocol)+"://"+URLExtractPath(sURL, urlDomain)
+      MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+      // Interrogates the URL (by managing the possible redirections)
+      MyResponse = HTTPSend(MyQuery)
+      WHILE MyResponse..StatusCode IN (301,302)
+      	MyResponse = HTTPSend(MyResponse.Header["Location"])
+      END
+      // If the query is OK (return code to 200), finds the tags indicating the icon
+      IF MyResponse..StatusCode = 200 _AND_ MyResponse..Content <> "" THEN
+      	
+      	// Tags to find
+      	arrTags is array of strings = ["rel=""icon""","rel=""shortcut icon"""]
+      	FOR ALL ELEMENT sATag of arrTags
+      		// Stores the full content
+      		sFaviconURL is string = MyResponse..Content
+      		// If the content contains the tag
+      		IF sFaviconURL [~] sATag THEN
+      			// Extracts the URL
+      			nStart, nEnd are int
+      			nStart = Position(sFaviconURL, sATag, 1, IgnoreCase)
+      			nStart = Position(sFaviconURL, "<",nStart, FromEnd)
+      			nEnd = Position(sFaviconURL, ">",nStart)
+      			sFaviconURL = sFaviconURL[[nStart TO nEnd]]
+      			sFaviconURL = ExtractString(sFaviconURL, 2, "href=""")
+      			sFaviconURL = ExtractString(sFaviconURL, 1, """")
+      			
+      			// Stores this URL (and its variants)
+      			Add(arrURLToTest, sFaviconURL)
+      			IF sFaviconURL [= "//" THEN Add(arrURLToTest, "http:"+sFaviconURL)
+      			Add(arrURLToTest, stMyStream.sAddress+["/"]+sFaviconURL)
+      			Add(arrURLToTest, URLExtractPath(stMyStream.sAddress, urlProtocol)+"://"+URLExtractPath(stMyStream.sAddress, urlDomain)+["/"]+sFaviconURL)
+      			Add(arrURLToTest, stMyStream.sLink+["/"]+sFaviconURL)
+      			Add(arrURLToTest, URLExtractPath(stMyStream.sLink, urlProtocol)+"://"+URLExtractPath(stMyStream.sLink, urlDomain)+["/"]+sFaviconURL)
+      			
+      		END
+      	END
+      END
+      
+      // Browses the URLs to check
+      FOR ALL ELEMENT sAnURL of arrURLToTest
+      	
+      	// Stores the URL 
+      	MyQuery..URL = sAnURL
+      	MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+      	// Interrogates the URL
+      	MyResponse = HTTPSend(MyQuery)	
+      	// If the query is OK (return code to 200), stores the image
+      	IF MyResponse..StatusCode = 200 _AND_ MyResponse..Content <> "" THEN
+      		// Saves the return in an image variable (to make sure that this return really is an image)
+      		MyImage = MyResponse..Content
+      		IF MyImage..Valid = False THEN CONTINUE
+      		// The return is an image
+      		RESULT MyResponse..Content
+      	END
+      	
+      END
+      
+      // Unable to retrieve an images for the stream
+      RESULT ""
+     type : 458752
+   -
+     name : rssLoadFromURL
+     internal_properties : CAAAAAgAAAB48M2Bg6eqL1bxnM7fcptUG4Zd6/1VhAe0pNq2vTvsvY4+Hga/yjLCguATNOjTIWd42ecS39W3Rtd6/H7ikrguD3MsKWLNu8Mci9v7fbsRHaRX/EdHCt9sPlNevJ9Y2rt5uMdthgnVDgAzjslIoumQp+1h6CY/OmFoVVSaUfG3bi3nF+WGO4RxBarMLGENVLBcJch1fEAWPD1s0vCLFhhpO4Iqpn4b
+     procedure_id : 1760455001109792566
+     type_code : 15
+     code : |1-
+      // Summary: Loads a stream from a URL
+      // Syntax:
+      //[ <Result> = ] rssLoadFromURL (<sURL> is string [, <bLoadPosts> is boolean])
+      //
+      // Parameters:
+      //	sURL (ANSI string): URL of the stream
+      //	bLoadPosts (boolean - default value=1): True to load the posts, False otherwise
+      // Return value:
+      // 	STRSSSTream: STRSSStream variable with the loaded stream
+      //
+      PROCEDURE rssLoadFromURL(LOCAL sURL is string, LOCAL bLoadPosts is boolean = True) : STRSSStream
+      
+      sContent		is string
+      RSSStreamContent 	is WL.XMLDocument
+      MyQuery 		is a httpRequest
+      MyResponse 		is a httpResponse
+      stMyRSSStream	is STRSSStream
+      
+      // Stores the URL
+      stMyRSSStream.sAddress = sURL
+      
+      // Defines the URL
+      MyQuery..URL = sURL
+      MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+      // Interrogates the URL
+      MyResponse = HTTPSend(MyQuery)
+      IF ErrorOccurred THEN
+      	// Identifies the error
+      	ErrorPropagate(ErrorInfo(errMessage))
+      	RESULT stMyRSSStream
+      END
+      
+      // Checks the result code
+      SWITCH MyResponse..StatusCode
+      	// 200: Query successfully processed
+      	CASE 200
+      		// Stores the response content
+      		sContent = MyResponse..Content
+      		// If the content is compressed in gzip
+      		IF MyResponse.Header["Content-Encoding"]..Empty = False _AND_ MyResponse.Header["Content-Encoding"] ~= "gzip" THEN
+      			// Decompresses the string
+      			bufContent is buffer = MyResponse..Content
+      			sContent = Uncompress(bufContent)
+      			IF ErrorOccurred THEN sContent = MyResponse..Content
+      		END
+      		// Loads an XML document from the content
+      		RSSStreamContent = XMLOpen(sContent, fromString)
+      		IF ErrorOccurred THEN
+      			ErrorPropagate(<§@15939788000396920000§>+CR+sURL)
+      			RESULT stMyRSSStream
+      		END
+      
+      		// Loads the stream information from the stream content
+      		_LoadInfoFromContent(RSSStreamContent, stMyRSSStream, bLoadPosts)
+      		RESULT stMyRSSStream
+      		
+      	// 301/302: Document moved/to be redirected permanently/temporarily
+      	CASE 301, 302, 307, 308
+      		// Retrieve the redirection URL and perform the load again
+      		sRedirectionURL is string = MyResponse.Header["Location"]
+      		stMyRSSStream = rssLoadFromURL(sRedirectionURL, bLoadPosts)
+      		RESULT stMyRSSStream
+      		
+      	// Other cases: server not accessible, internal error, etc.
+      	OTHER CASE
+      		ErrorPropagate(MyResponse..DescriptionStatusCode)
+      		RESULT stMyRSSStream
+      END
+     type : 458752
+   -
+     name : OPMLFile_Load
+     internal_properties : CAAAAAgAAADjQhrHX1pwpp//Sn4k+zqR2KygTqSGsMSwUvvVKH2BVdw+quo4/VW8Y5l0bGjMVWY6sGI8czv+IenlMnszPWNB3P8iQ83GgU+RJ2by5zI5Qz5x1RSFzmzAOYIAEWxdFpBv8VnZcawpFfadskYP6Ukn8YwZkikUKgBWz+TbJDIPWz/lEq01SxZBjA4/rCTsw7gH11AlA0ogL5vf3MiJpAA94jcvpcosflSFDUgb48mAATqORDAE
+     procedure_id : 1760455001109858102
+     type_code : 15
+     code : |1-
+      // Summary: Loads the data of the OPML file
+      // Syntax:
+      //[ <Result> = ] OPMLFile_Load (<sOPMLFile> is string)
+      //
+      // Parameters:
+      //	sOPMLFile (ANSI string): <specify the role of sOPMLFile>
+      // Return value:
+      // 	array: Array containing the streams read in the file
+      //
+      PROCEDURE OPMLFile_Load(LOCAL sOPMLFile is string)
+      
+      arrStream is array of STRSSStream
+      
+      // Loads the XML document
+      xmlOPML is WL.XMLDocument = XMLOpen(sOPMLFile, fromFile)
+      
+      // Retrieves the <body> node
+      xmlSourceNode is a xmlNode = xmlOPML.opml.body
+      
+      // Processes the elements of this node recursively
+      // (An OPML file is defined by <outline> tags whose number of nesting depends on the application that generated the file)
+      OPMLFile_ProcessChildNode(xmlSourceNode, arrStream)
+      
+      // Sorts the stream by caption
+      ArraySort(arrStream, asMember, "sFolder;sTitle")
+      
+      RESULT arrStream
+     type : 458752
+   -
+     name : OPMLFile_ProcessChildNode
+     internal_properties : CAAAAAgAAACYJq7r1z5tEezYDUmo+oFkezu1TJHZ0Nit5+xRGWIP1H96kw1llUnb++2b5ljfrAvuzkwRldBKqapLNCi2F+f5rVsmHWGaPGFz4KPTy+6sakWINYLC0wpqeS8GQSXyCs82aMrcdVbutXvf+8V4GWVRcBtYIOs+DbD0ciTYufafGMzgUh/i2Dkk43/DzNsbmsxHibcj/J2+KJ/8gYzk+Q0PR+hioUv7UT/Ny8/gA579STN3NYP3pSk9xCdZqTgyYkS8kbFEZJMj8C7zfulg+lY+V85u+dMVxBQzmTOHH1rBe4sui4NLdSlVkS+EIendD2vtQHHGdjr/DwYkBaquz9uKpH5iAlvqRJW3dY0=
+     procedure_id : 1760455001109923638
+     type_code : 15
+     code : |1-
+      // Summary: <specify the action of the procedure>
+      // Syntax:
+      //OPMLFile_ProcessChildNodes (<xmlSourceNode> is xmlNode, <arrStream> is array)
+      //
+      // Parameters:
+      //	xmlSourceNode (xmlNode): Source XML
+      //	arrStream (array): Array of streams
+      // Return value:
+      // 	None
+      //
+      PROCEDURE PRIVATE OPMLFile_ProcessChildNode(xmlSourceNode is a xmlNode, arrStream is array of STRSSStream)
+      
+      xmlNode is a xmlNode
+      
+      // Browses the child nodes of the source node
+      FOR ALL ELEMENT xmlNode of xmlSourceNode
+      	
+      	// If the current node contains <outline> children, go down in the element
+      	IF xmlNode.outline..Count > 0 THEN
+      		OPMLFile_ProcessChildNode(xmlNode, arrStream)
+      		CONTINUE
+      	END
+      	
+      	// Check whether the current node is a stream description
+      	IF xmlNode..Name <> "outline" THEN CONTINUE
+      	
+      	// Here, the node is a stream node
+      	
+      	stAStream is STRSSStream
+      	VariableReset(stAStream)
+      	
+      	// Browses the attributes
+      	FOR ALL ELEMENT Attribute of xmlNode..Attribute
+      		// According to the attribute name
+      		SWITCH Attribute..Name
+      			// text: caption of the stream
+      			CASE "text"
+      				stAStream.sTitle = Attribute..Value
+      			// xmlUrl: URL for accessing the stream
+      			CASE "xmlUrl"
+      				stAStream.sAddress = Attribute..Value
+      			// attributes not supported
+      			OTHER CASE
+      				// No action
+      		END
+      	END
+      	
+      	
+      	// To retrieve the direct folder, interrogate the source node
+      	FOR ALL ELEMENT Attribute of xmlSourceNode..Attribute
+      		// If it is the "text" attribute, stores the name as folder name
+      		IF Attribute..Name = "text"
+      			stAStream.sFolder = Attribute..Value
+      		END
+      	END
+      	
+      	// If the stream has no address, ignore it (wrong generation or interpretation of OPML file)
+      	IF stAStream.sAddress = "" THEN CONTINUE
+      	
+      	// If the title is empty
+      	IF stAStream.sTitle ~= "" THEN
+      		// Defines the address as being the title
+      		stAStream.sTitle = stAStream.sAddress
+      	END
+      		
+      	// Stores the stream if it is correct
+      	Add(arrStream, stAStream)
+      	
+      END
+     type : 458752
+   -
+     name : TP_rssGetStreamImage
+     internal_properties : CAAAAAgAAADZYxvxsagSpJHlvOxOie0NuWJmENb8ykIKSD3DkvtY0lJe95DBJRX0u4HEpAh8RX7SePLUE3tGYSk1qsuLJWtxfF+Kc+UeIQeZH7b6F9J5C1Y5VWw13mTQeUJs9RDxMrw7zfWVVaAVAeqhbrqDnSVjjShlDu1I5rwakyBvqLb7ZxtB7hm5L3IdoMJb8GiQb1TkNjI5i0U0N5vP2GxJUBy9Uq+rJSdvKoQ9lew3281k6cK2jQo+
+     procedure_id : 1760455001109989174
+     type_code : 15
+     code : |1+
+      // Summary: Starts retrieving the image of an RSS stream
+      // Syntax:
+      //TP_rssGetStreamImage (<nStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE TP_rssGetStreamImage(LOCAL nStreamID is 8-byte int)
+      
+      bufImage is buffer
+      stMyStream is STRSSStream
+      
+      // Positions on the stream
+      HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      IF HFound(RSSStream) = False THEN RETURN
+      
+      // Loads the stream from the URL
+      stMyStream = rssLoadFromURL(RSSStream.Address, False)
+      IF stMyStream.nVersion = 0 THEN RETURN
+      
+      // Retrieves the image of the stream
+      bufImage = rssGetStreamImage(stMyStream)
+      // If the buffer is retrieved
+      IF bufImage ~= "" THEN RETURN
+      
+      // Loads the buffer in an image (to make sure that it is an image)
+      MyImage is an Image = bufImage
+      IF MyImage..Valid = False THEN RETURN
+      // Resizes the image in 16x16
+      dResize(MyImage, 16, 16, drHomotheticExtended+drHighQuality)
+      bufImage = MyImage..Image
+      
+      // Creates an image in cache (to speed up the display)
+      fSaveBuffer(gsCacheDirectory +["\"]+ "stream" +["\"]+ RSSStream.RSSStreamID+".png", bufImage)
+      
+      CriticalSectionStart("STREAM")
+      // Positions on the stream and modifies the image
+      HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      RSSStream.Image = bufImage
+      HModify(RSSStream)
+      CriticalSectionEnd("STREAM")
+      
+     type : 458752
+   -
+     name : ImportStream
+     procedure_id : 1760455001110054710
+     type_code : 15
+     code : |1-
+      // Summary: Imports the streams from an array
+      // Syntax:
+      //[ <Result> = ] ImportStream (<arrStream> is array [, <nImportFolderID> is 8-byte int])
+      //
+      // Parameters:
+      //	arrStream (array): Array of streams to import
+      //	nImportFolderID (8-byte integer - default value=-1): Identifier of the folder into which the streams will be imported
+      // Return value:
+      // 	array: Array containing all the identifiers of imported streams
+      //
+      PROCEDURE ImportStream(arrStream is array of STRSSStream, LOCAL nImportFolderID is 8-byte int = -1) : array of 8-byte int
+      
+      nIDFolder is 8-byte int
+      arrStreamID is array of 8-byte int
+      
+      // Browses the streams
+      FOR ALL ELEMENT stAStream of arrStream
+      	
+      	// Only if the stream is flagged to import
+      	IF stAStream.bToImport = False THEN CONTINUE
+      	
+      	// The stream must not already exist
+      	HSeekFirst(RSSStream, Address, stAStream.sAddress)
+      	IF HFound(RSSStream) THEN
+      		ErrorBuild("Unable to add the %1 stream: this stream is already found in the application.", stAStream.sAddress)
+      		RESULT arrStreamID
+      	END
+      	
+      	// In "import with tree structure" mode, add the folder if necessary
+      	IF nImportFolderID = -1 THEN
+      		// Does the folder exist?
+      		IF stAStream.sFolder <> "" THEN
+      			HReadSeekFirst(Folder, Caption, stAStream.sFolder)
+      			IF HFound(Folder) = False THEN
+      				HReset(Folder)
+      				Folder.Caption = stAStream.sFolder
+      				IF HAdd(Folder) = False THEN
+      					ErrorBuild(<§@15939788000396920001§> +CR+ HErrorInfo(hErrMessage), stAStream.sFolder)
+      				END
+      				nIDFolder = Folder.FolderID
+      			END
+      		ELSE
+      			// No folder for this stream, it will be positioned at the root
+      			nIDFolder = 0
+      		END
+      	ELSE
+      		// The folder is the import folder given in parameter
+      		nIDFolder = nImportFolderID
+      	END
+      	
+      	// Adds the stream
+      	HReset(RSSStream)
+      	RSSStream.Address 	= stAStream.sAddress
+      	RSSStream.Title 		= stAStream.sTitle
+      	RSSStream.Image		= stAStream.bufImage
+      	RSSStream.FolderID	= nIDFolder
+      	RSSStream.Link		= stAStream.sLink
+      	IF HAdd(RSSStream) = False THEN
+      		ErrorBuild(<§@15939788000396920002§> +CR+ HErrorInfo(hErrMessage), stAStream.sTitle)
+      		RESULT arrStreamID
+      	END
+      	// Stores the identifier of the stream	
+      	nRSSStreamID is 8-byte int = RSSStream.RSSStreamID
+      	// Stores this identifier
+      	Add(arrStreamID, nRSSStreamID)
+      	
+      	// Retrieves the image of the stream (in parallel task)
+      	WIN_Main.RSSStream_Display(nRSSStreamID)
+      	MyTask is a ParallelTask = ParallelTaskExecute(TP_rssGetStreamImage, (nRSSStreamID),ptoFullCopyHFSQLContext)
+      	MyTask2 is a ParallelTask = ParallelTaskExecuteAfter(MyTask, WIN_Main.RSSStream_UPD_Image, (nRSSStreamID), ptoMainThread)
+      	
+      END
+      
+      // Returns the array containing all the imported streams
+      RESULT arrStreamID
+     type : 458752
+   -
+     name : TP_rssGetStreamPosts
+     procedure_id : 1760455001110120246
+     type_code : 15
+     code : |1-
+      // Summary: Starts retrieving the posts of an RSS stream
+      // Syntax:
+      //[ <Result> = ] TP_rssGetStreamPosts (<nStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	multi-value: Stream ID/Number of new messages retrieved
+      //
+      
+      PROCEDURE TP_rssGetStreamPosts(LOCAL nStreamID is 8-byte int) : (8-byte int, int)
+      
+      stMyStream is STRSSStream
+      nNbNewPosts is int
+      
+      // Positions on the stream
+      HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      IF HFound(RSSStream) = False THEN RESULT (nStreamID, 0)
+      
+      // Loads the stream from the URL
+      stMyStream = rssLoadFromURL(RSSStream.Address)
+      IF stMyStream.nVersion = 0 THEN RESULT (nStreamID, 0)
+      
+      // If a link is found in the structure but not in the record (link not found during the import or wrongly detected), it must be added
+      IF stMyStream.sLink <> "" _AND_ RSSStream.Link ~= "" THEN
+      	HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      	RSSStream.Link = stMyStream.sLink
+      	HModify(RSSStream)
+      END
+      
+      // Retrieves the date of the last stream generation (if it exists)
+      IF stMyStream.dtPublication <= RSSStream.LastGeneration THEN RESULT (nStreamID, 0)	
+      
+      // Browses the posts of the stream
+      stAPost is STPost
+      FOR ALL ELEMENT stAPost of stMyStream.arrPosts
+      	
+      	// Does this post already exist in database?
+      	HSeekFirst(Post, GUID, stAPost.sGUID)
+      	IF HFound(Post) THEN CONTINUE
+      	
+      	// Checks whether a post with the same title and with the same date is not already found
+      	HSeekFirst(Post, PublicationDateStreamTitle,[stAPost.dtDPublication,stAPost.sTitle, RSSStream.RSSStreamID])
+      	IF HFound(Post) THEN CONTINUE
+      	
+      	// Adds the post
+      	HReset(Post)
+      	Post.PublicationDate 	= stAPost.dtDPublication
+      	Post.ReceiveDate 	= Now()
+      	Post.RSSStreamID		= RSSStream.RSSStreamID
+      	Post.Author			= stAPost.sAuthor
+      	Post.Category 		= stAPost.sCategory
+      	Post.Description		= stAPost.sDescription
+      	Post.GUID				= stAPost.sGUID
+      	Post.Image			= stAPost.sImage
+      	Post.Link				= stAPost.sLink
+      	Post.Title			= stAPost.sTitle
+      	Post.Content			= stAPost.sContent
+      	HAdd(Post)
+      	
+      	nNbNewPosts++
+      	
+      	// Modifies the counters
+      	CriticalSectionStart(EVT_COUNT)
+      	gaaCount[nStreamID]++
+      	IF RSSStream.FolderID > 0 THEN gaaCount[PREFIX_FOLDER+RSSStream.FolderID]++
+      	gaaCount[SUBSCRIPTIONID]++
+      	gaaCount[NOTREADID] = gaaCount[SUBSCRIPTIONID]
+      	IF Post.PublicationDate..Date = Today() THEN gaaCount[TODAYID]++
+      	IF Post.PublicationDate..Date = Yesterday() THEN gaaCount[YESTERDAYID]++
+      	CriticalSectionEnd(EVT_COUNT)
+      	
+      	// Sends a message to the window every 5 posts
+      	IF modulo(nNbNewPosts,5) = 0 THEN
+      		// Notifies the window about the update
+      		ParallelTaskExecute(NotifyWindow, (RSSStream.RSSStreamID,1), ptoMainThread)
+      	END
+      	
+      	// Retrieves the image of the post (to store it in cache)
+      	Post_GetImage(Post.PostID)
+      	
+      END
+      
+      // If at least one post was retrieved
+      IF nNbNewPosts > 0 THEN
+      	// Notifies the window about the update
+      	ParallelTaskExecute(NotifyWindow, (RSSStream.RSSStreamID,1), ptoMainThread)
+      END
+      
+      // Retrieves the date of the last stream generation (if it exists)
+      CriticalSectionStart("STREAM")
+      HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      RSSStream.LastGeneration = stMyStream.dtPublication
+      HModify(RSSStream)
+      CriticalSectionEnd("STREAM")
+      
+      // If necessary, delete the oldest posts that exceed the limit
+      IF Archiving_NbPosts(RSSStream.RSSStreamID) THEN
+      	// Update all the counters
+      	CountInitialize()
+      END
+      
+      
+      RESULT (nStreamID, nNbNewPosts)
+     type : 458752
+   -
+     name : _dateConverted
+     internal_properties : CAAAAAgAAAAapVmMO3f1ziyrnqtQaMISJ48XKlhplCbrD22chx3TVmDnNmvHyutj01Zpt2QiPeSJ333anuChvTdXz82mPPydZYTGhZWvgYpEUVbS/aLbhTjLPsPmqr70NEjXAO2WhHgAqZINmExGJQb6OCHgWFGwqf+NLNpTVGsQzVya0SWHtiSH/Ry9P2lRO8F0LEauNC4jKIQtbEwm5idPxmcWV66iiVX6UIf+P7NUiE0m/swQRx+6TCEqIv1is82C9usfg7Of3xcGhnSKbe6okZ+8t2gahnWqIt32
+     procedure_id : 1760455001110185782
+     type_code : 15
+     code : |1+
+      // Summary: Converts an RSS date into a WLanguage DateTime
+      
+      PROCEDURE PRIVATE _dateConverted(LOCAL sTagValue is string)
+      
+      dtDateTime is datetime
+      sHourOffset, sMinuteOffset are strings
+      sSignOffset is string
+      sArea is string
+      duOffsetDuration is duration
+      sMonthInAlpha is string
+      
+      // Deletes the double spaces that may be found
+      WHILE sTagValue [=] "  "
+      	sTagValue = Replace(sTagValue, "  ", " ")
+      END
+      // Deletes the before/after spaces
+      sTagValue = StringFormat(sTagValue, ccIgnoreSpace)
+      
+      // DD-MM-YYYY HH:mm:SS format (13-07-2015 14:15:10)
+      IF MatchRegularExpression(sTagValue, "([0-9]{2,2})-([0-9]{2,2})-([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dtDateTime..Day, dtDateTime..Month, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second) THEN
+      	
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // YYYY-MM-DDTHH:mm:SS format (2015-07-13T14:15:10)
+      IF MatchRegularExpression(sTagValue, "([0-9]{4,4})-([0-9]{2,2})-([0-9]{2,2})T([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dtDateTime..Year, dtDateTime..Month, dtDateTime..Day, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second) THEN
+      	
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // YYYY-MM-DDTHH:mm:SS+01:00 format (2015-07-13T14:15:10+03:00)
+      IF MatchRegularExpression(sTagValue, "([0-9]{4,4})-([0-9]{2,2})-([0-9]{2,2})T([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})(+|-)([0-9]{2,2}):([0-9]{2,2})",dtDateTime..Year, dtDateTime..Month, dtDateTime..Day, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second, sSignOffset, sHourOffset, sMinuteOffset) THEN
+      	
+      	// Adds the difference
+      	SWITCH sSignOffset
+      		CASE "+" : dtDateTime..Hour -= sHourOffset ; dtDateTime..Minute -= sMinuteOffset
+      		CASE "-" : dtDateTime..Hour += sHourOffset ; dtDateTime..Minute += sMinuteOffset			
+      	END
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // YYYY-MM-DDTHH:mm:SSZZZ format (2015-07-13T14:15:10PDT)
+      IF MatchRegularExpression(sTagValue, "([0-9]{4,4})-([0-9]{2,2})-([0-9]{2,2})T([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})([a-zA-Z]{1,4})",dtDateTime..Year, dtDateTime..Month, dtDateTime..Day, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second, sArea) THEN
+      	
+      	// Converts the zone into offset
+      	(duOffsetDuration) = _ZoneToOffset(sArea)
+      	// Applies the offset
+      	dtDateTime += duOffsetDuration
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // Ddd, DD Mmm YYYY HH:mm:SS format (Mon, 13 Jul 2015 14:15:10)
+      IF MatchRegularExpression(sTagValue, "[a-zA-Z]{3,3}, ([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dtDateTime..Day, sMonthInAlpha, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second) THEN
+      	
+      	// Converts month from letters
+      	dtDateTime..Month = _MonthLetterToMonthInteger(sMonthInAlpha)
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // Ddd, JJ Mmm YYYY HH:mm:SS +0100 format (Mon, 13 Jul 2015 14:15:10 +0300)
+      IF MatchRegularExpression(sTagValue, "[a-zA-Z]{3,3}, ([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) (+|-)([0-9]{2,2})([0-9]{2,2})",dtDateTime..Day, sMonthInAlpha, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second, sSignOffset, sHourOffset, sMinuteOffset) THEN
+      	
+      	// Converts month from letters
+      	dtDateTime..Month = _MonthLetterToMonthInteger(sMonthInAlpha)
+      	// Adds the difference
+      	SWITCH sSignOffset
+      		CASE "+" : dtDateTime..Hour -= sHourOffset ; dtDateTime..Minute -= sMinuteOffset
+      		CASE "-" : dtDateTime..Hour += sHourOffset ; dtDateTime..Minute += sMinuteOffset			
+      	END
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // Ddd, DD Mmm YYYY HH:mm:SS ZZZ format (Mon, 13 Jul 2015 14:15:10 PDT)
+      IF MatchRegularExpression(sTagValue, "[a-zA-Z]{3,3}, ([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) ([a-zA-Z]{1,4})",dtDateTime..Day, sMonthInAlpha, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second, sArea) THEN
+      	
+      	// Converts month from letters
+      	dtDateTime..Month = _MonthLetterToMonthInteger(sMonthInAlpha)
+      	// Converts the zone into offset
+      	(duOffsetDuration) = _ZoneToOffset(sArea)
+      	// Applies the offset
+      	dtDateTime += duOffsetDuration
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // DD Mmm YYYY HH:mm:SS format (13 Jul 2015 14:15:10)
+      IF MatchRegularExpression(sTagValue, "([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2})",dtDateTime..Day, sMonthInAlpha, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second) THEN
+      	
+      	// Converts month from letters
+      	dtDateTime..Month = _MonthLetterToMonthInteger(sMonthInAlpha)
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // DD Mmm YYYY HH:mm:SS +0100 format (13 Jul 2015 14:15:10 +0300)
+      IF MatchRegularExpression(sTagValue, "([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) (+|-)([0-9]{2,2})([0-9]{2,2})",dtDateTime..Day, sMonthInAlpha, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second, sSignOffset, sHourOffset, sMinuteOffset) THEN
+      	
+      	// Converts month from letters
+      	dtDateTime..Month = _MonthLetterToMonthInteger(sMonthInAlpha)
+      	// Adds the difference
+      	SWITCH sSignOffset
+      		CASE "+" : dtDateTime..Hour -= sHourOffset ; dtDateTime..Minute -= sMinuteOffset
+      		CASE "-" : dtDateTime..Hour += sHourOffset ; dtDateTime..Minute += sMinuteOffset			
+      	END
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      // DD Mmm YYYY HH:mm:SS ZZZ format (13 Jul 2015 14:15:10 PDT)
+      IF MatchRegularExpression(sTagValue, "([0-9]{1,2}) ([a-zA-Z]{3,3}) ([0-9]{4,4}) ([0-9]{2,2}):([0-9]{2,2}):([0-9]{2,2}) ([a-zA-Z]{1,4})",dtDateTime..Day, sMonthInAlpha, dtDateTime..Year, dtDateTime..Hour, dtDateTime..Minute, dtDateTime..Second, sArea) THEN
+      	
+      	// Converts month from letters
+      	dtDateTime..Month = _MonthLetterToMonthInteger(sMonthInAlpha)
+      	// Converts the zone into offset
+      	(duOffsetDuration) = _ZoneToOffset(sArea)
+      	// Applies the offset
+      	dtDateTime += duOffsetDuration
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      
+      // Exotic formats:
+      // 02/10/10 at 20h30
+      // DD/MM/YY at HHhmm format (13/07/15 at 14h15)
+      nYear is int
+      IF MatchRegularExpression(sTagValue, "([0-9]{2,2})/([0-9]{2,2})/([0-9]{2,2}) a ([0-9]{2,2})h([0-9]{2,2})",dtDateTime..Day, dtDateTime..Month, nYear, dtDateTime..Hour, dtDateTime..Minute) THEN
+      	
+      	// Applies the year (we consider that the posts are "recent")
+      	dtDateTime..Year = nYear + 2000
+      	// Switch back to local mode
+      	dtDateTime = DateTimeUTCToLocal(dtDateTime)
+      	// If the date time is valid, return it
+      	IF DateTimeValid(dtDateTime) THEN RESULT dtDateTime
+      	
+      END
+      
+      
+      // If the date time has an unknown format, returns the default date time (that corresponds to now
+      RESULT dtDateTime
+      
+     type : 458752
+   -
+     name : _MonthLetterToMonthInteger
+     internal_properties : CAAAAAgAAADM6G1vKNFBoxCdcP4nEP9LRx9m/x+Nq3NqILbZlDUpABLZsX0O3pqQExHOlTE5LcVSv7gDOhTJu2GDHZ8K6lMZv65QkS1S69koQknVo/ophLaFODh7LA6c+1colOFZ/AnQqu9cJk5Z4w1El7Dp5NoSdGOVItWcjsdCxGOar9ZxLcxFUmzXsnM927Z5KMvcrfu2/lbxQgmlzZ6m7MmT8xK1mRy98MxSuKRVAlMnraQTOLLvGDiA2fptF0WEKrDVhwAGNS7vYumZenKna0OuSoE1sFZ5r9SSjLQF4Utz5jiOKYpI/aUnqJKeVA==
+     procedure_id : 1760455001110251318
+     type_code : 15
+     code : |1+
+      // Summary: Returns the number of the month corresponding to the text
+      
+      PROCEDURE PRIVATE _MonthLetterToMonthInteger(sMonthLetter)
+      
+      SWITCH sMonthLetter
+      	CASE "Jan":
+      		RESULT 1
+      	CASE "Feb":
+      		RESULT 2
+      	CASE "Mar":
+      		RESULT 3
+      	CASE "Apr":
+      		RESULT 4
+      	CASE "May":
+      		RESULT 5
+      	CASE "Jun":
+      		RESULT 6
+      	CASE "Jul":
+      		RESULT 7
+      	CASE "Aug":
+      		RESULT 8
+      	CASE "Sep":
+      		RESULT 9
+      	CASE "Oct":
+      		RESULT 10
+      	CASE "Nov":
+      		RESULT 11
+      	CASE "Dec":
+      		RESULT 12
+      	OTHER CASE:
+      		RESULT 0
+      END
+      
+     type : 458752
+   -
+     name : _LoadInfoFromContent
+     internal_properties : CAAAAAgAAADMNAFNkwsHMTbxhshtwumGIz7tUwSV1Ke8TBKmtSMEVT5Wbh4PYmIa4nCTHNgzMZcgaX+yV0XfZt8itL66ugAWD+ucUSJVa6ssi4sT3Qth3exn1HsLThs42vfyOOsUTjdFrMshGp1B+jynMtWEvi2Mg/F1zPpzVn10OehmjZ1L+qlrG7n6z9C9UT5A2P2ZSLRAcosKMb13n0Jpf2sQu3/Jm1Z26jqn
+     procedure_id : 1760455001110316854
+     type_code : 15
+     code : |1-
+      // Summary: Loads the stream information in a STRSSStream structure from the stream content
+      // Syntax:
+      //[ <Result> = ] _LoadInfoFromContent (<RSSStreamContent> is xmlDocument, <stMyRSSStream> is STFluxRSS [, <bLoadPosts> is boolean])
+      //
+      // Parameters:
+      //	RSSStreamContent (xmlDocument): Content of the stream
+      //	stMyRSSStream (STRSSStream): Structure of the stream
+      //	bLoadPosts (boolean - default value=1): True to load the posts, False otherwise
+      // Return value:
+      // 	STRSSSTream: RSS stream
+      //
+      PROCEDURE PRIVATE _LoadInfoFromContent(LOCAL RSSStreamContent is WL.XMLDocument, stMyRSSStream is STRSSStream, LOCAL bLoadPosts is boolean = True) : STRSSStream
+      
+      // Stores the content of the stream
+      stMyRSSStream.Stream = RSSStreamContent
+      
+      // Defines the version of the stream (Atom 1.0 or RSS 2.0)
+      SWITCH True
+      	// RSS
+      	CASE RSSStreamContent.rss..Exist
+      		stMyRSSStream.nVersion = 2
+      		_LoadInfoFromContent_RSS(stMyRSSStream, bLoadPosts)
+      		
+      	// Atom
+      	CASE RSSStreamContent.feed..Exist
+      		stMyRSSStream.nVersion = 1
+      		_LoadInfoFromContent_Atom(stMyRSSStream, bLoadPosts)
+      		
+      	// Type not supported
+      	OTHER CASE
+      		ErrorPropagate(<§@15939788000396920003§>) 
+      		RESULT stMyRSSStream
+      END
+      
+      RESULT stMyRSSStream
+     type : 458752
+   -
+     name : _LoadInfoFromContent_RSS
+     internal_properties : CAAAAAgAAAB0ukWPVL/IUhZm61tAdpN2nCvCB4SGVvW7oKfqdp1/eNBOIhH0iEngyZQ+DaI9vpWeIgW/mBs1l5zXinNLSweSf8p/larF64u1n3SHD85G1WxZ05sovPTh65tEEQFiXh4g1VNyK9PHWeBjFz1pBV7sgOQtfdjh6l0jCxMZVXQpWr9YhnsRI1k1Cj0ZjcnagSaaMIJshIzpx+cpiqQZ6cYumgbQibY7/FgEUnwYT+qocsf3AQIqsDLPQ2giPaEGAlSqm/EdiRZybCQrrK3futy8ZNlqaCgoDWyU12JjA6/1tMK0ODApdzvcln4=
+     procedure_id : 1760455001110382390
+     type_code : 15
+     code : |1-
+      // Summary: Loads the information of a stream in RSS 2.0
+      // Syntax:
+      //_LoadInfoFromContent_RSS (<stMyRSSStream> is STFluxRSS [, <bLoadPosts> is boolean])
+      //
+      // Parameters:
+      //	stMyRSSStream (STRSSStream): Structure to fill
+      //	bLoadPosts (boolean - default value=1): True to load the posts, False otherwise
+      // Return value:
+      // 	None
+      //
+      PROCEDURE PRIVATE _LoadInfoFromContent_RSS(stMyRSSStream is STRSSStream, LOCAL bLoadPosts is boolean = True)
+      
+      // Checks the format of the stream
+      IF stMyRSSStream.Stream.rss..Exist = False THEN RETURN
+      
+      // Title
+      stMyRSSStream.sTitle 		= stMyRSSStream.Stream.rss.channel.title..Text
+      // Link
+      xmlLnk is a xmlNode
+      FOR ALL ELEMENT xmlLnk of stMyRSSStream.Stream.rss.channel
+      	IF xmlLnk..Name ~= "link" AND xmlLnk..Text <> "" THEN
+      		stMyRSSStream.sLink = xmlLnk..Text
+      		BREAK
+      	END
+      END
+      // Date of publication
+      IF stMyRSSStream.Stream.rss.channel.lastBuildDate..Exist THEN
+      	stMyRSSStream.dtPublication 	= _dateConverted(stMyRSSStream.Stream.rss.channel.lastBuildDate..Text)
+      ELSE
+      	IF stMyRSSStream.Stream.rss.channel.advdDate..Exist THEN
+      		stMyRSSStream.dtPublication 	= _dateConverted(stMyRSSStream.Stream.rss.channel.advdDate..Text)
+      	END
+      END
+      // Description
+      stMyRSSStream.sDescription 	= stMyRSSStream.Stream.rss.channel.description..Text
+      
+      
+      // Posts
+      IF bLoadPosts = False THEN RETURN
+      
+      stAPost is STPost
+      MyCategory is a xmlNode
+      MyPost is a xmlNode
+      
+      // Browses the posts of the stream
+      FOR ALL ELEMENT MyPost of stMyRSSStream.Stream.rss.channel on item
+      	
+      	VariableReset(stAPost)
+      	
+      	// Stores the post information
+      	stAPost.sGUID			= MyPost.guid..Text
+      	sTitle is string = MyPost.title..Text
+      	stAPost.sTitle			= sTitle
+      	stAPost.sLink			= MyPost.link..Text
+      	sDesc is string = MyPost.description..Text
+      	stAPost.sDescription		= sDesc
+      	stAPost.sContent			= stAPost.sDescription
+      	IF MyPost.encoded..Exist THEN stAPost.sContent = MyPost.encoded..Text
+      	stAPost.sAuthor			= MyPost.author..Text
+      	IF stAPost.sAuthor ~= "" THEN stAPost.sAuthor			= MyPost.creator..Text
+      	IF MyPost.pubDate..Exist THEN
+      		stAPost.dtDPublication 	= _dateConverted(MyPost.pubDate..Text)
+      	ELSE
+      		IF MyPost.date..Exist THEN
+      			stAPost.dtDPublication 	= _dateConverted(MyPost.date..Text)
+      		END
+      	END
+      	stAPost.dtReception 		= Now()
+      	stAPost.sImage			= MyPost.image..Text
+      	// If the image tag is not defined
+      	IF stAPost.sImage ~= "" THEN
+      		// Checks whether an enclosure tab exists
+      		IF MyPost.enclosure..Exist THEN
+      			stAPost.sImage = MyPost.enclosure..Attribute["url"]..Value
+      		ELSE
+      			// Checks whether an image content tab exists
+      			IF MyPost.content..Exist _AND_ MyPost.content..Attribute["medium"]..Value ~= "image" THEN
+      				stAPost.sImage = MyPost.content..Attribute["url"]..Value
+      			ELSE
+      				// Find an <img> tag in the content
+      				sImageURL is string = stAPost.sContent
+      				IF sImageURL [~] "<img" THEN
+      					sImageURL = ExtractString(sImageURL, 2, "<img")
+      					sImageURL = ExtractString(sImageURL, 1, ">")
+      					sImageURL = ExtractString(sImageURL, 2, "src=""")
+      					sImageURL = ExtractString(sImageURL, 1, """")
+      					IF sImageURL <> "" THEN
+      						IF sImageURL [=] "://" THEN
+      							stAPost.sImage = sImageURL
+      						ELSE
+      							stAPost.sImage = URLExtractPath(stMyRSSStream.sLink, urlProtocol)+"://"+URLExtractPath(stMyRSSStream.sLink, urlDomain)+["/"]+sImageURL
+      						END
+      					END
+      				END	
+      			END
+      			
+      		END
+      		
+      	END
+      	
+      	// If the GUID is empty, consider that the link is used as GUID
+      	IF stAPost.sGUID ~= "" THEN
+      		IF stAPost.sLink <> "" THEN
+      			stAPost.sGUID = stAPost.sLink
+      		ELSE
+      			// If the link is empty, use the title
+      			stAPost.sGUID = stAPost.sTitle
+      		END
+      	END
+      	
+      	FOR EACH MyCategory of MyPost on category
+      		stAPost.sCategory += [";"] + MyCategory..Text	
+      	END
+      	
+      	// Adds the post to the list of posts
+      	Add(stMyRSSStream.arrPosts, stAPost)
+      	
+      END
+     type : 458752
+   -
+     name : _LoadInfoFromContent_Atom
+     internal_properties : CAAAAAgAAAATeNZ6XrQcKQts6YBhhrWibrn50l4LV2eoV5RhrsKOFBKPWt/Stn6023PxO6S1ZKRXtWiAdUR0F1hNrdnIGpSgSnEonG0TJ0b8Z1PljolY5OaRTVPDnaaOUUTlKjjzPiv1LM4fGSfGpkBEjA1EYbz5NMj4oX60G8pe/Yh8b9SqyhBJp6pPCvAyGE3RpplPecjXf5qhoaCj0OMFkUIrfyLDViCLM8THV7LE3/Uo6JzpoxHFfzIBtgoVNrCVRPhvNY5hD1QoIk7/wk2RP7lx93JpQAu0NrWrPxLU6KL3GsSp9AO6Ivs+iQ0svOjP0Atydz8iK+lqR+VL1Cm2APNguyTBs7BJVJNCWZ+h3SNzuT8p8QSafiuy683Z1WuxRYBfHVYa6sG6XXKbBb3cnUMSHBrxydbUNYrIcEuVWnIQ8Dtd6W76
+     procedure_id : 1760455001110447926
+     type_code : 15
+     code : |1-
+      // Summary: Loads the information of a stream in Atom 1.0
+      // Syntax:
+      //_LoadInfoFromContent_Atom (<stMyRSSStream> is STFluxRSS [, <bLoadPosts> is boolean])
+      //
+      // Parameters:
+      //	stMyRSSStream (STRSSStream): Structure to fill
+      //	bLoadPosts (boolean - default value=1): True to load the posts, False otherwise
+      // Return value:
+      // 	None
+      //
+      PROCEDURE PRIVATE _LoadInfoFromContent_Atom(stMyRSSStream is STRSSStream, LOCAL bLoadPosts is boolean = True)
+      
+      // Checks the format of the stream
+      IF stMyRSSStream.Stream.feed..Exist = False THEN RETURN
+      
+      // Title
+      stMyRSSStream.sTitle 		= stMyRSSStream.Stream.feed.title..Text
+      // Link: the link is on a "link" tag of "alternate" type
+      xmlLnk is a xmlNode
+      FOR ALL ELEMENT xmlLnk of stMyRSSStream.Stream.feed on link
+      	IF xmlLnk..Attribute["rel"] ~= "alternate" AND xmlLnk..Attribute["href"] <> "" THEN
+      		stMyRSSStream.sLink = xmlLnk..Attribute["href"]
+      		BREAK
+      	END
+      END
+      // Date of publication
+      stMyRSSStream.dtPublication 	= _dateConverted(stMyRSSStream.Stream.feed.updated..Text)
+      // Description
+      stMyRSSStream.sDescription 	= stMyRSSStream.Stream.feed.subtitle..Text
+      
+      // Posts
+      IF bLoadPosts = False THEN RETURN
+      
+      stAPost is STPost
+      MyCategory is a xmlNode
+      MyPost is a xmlNode
+      
+      // Browses the posts of the stream
+      FOR ALL ELEMENT MyPost of stMyRSSStream.Stream.feed on entry
+      	
+      	VariableReset(stAPost)
+      	
+      	// Stores the post information
+      	stAPost.sGUID			= MyPost.id..Text
+      	stAPost.sTitle			= MyPost.title..Text
+      	
+      	// The link is on a "link" tag of "alternate" type (or not)
+      	FOR ALL ELEMENT xmlLnk of MyPost on link
+      		// The href is filled
+      		IF xmlLnk..Attribute["href"] <> "" THEN
+      			// If it is an "alternate", 
+      			IF xmlLnk..Attribute["rel"] ~= "alternate" THEN
+      				// Forces this link
+      				stAPost.sLink = xmlLnk..Attribute["href"]
+      				BREAK
+      			ELSE // If it is not an alternate
+      				// Stores the link (only if it is not already filled) and continues the browse (to possibly find the alternate link)
+      				IF stAPost.sLink ~= "" THEN stAPost.sLink = xmlLnk..Attribute["href"]
+      			END
+      		END
+      	END
+      	
+      	IF MyPost.summary..Exist THEN
+      		stAPost.sDescription = MyPost.summary..Text
+      	ELSE
+      		IF MyPost.content..Exist THEN
+      			stAPost.sDescription = MyPost.content..Text
+      		END
+      	END
+      	stAPost.sContent = MyPost.content..Text
+      	
+      	stAPost.sAuthor			= MyPost.author.name..Text
+      	stAPost.dtDPublication 	= _dateConverted(MyPost.updated..Text)
+      	stAPost.dtReception 		= Now()
+      	
+      	// Find an <img> tag in the content
+      	sImageURL is string = stAPost.sContent
+      	IF sImageURL [~] "<img" THEN
+      		sImageURL = ExtractString(sImageURL, 2, "<img")
+      		sImageURL = ExtractString(sImageURL, 1, ">")
+      		sImageURL = ExtractString(sImageURL, 2, "src=""")
+      		sImageURL = ExtractString(sImageURL, 1, """")
+      		IF sImageURL <> "" THEN
+      			stAPost.sImage 			= sImageURL
+      		END
+      	END	
+      	stAPost.sImage 			= sImageURL
+      	
+      	FOR EACH MyCategory of MyPost on category
+      		stAPost.sCategory += [";"] + MyCategory..Text	
+      	END
+      	
+      	// Adds the post to the list of posts
+      	Add(stMyRSSStream.arrPosts, stAPost)
+      	
+      END
+     type : 458752
+   -
+     name : RSSStream_GetCacheImage
+     internal_properties : CAAAAAgAAABgiwzaU0RoobbGOyVqmos+w/DkPFKP+S50bgBFhSCSHxKHAYzJlsRlPGRWSHaileqIcDQlNkIBAySwAb586CzRA3SqAgTe05KqIv4W4ClaASL/ZcGZ4td0MJ34Mpdw4ktHji2/YKUpYlTHwukQFBX8if+LzjTJbJNMQYDqad1j0rpkFk47amnUuB0PLWAgGbnXiq1A0/g=
+     procedure_id : 1760455001110513462
+     type_code : 15
+     code : |1-
+      // Summary: Retrieves the image of the stream from the cache
+      // Syntax:
+      //[ <Result> = ] RSSStream_GetCacheImage (<nRSSStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nRSSStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	ANSI string: Path of image
+      //
+      
+      PROCEDURE RSSStream_GetCacheImage(LOCAL nRSSStreamID is 8-byte int) : string
+      
+      sImage is string
+      nPosition is int
+      
+      
+      // Defines the path of the image
+      sImage = gsCacheDirectory +["\"]+ "stream" +["\"]+ nRSSStreamID+".png"
+      // If this image exists, it must be returned
+      IF fFileExist(sImage) THEN RESULT sImage
+      
+      // Stores the HF position
+      nPosition = HSavePosition(RSSStream, hSaveItems)
+      
+      // Read the record
+      HReadSeekFirst(RSSStream, RSSStreamID, nRSSStreamID)
+      IF HFound(RSSStream) THEN
+      	
+      	// If an image is defined
+      	IF HInfoMemo(RSSStream, Image) <> "" THEN
+      		
+      		// Saves the image in the cache file
+      		IF HExtractMemo(RSSStream, Image, sImage) THEN
+      			
+      			// Returns the image
+      			RESULT sImage
+      			
+      		END
+      		
+      	END
+      	
+      END
+      
+      // Image not defined
+      RESULT ".\ihm\picto-rss.png"
+      
+      END:
+      IF nPosition > 0 THEN HRestorePosition(nPosition)
+     type : 458752
+   -
+     name : Post_GetCacheImage
+     internal_properties : CAAAAAgAAAAAq2w6s6SmMcqK55WKdsvitxRUzIpTpb6w2hQ1NVxKK4bTcQQBUnD9YNg6uI4WtQ4s3Ly1tg61ExiUbS6kpMz9N8g6IiwKr2rGnurIarvUhxTpx2/bfEFeKkeiXNEyjDHBILc9AvfjHG6phMNC/m8SKxmtpD7r7pVem5pUEz8t4NwmUDR9fKP++pdZv3I6Yxk3ao1gs9g=
+     procedure_id : 1760455001110578998
+     type_code : 15
+     code : |1-
+      // Summary: Retrieves the image of a post from the cache
+      // Syntax:
+      //[ <Result> = ] Post_GetCacheImage (<nPostID> is 8-byte int)
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post
+      // Return value:
+      // 	ANSI string: Path of image
+      //
+      
+      PROCEDURE Post_GetCacheImage(LOCAL nPostID is 8-byte int) : string
+      
+      sImage is string
+      nPosition is int
+      
+      // Defines the path of the image
+      sImage = gsCacheDirectory +["\"]+ "post" +["\"]+ nPostID+".jpg"
+      // If this image exists, it must be returned
+      IF fFileExist(sImage) THEN RESULT sImage
+      
+      // Stores the HF position
+      nPosition = HSavePosition(Post, hSaveItems)
+      
+      // Read the record
+      HReadSeekFirst(Post, PostID, nPostID)
+      IF HFound(Post) THEN
+      	
+      	// If an image is defined
+      	IF Post.Image <> "" THEN
+      		
+      		// Tries to retrieve the image
+      		sImage = Post_GetImage(Post.Image)
+      		IF fFileExist(sImage) THEN RESULT sImage
+      				
+      	END
+      	
+      END
+      
+      // Image not defined
+      RESULT ".\ihm\DefaultPost.jpg"
+      
+      END:
+      IF nPosition > 0 THEN HRestorePosition(nPosition)
+     type : 458752
+   -
+     name : FlagRead_RSSStream
+     procedure_id : 1760455001110644534
+     type_code : 15
+     code : |1-
+      // Summary: Flags an RSS stream as read
+      // Syntax:
+      //FlagRead_RSSStream (<nRSSStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nRSSStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	None
+      //
+      PROCEDURE FlagRead_RSSStream(LOCAL nRSSStreamID is 8-byte int)
+      
+      // The stream must be valid
+      HReadSeekFirst(RSSStream, RSSStreamID, nRSSStreamID)
+      IF HFound(RSSStream) = False THEN RETURN
+      
+      // Configures the update query
+      QRY_FlagRead_RSSStream.pRSSStreamID = nRSSStreamID
+      // Runs the update query
+      IF HExecuteQuery(QRY_FlagRead_RSSStream) = False THEN RETURN
+      
+      // Decrements the array of counts
+      CriticalSectionStart(EVT_COUNT)
+      nNbUnread is int = gaaCount[RSSStream.RSSStreamID]
+      gaaCount[RSSStream.RSSStreamID] = 0
+      IF RSSStream.FolderID > 0 THEN gaaCount[PREFIX_FOLDER+RSSStream.FolderID]-=nNbUnread
+      gaaCount[SUBSCRIPTIONID]-=nNbUnread
+      gaaCount[NOTREADID] = gaaCount[SUBSCRIPTIONID]
+      UPD_Counter_Today()
+      UPD_Counter_Yesterday()
+      CriticalSectionEnd(EVT_COUNT)
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (RSSStream.RSSStreamID,1), ptoMainThread)
+     type : 458752
+   -
+     name : FlagRead_Post
+     procedure_id : 1760455001110710070
+     type_code : 15
+     code : |1-
+      // Summary: Flags a post as read
+      // Syntax:
+      //FlagRead_Post (<nPostID> is 8-byte int [, <bNotifyWindow> is boolean])
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post
+      //	bNotifyWindow (boolean - default value=1): True to notify the window about the change, False otherwise
+      // Return value:
+      // 	None
+      //
+      PROCEDURE FlagRead_Post(LOCAL nPostID is 8-byte int, LOCAL bNotifyWindow is boolean = True)
+      
+      nPosition is int = HSavePosition(Post, hSaveItems)
+      
+      // The post must be valid
+      HReadSeekFirst(Post, PostID, nPostID)
+      IF HFound(Post) = False THEN RETURN
+      // If the post is already read, no action
+      IF Post.Read THEN RETURN
+      
+      // Reads the corresponding RSS stream
+      HReadSeekFirst(RSSStream, RSSStreamID, Post.RSSStreamID)
+      
+      // Flags the post as read
+      Post.Read = True
+      IF HModify(Post) = False THEN RETURN
+      
+      // Decrements the array of counts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[RSSStream.RSSStreamID]--
+      IF RSSStream.FolderID > 0 THEN gaaCount[PREFIX_FOLDER+RSSStream.FolderID]--
+      gaaCount[SUBSCRIPTIONID]--
+      gaaCount[NOTREADID] = gaaCount[SUBSCRIPTIONID]
+      IF Post.PublicationDate..Date = Today() THEN gaaCount[TODAYID]--
+      IF Post.PublicationDate..Date = Yesterday() THEN gaaCount[YESTERDAYID]--
+      CriticalSectionEnd(EVT_COUNT)
+      
+      // Notifies the window about a change of count
+      IF bNotifyWindow THEN 
+      	ParallelTaskExecute(NotifyWindow,(RSSStream.RSSStreamID,1), ptoMainThread)
+      END
+      
+      END : 
+      HRestorePosition(nPosition)
+     type : 458752
+   -
+     name : Post_ChangeFavoritesStatus
+     procedure_id : 1760455001110775606
+     type_code : 15
+     code : |1-
+      // Summary: Modifies the favorite status of a post
+      // Syntax:
+      //Post_ChangeFavoriteStatus (<nPostID> is 8-byte int [, <bFavorite> is boolean])
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post
+      //	bFavorite (boolean - default value=1): True to flag the post as favorite, False otherwise
+      // Return value:
+      // 	None
+      //
+      PROCEDURE Post_ChangeFavoritesStatus(LOCAL nPostID is 8-byte int, LOCAL bFavorites is boolean = True)
+      
+      // The post must be valid
+      HReadSeekFirst(Post, PostID, nPostID)
+      IF HFound(Post) = False THEN RETURN
+      
+      // Applies the favorite status
+      Post.Favorites = bFavorites
+      HModify(Post)
+     type : 458752
+   -
+     name : Post_ChangeFavoritesStatus
+     procedure_id : 1760455001110775606
+     type_code : 15
+     code : |1-
+      PROCEDURE Post_ChangeFavoritesStatus(LOCAL nPostID is 8-byte int)
+      
+      // The post must be valid
+      HReadSeekFirst(Post, PostID, nPostID)
+      IF HFound(Post) = False THEN RETURN
+      
+      // Reverses the favorite status
+      Post.Favorites = NOT Post.Favorites
+      HModify(Post)
+     type : 458753
+   -
+     name : Post_ListAssociatedTags
+     procedure_id : 1760455001110841142
+     type_code : 15
+     code : |1+
+      // Summary: List of tags associated with a post (separated by ";")
+      // Syntax:
+      //[ <Result> = ] Post_ListAssociatedTags (<nPostID> is 8-byte int)
+      //
+      // Parameters:
+      //	nPostID (8-byte int):Identifier of the post
+      
+      // Return value:
+      // 	ANSI string: List of tags
+      PROCEDURE Post_ListAssociatedTags(LOCAL nPostID is 8-byte int) : string
+      
+      sListTags 	is string
+      
+      // Configures the query
+      QRY_ListPostTags.pPostID = nPostID
+      // Runs the query
+      IF HExecuteQuery(QRY_ListPostTags) = False THEN RESULT ""
+      
+      // Stores the different tags
+      FOR EACH QRY_ListPostTags
+      	sListTags += [";"] + QRY_ListPostTags.Caption
+      END
+      
+      RESULT sListTags
+      
+     type : 458752
+   -
+     name : OptionsLoad
+     procedure_id : 1760455001110906678
+     type_code : 15
+     code : |1-
+      // Summary: Loads the options
+      // Syntax:
+      //OptionsLoad ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      PROCEDURE OptionsLoad()
+      
+      // Loads the options of the application
+      gaaOptions[OPTION_ALERT_TEMPORIZATION] 			= LoadParameter(OPTION_ALERT_TEMPORIZATION, gaaDefaultOptions[OPTION_ALERT_TEMPORIZATION])
+      gaaOptions[OPTION_ALERT_ONLYIFREDUCED ] 		= LoadParameter(OPTION_ALERT_ONLYIFREDUCED, gaaDefaultOptions[OPTION_ALERT_ONLYIFREDUCED])
+      gaaOptions[OPTION_ARCHIVING_NBPOSTS_ENABLED]	= LoadParameter(OPTION_ARCHIVING_NBPOSTS_ENABLED, gaaDefaultOptions[OPTION_ARCHIVING_NBPOSTS_ENABLED])
+      gaaOptions[OPTION_ARCHIVING_NBPOSTS]			= LoadParameter(OPTION_ARCHIVING_NBPOSTS, gaaDefaultOptions[OPTION_ARCHIVING_NBPOSTS])
+      gaaOptions[OPTION_ARCHIVING_NBDAYS_ENABLED]		= LoadParameter(OPTION_ARCHIVING_NBDAYS_ENABLED, gaaDefaultOptions[OPTION_ARCHIVING_NBDAYS_ENABLED])
+      gaaOptions[OPTION_ARCHIVING_NBDAYS] 			= LoadParameter(OPTION_ARCHIVING_NBDAYS, gaaDefaultOptions[OPTION_ARCHIVING_NBDAYS])
+      gaaOptions[OPTION_GUI_EXPANDFOLDERAUTO]			= LoadParameter(OPTION_GUI_EXPANDFOLDERAUTO, gaaDefaultOptions[OPTION_GUI_EXPANDFOLDERAUTO])
+      gaaOptions[OPTION_GUI_CURRENTNODE]				= LoadParameter(OPTION_GUI_CURRENTNODE, gaaDefaultOptions[OPTION_GUI_CURRENTNODE])
+      gaaOptions[OPTION_GUI_EXPANDEDNODES]			= LoadParameter(OPTION_GUI_EXPANDEDNODES, gaaDefaultOptions[OPTION_GUI_EXPANDEDNODES])
+      gaaOptions[OPTION_GUI_MODE]						= LoadParameter(OPTION_GUI_MODE, gaaDefaultOptions[OPTION_GUI_MODE])
+      gaaOptions[OPTION_AUTOSTART]					= LoadParameter(OPTION_AUTOSTART, gaaDefaultOptions[OPTION_AUTOSTART])
+      gaaOptions[OPTION_CONFIRMFLAGREAD]				= LoadParameter(OPTION_CONFIRMFLAGREAD, gaaDefaultOptions[OPTION_CONFIRMFLAGREAD])
+      gaaOptions[OPTION_GUI_TAGENABLED]				= LoadParameter(OPTION_GUI_TAGENABLED, gaaDefaultOptions[OPTION_GUI_TAGENABLED])
+      gaaOptions[OPTION_GUI_SHAREENABLED]				= LoadParameter(OPTION_GUI_SHAREENABLED, gaaDefaultOptions[OPTION_GUI_SHAREENABLED])
+      gaaOptions[OPTION_GUI_COLOR]					= LoadParameter(OPTION_GUI_COLOR, gaaDefaultOptions[OPTION_GUI_COLOR])
+     type : 458752
+   -
+     name : OptionsSave
+     procedure_id : 1760455001110972214
+     type_code : 15
+     code : |1-
+      // Summary: Saves the options
+      // Syntax:
+      //OptionsSave ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      PROCEDURE OptionsSave()
+      
+      // Saves the application options
+      SaveParameter(OPTION_ALERT_TEMPORIZATION, 		gaaOptions[OPTION_ALERT_TEMPORIZATION])
+      SaveParameter(OPTION_ALERT_ONLYIFREDUCED, 		gaaOptions[OPTION_ALERT_ONLYIFREDUCED ])
+      SaveParameter(OPTION_ARCHIVING_NBPOSTS_ENABLED, gaaOptions[OPTION_ARCHIVING_NBPOSTS_ENABLED])
+      SaveParameter(OPTION_ARCHIVING_NBPOSTS, 		gaaOptions[OPTION_ARCHIVING_NBPOSTS])
+      SaveParameter(OPTION_ARCHIVING_NBDAYS_ENABLED, 	gaaOptions[OPTION_ARCHIVING_NBDAYS_ENABLED])
+      SaveParameter(OPTION_ARCHIVING_NBDAYS, 			gaaOptions[OPTION_ARCHIVING_NBDAYS])
+      SaveParameter(OPTION_GUI_EXPANDFOLDERAUTO, 		gaaOptions[OPTION_GUI_EXPANDFOLDERAUTO])
+      SaveParameter(OPTION_GUI_CURRENTNODE, 			gaaOptions[OPTION_GUI_CURRENTNODE])
+      SaveParameter(OPTION_GUI_EXPANDEDNODES, 		gaaOptions[OPTION_GUI_EXPANDEDNODES])
+      SaveParameter(OPTION_GUI_MODE, 					gaaOptions[OPTION_GUI_MODE])
+      SaveParameter(OPTION_AUTOSTART, 				gaaOptions[OPTION_AUTOSTART])
+      SaveParameter(OPTION_CONFIRMFLAGREAD, 			gaaOptions[OPTION_CONFIRMFLAGREAD])
+      SaveParameter(OPTION_GUI_TAGENABLED, 			gaaOptions[OPTION_GUI_TAGENABLED])
+      SaveParameter(OPTION_GUI_SHAREENABLED, 			gaaOptions[OPTION_GUI_SHAREENABLED])
+      SaveParameter(OPTION_GUI_COLOR, 				gaaOptions[OPTION_GUI_COLOR])
+     type : 458752
+   -
+     name : OptionRead
+     procedure_id : 1760455001111037750
+     type_code : 15
+     code : |1-
+      // Summary: Reads the value of an option
+      // Syntax:
+      //[ <Result> = ] OptionRead (<sOptionName> is string)
+      //
+      // Parameters:
+      //	sOptionName (ANSI string): Name of the option
+      // Return value:
+      // 	ANSI string: Value of the option
+      //
+      
+      PROCEDURE OptionRead(LOCAL sOptionName is string)
+      
+      // If the option is not defined
+      if gaaOptions[sOptionName]..Exist = false then
+      	// Returns the default value
+      	if gaaDefaultOptions[sOptionName]..Exist = false THEN
+      		RESULT ""
+      	else
+      		RESULT gaaDefaultOptions[sOptionName]
+      	END
+      END
+      
+      // Returns the value of the option
+      RESULT gaaOptions[sOptionName]
+     type : 458752
+   -
+     name : OptionWrite
+     procedure_id : 1760455001111103286
+     type_code : 15
+     code : |1+
+      // Summary: Writes the value of an option
+      // Syntax:
+      //OptionWrite (<sOptionName> is string, <vValue>)
+      //
+      // Parameters:
+      //	sOptionName (ANSI string): Name of the option
+      //	vValue: Value
+      // Return value:
+      // 	None
+      //
+      PROCEDURE OptionWrite(LOCAL sOptionName is string, LOCAL vValue)
+      
+      // Assigns the option
+      gaaOptions[sOptionName] = vValue
+     type : 458752
+   -
+     name : Post_DeleteCacheImage
+     internal_properties : CAAAAAgAAACeGZr8kfvEKYQEu4m2OBNatcKOcvZ1gUaOQFCZyW7y5xCNGzp5aJSpTgbC0PYk4UruHpa7zlRRo36q8bY8+vw9VSZw9HBsa14UTB7lrZrRut/czIq+oyg3xeqFVVCdxaDcO1zAJaZqFWnUz+CheZR9EmBmAw0W0WYZhiUxNu6eT4tVje+c30470b6AqA1pfPYVSNOqZW4=
+     procedure_id : 1760455001111168822
+     type_code : 15
+     code : |1+
+      // Summary: Deletes the image of a post from the cache
+      // Syntax:
+      //[ <Result> = ] Post_DeleteCacheImage (<nPostID> is 8-byte int)
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post
+      // Return value:
+      // 	boolean: True if the deletion is effective, False otherwise
+      //
+      
+      PROCEDURE Post_DeleteCacheImage(LOCAL nPostID is 8-byte int) : boolean
+      
+      sImage is string
+      
+      // Defines the path of the image
+      sImage = gsCacheDirectory +["\"]+ "post" +["\"]+ nPostID+".jpg"
+      
+      // If this image exists, it must be deleted
+      IF fFileExist(sImage) THEN RESULT fDelete(sImage, frReadOnly)
+      RESULT True
+     type : 458752
+   -
+     name : Archiving_NbPosts
+     procedure_id : 1760455001111234358
+     type_code : 15
+     code : |1-
+      // Summary: Archives the posts of a stream (for the posts that exceed the authorized limit)
+      // Syntax:
+      //[ <Result> = ] Archive_NbPosts (<nRSSStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nRSSStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	boolean: True if the archiving triggered a modification, False otherwise
+      //
+      PROCEDURE Archiving_NbPosts(LOCAL nRSSStreamID is 8-byte int) : boolean
+      
+      nLimit 		is int
+      bModification 	is boolean
+      bArchive 		is boolean
+      bArchivable 	is boolean
+      sReason 		is string
+      
+      // The option must be enabled
+      IF Val(OptionRead(OPTION_ARCHIVING_NBPOSTS_ENABLED)) = False THEN RESULT False
+      
+      // Reads the limit
+      nLimit = Val(OptionRead(OPTION_ARCHIVING_NBPOSTS))
+      
+      // Browses the posts of the stream
+      FOR EACH Post on PublicationDate WHERE "RSSStreamID = "+nRSSStreamID FromEnd
+      		
+      	// If the post cannot be archived, goes to the next post
+      	
+      	(bArchivable, sReason) = Archiving_PostIsArchivable()
+      	IF bArchivable = False THEN CONTINUE
+      	
+      	// Removes an element from the limit
+      	nLimit--
+      	
+      	// If the post exceeds the quota
+      	IF nLimit < 0 THEN
+      		
+      		// Archives the post
+      		(bArchive, sReason) = Archiving_Post()
+      		IF bArchive THEN
+      			
+      			// The archiving triggered a modification
+      			bModification = True
+      			
+      		END
+      		
+      	END
+      	
+      END
+      
+      RESULT bModification
+     type : 458752
+   -
+     name : Archiving_NbPosts
+     procedure_id : 1760455001111234358
+     type_code : 15
+     code : |1-
+      PROCEDURE Archiving_NbPosts()
+      
+      bModification is boolean
+      
+      // The option must be enabled
+      IF Val(OptionRead(OPTION_ARCHIVING_NBPOSTS_ENABLED)) = False THEN RESULT False
+      
+      // Browses the streams
+      FOR EACH RSSStream
+      	// Starts the archiving procedure
+      	IF Archiving_NbPosts(RSSStream.RSSStreamID) THEN
+      		bModification = True
+      	END
+      END
+      
+      RESULT bModification
+     type : 458753
+   -
+     name : Archive_Date
+     internal_properties : CAAAAAgAAAAAIvnD0DMWTx0clMYZvBf7tqypCmjL/4uDoJ49kV0IVPrt4wb4Fzdx2V0f9vcOXAbTvCLZfR6RBURAs5TjkOiiURH3Md4TeBcf7r9zn7IOIJBAbxGaqSv7ZoeoifqlhgDP06s/Bb63n0wjBAzJRytrVXY7yDfAzqTKs6j52ky18ZyT7LK0G403thdnco/RgUoLbNCNpQ==
+     procedure_id : 1760455001111299894
+     type_code : 15
+     code : |1-
+      // Summary: Archives the posts whose publication date exceeds the limit
+      // Syntax:
+      //[ <Result> = ] Archive_Date ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	boolean: True if the archiving triggered a modification, False otherwise
+      //
+      PROCEDURE Archive_Date() : boolean
+      
+      nLimit 		is int
+      bModification 	is boolean
+      bArchive 		is boolean
+      sReason 		is string
+      
+      // The option must be enabled
+      IF Val(OptionRead(OPTION_ARCHIVING_NBDAYS_ENABLED)) = False THEN RESULT False
+      
+      // Reads the limit
+      nLimit = Val(OptionRead(OPTION_ARCHIVING_NBDAYS))
+      
+      // Defines the limit datetime
+      dtLimited is datetime
+      dtLimited..Day -= nLimit
+      dtLimited..Time = "235900"
+      
+      // Browses the posts
+      FOR EACH Post WHERE PublicationDate <= dtLimited
+      	
+      	// Archives the post
+      	(bArchive, sReason) = Archiving_Post()
+      	IF bArchive THEN
+      		// The archiving triggered a modification
+      		bModification = True
+      	END
+      		
+      END
+      
+      
+      RESULT bModification
+     type : 458752
+   -
+     name : Post_GetImage
+     internal_properties : CAAAAAgAAADqBQozBAuOEFXfalDCIW7D+9Stp9eL7Gjj5mgKvZpL4TFID/R/peDikf5jvazz7SJj9mGK9DK0/i3waVRw00c3TxzpyNYE5AvM3NCN1W1OmiZOqJPLHB68hY+RcO/5+RjV378Aqg+PjwFhAeXZ4/nWKcXBI2nQzW3EJ034FmtxmAYS4RmR8/EF/HhGGVMgCF1AQdDt3ynUQL5jngHgep63LYVcTwWQMKdeuw0pCUvfgCk06odGOSTvGDx/qZQqn2erkx+oQc5YMqDK4wHBHk2LIwPTFFIGJ14Y9Kuzu68I53+eZe+kPDrcgjA9NvUa6qiJjCfQ
+     procedure_id : 1760455001111365430
+     type_code : 15
+     code : |1-
+      // Summary: Retrieves the image of an image
+      // Syntax:
+      //[ <Result> = ] Post_GetImage (<nPostID> is 8-byte int)
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post
+      // Return value:
+      // 	ANSI string: Path of the image in the cache
+      //
+      PROCEDURE Post_GetImage(LOCAL nPostID is 8-byte int)
+      
+      nPosition is int = -1
+      
+      
+      nPosition = HSavePosition(Post, hSaveItems)
+      
+      HReadSeekFirst(Post, PostID, nPostID)
+      IF HFound(Post) = False THEN RESULT ""
+      
+      // Interrogates the URL of the image
+      IF Post.Image <> "" THEN
+      	
+      	// The URL must be formatted
+      	sURL is string = URLEncode(StringToUTF8(Post.Image))
+      	// Interrogates the URL of the image
+      	IF HTTPRequest(sURL) THEN
+      		// Retrieves the buffer
+      		bufImage is buffer = HTTPGetResult(httpResult)
+      	END
+      	
+      ELSE
+      	
+      	// Tries to retrieve the image from the page of the post
+      	sURL = Post.Link
+      	// Interrogates the URL of the link
+      	IF HTTPRequestRedirection(sURL) <> "" THEN
+      		// Retrieves the buffer
+      		bufImage = HTTPGetResult(httpResult)
+      		// Extracts the content from the "content" attribute for the meta tag whose other attribute is "og:image" (tag used by the Facebook share)
+      		nStart is int = Position(bufImage,"property=""og:image""", 1, IgnoreCase)
+      		IF nStart > 0 THEN
+      			nStart = Position(bufImage, "<", nStart, FromEnd)
+      			nend is int = Position(bufImage, ">", nStart)
+      			bufImage = bufImage[[nStart TO nend]]
+      			bufImage = ExtractString(bufImage, 2, "content=""")
+      			bufImage = ExtractString(bufImage, 1, """")
+      			// The "content" is not empty
+      			IF bufImage <> "" THEN
+      				// Interrogates the address of the image
+      				sURL = bufImage
+      				IF HTTPRequestRedirection(sURL) <> "" THEN
+      					// Retrieves the buffer
+      					bufImage  = HTTPGetResult(httpResult)
+      				END
+      			END
+      			
+      		ELSE
+      			// No image in the page of the post, clears the buffer
+      			bufImage = ""
+      		END
+      		
+      	END
+      	
+      END
+      
+      
+      // If the image was found
+      IF bufImage ~= "" THEN
+      	HReadSeekFirst(Post, PostID, nPostID)
+      	Post.Image = ""
+      	HModify(Post)
+      	RESULT ""
+      END
+      
+      // Checks whether it is a valid image
+      MyImage is an Image = bufImage
+      IF MyImage..Valid _AND_ MyImage..Width > 1 _AND_ MyImage..Height > 1 THEN
+      	
+      	// Reduces the image (to avoid increasing the cache and slowing down the application)
+      	dResize(MyImage, 192, 138, drHomotheticExtended+drHighQuality)
+      	
+      	// Defines the name of the file
+      	sFile is string = gsCacheDirectory +["\"]+ "post" +["\"]+ Post.PostID+".jpg"
+      	// Deletes the former image if it exists
+      	IF fFileExist(sFile) THEN fDelete(sFile)
+      	// Saves this buffer in a physical file
+      	dSaveImageJPEG(MyImage, sFile, 100)
+      	// Returns the path of the image
+      	RESULT gsCacheDirectory +["\"]+ "post" +["\"]+ Post.PostID+".jpg"
+      	
+      ELSE // Otherwise, delete the image (it will no longer be found)
+      	
+      	HReadSeekFirst(Post, PostID, nPostID)
+      	Post.Image = ""
+      	HModify(Post)
+      	RESULT ""	
+      END
+      
+      
+      
+      END :
+      IF nPosition <> -1 THEN HRestorePosition(nPosition)
+     type : 458752
+   -
+     name : _MouseWheel
+     internal_properties : CAAAAAgAAABa6xM8u6YkAdro/YTzmR8oYBtWp5J5xQjt/bRw3NkIPWJpGQPDXXVgRUQ1pQyg3sdIafUi2pp+gSza94NWEawnauhsuf8F8J9o+3l2wvEKn0RZdF+YC6QFN8dse1LBsnn8MW9eWXZPgLG8fmWB
+     procedure_id : 1760455001111430966
+     type_code : 15
+     code : |1-
+      // Summary: Procedure called during a WM_MOUSEWHEEL event
+      PROCEDURE PRIVATE _MouseWheel(nMessage <useful>, wParam <useful>, lParam <useful>)
+      
+      nPositionX is int
+      nYPosition is int
+      nHandle is system int
+      
+      // Retrieve the position of the mouse
+      nPositionX = LoWord(lParam)
+      nYPosition = HiWord(lParam)
+      
+      // Retrieve the control below the cursor
+      nHandle = API("user32","WindowFromPoint",nPositionX,nYPosition)
+      
+      // If the handle of the control is valid and if the control found below the mouse is not the one that received the message (the one with focus)
+      IF nHandle <> 0 THEN
+      	
+      	// Disables the wheel at rollover (to avoid going back here)
+      	WheelAtRollover_Disable()
+        	
+        	// Returns the message to the control found below the mouse
+        	SendMessage(nHandle,nMessage,wParam,lParam)
+        	
+        	// Re-enables the wheel at rollover
+      	WheelAtRollover_Enable()
+      	
+      	// Consider that the message was processed	
+      	RESULT True
+      END
+      
+      // Consider that the message was not processed, therefore Windows will inform the relevant one.
+      RESULT False
+     type : 458752
+   -
+     name : WheelAtRollover_Enable
+     procedure_id : 1760455001111496502
+     type_code : 15
+     code : |1-
+      // Summary: Enables the return of the event to the control with rollover (and not to the one with focus)
+      PROCEDURE WheelAtRollover_Enable()
+      
+      // If the event is already enabled, remove it
+      IF gnRolloverEventID <> -1 THEN
+      	RETURN
+      END
+      
+      // Implement an event on the wheel (WM_MOUSEWHEEL), for all the application windows (*.*)
+      // This event will call the _MouseWheel procedure
+      gnRolloverEventID = Event(_MouseWheel,"*.*",WM_MOUSEWHEEL)
+     type : 458752
+   -
+     name : WheelAtRollover_Disable
+     internal_properties : CAAAAAgAAACio311E35eTZ5uLzi3DdOuqNXa5TpXoehFf5pkyHVgT2b/lck/eykosdKbGYAkBkHU7yGg+ny7Lrmh3iD1tBOGA1F5Tm6Uefjh6kC7CaRpfu0ioTjLBtnK+JLXkOmcyRAdcnAzaE1mLVquhh15
+     procedure_id : 1760455001111562038
+     type_code : 15
+     code : |1-
+      // Summary: Disables the wheel at rollover
+      PROCEDURE WheelAtRollover_Disable()
+      
+      // Stops managing the WM_MOUSEWHEEL event
+      EndEvent(gnRolloverEventID)
+      
+      // Reposition the identifier of the event to -1
+      gnRolloverEventID = -1
+     type : 458752
+   -
+     name : UPD_Counter_Subscription
+     procedure_id : 1760455001111627574
+     type_code : 15
+     code : |1-
+      // Summary: Updates the counter for the "Subscriptions" folder (root)
+      // Syntax:
+      //UPD_Counter_Subscription ()
+      //
+      // Parameters:
+      //	None
+      
+      // Return value:
+      PROCEDURE UPD_Counter_Subscription()
+      
+      
+      // Number of posts
+      QRY_NbUnreadPosts.pIDFolder = Null
+      QRY_NbUnreadPosts.pStreamID = Null
+      QRY_NbUnreadPosts.pStart = Null
+      QRY_NbUnreadPosts.pEnd = Null
+      IF HExecuteQuery(QRY_NbUnreadPosts) = False THEN RETURN
+      HReadFirst(QRY_NbUnreadPosts)
+      IF HOut(QRY_NbUnreadPosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[SUBSCRIPTIONID] = QRY_NbUnreadPosts.NbPosts
+      gaaCount[NOTREADID] = QRY_NbUnreadPosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : UPD_Counter_Today
+     internal_properties : CAAAAAgAAADII9SyOMRvIbbGOyVqmos+w/DkPFKP+S50bgBFhSCSHxKHAYzJlsRlPGRWSHaileqIcDQlNkIBAySwAb586CzRA3SqAgTe05KqIv4W4ClaASL/ZcGZ4td0MJ34Mpdw4ktHji2/YKUpYlTHwukQFBX8if+LzjTJbJNMQYDqad1j0rpkFk47amnUuB0PLWAgmTjW8gX4K6A=
+     procedure_id : 1760455001111693110
+     type_code : 15
+     code : |1+
+      // Summary: Updates the "Today" counter
+      // Syntax:
+      //UPD_Counter_Today ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE UPD_Counter_Today()
+      
+      
+      // Number of unread posts for the "Today" folder
+      QRY_NbUnreadPosts.pIDFolder = Null
+      QRY_NbUnreadPosts.pStreamID = Null
+      QRY_NbUnreadPosts.pStart = Today()+"000000"
+      QRY_NbUnreadPosts.pEnd = Today()+"235959"
+      IF HExecuteQuery(QRY_NbUnreadPosts) = False THEN RETURN
+      HReadFirst(QRY_NbUnreadPosts)
+      IF HOut(QRY_NbUnreadPosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[TODAYID] = QRY_NbUnreadPosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : UPD_Counter_Folder
+     procedure_id : 1760455001111758646
+     type_code : 15
+     code : |1+
+      // Summary: Updates the counter for a folder
+      // Syntax:
+      //UPD_Folder_Counter (<nFolderID> is 8-byte int)
+      //
+      // Parameters:
+      //	nFolderID (8-byte integer): Identifier of the folder
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE UPD_Counter_Folder(LOCAL nIDFolder is 8-byte int)
+      
+      
+      // Number of posts
+      QRY_NbUnreadPosts.pIDFolder = nIDFolder
+      QRY_NbUnreadPosts.pStreamID = Null
+      QRY_NbUnreadPosts.pStart = Null
+      QRY_NbUnreadPosts.pEnd = Null
+      IF HExecuteQuery(QRY_NbUnreadPosts) = False THEN RETURN
+      HReadFirst(QRY_NbUnreadPosts)
+      IF HOut(QRY_NbUnreadPosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[PREFIX_FOLDER+nIDFolder] = QRY_NbUnreadPosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : UPD_Counter_Favorites
+     procedure_id : 1760455001111824182
+     type_code : 15
+     code : |1+
+      // Summary: Updates the counter of favorites
+      // Syntax:
+      //UPD_Counter_Favorites ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE UPD_Counter_Favorites()
+      
+      
+      // Number of posts
+      IF HExecuteQuery(QRY_NbFavoritePosts) = False THEN RETURN
+      HReadFirst(QRY_NbFavoritePosts)
+      IF HOut(QRY_NbFavoritePosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[FAVORITESID] = QRY_NbFavoritePosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : UPD_Counter_RSSStream
+     procedure_id : 1760455001111889718
+     type_code : 15
+     code : |1+
+      // Summary: Updates the counter for a stream
+      // Syntax:
+      //UPD_Counter_RSSStream (<nRSSStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nRSSStreamID (8-byte integer): Identifier of the RSS stream
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE UPD_Counter_RSSStream(LOCAL nRSSStreamID is 8-byte int)
+      
+      
+      // Number of posts
+      QRY_NbUnreadPosts.pIDFolder = Null
+      QRY_NbUnreadPosts.pStreamID = nRSSStreamID
+      QRY_NbUnreadPosts.pStart = Null
+      QRY_NbUnreadPosts.pEnd = Null
+      IF HExecuteQuery(QRY_NbUnreadPosts) = False THEN RETURN
+      HReadFirst(QRY_NbUnreadPosts)
+      IF HOut(QRY_NbUnreadPosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[nRSSStreamID] = QRY_NbUnreadPosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : UPD_Counter_Yesterday
+     procedure_id : 1760455001111955254
+     type_code : 15
+     code : |1+
+      // Summary: Updates the counter for "Yesterday"
+      // Syntax:
+      //UPD_Counter_Yesterday ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE UPD_Counter_Yesterday()
+      
+      
+      // Number of unread posts for the "Yesterday" folder
+      QRY_NbUnreadPosts.pIDFolder = Null
+      QRY_NbUnreadPosts.pStreamID = Null
+      QRY_NbUnreadPosts.pStart = Yesterday()+"000000"
+      QRY_NbUnreadPosts.pEnd = Yesterday()+"235959"
+      IF HExecuteQuery(QRY_NbUnreadPosts) = False THEN RETURN
+      HReadFirst(QRY_NbUnreadPosts)
+      IF HOut(QRY_NbUnreadPosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[YESTERDAYID] = QRY_NbUnreadPosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : UPD_Counter_Tag
+     procedure_id : 1760455001112020790
+     type_code : 15
+     code : |1+
+      // Summary: Updates the counter for a tag
+      // Syntax:
+      //UPD_Counter_Tag (<nTagID> is 8-byte int)
+      //
+      // Parameters:
+      //	nTagID (8-byte int):Identifier of the tag
+      
+      // Return value:
+      PROCEDURE UPD_Counter_Tag(LOCAL nTagID is 8-byte int)
+      
+      // Number of unread posts for the stream
+      QRY_NbTagPosts.pIDTag = nTagID
+      IF HExecuteQuery(QRY_NbTagPosts) = False THEN RETURN
+      HReadFirst(QRY_NbTagPosts)
+      IF HOut(QRY_NbTagPosts) THEN RETURN
+      
+      // Stores the number of posts
+      CriticalSectionStart(EVT_COUNT)
+      gaaCount[PREFIX_TAG+nTagID] = QRY_NbTagPosts.NbPosts
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : _ZoneToOffset
+     procedure_id : 1760455001112086326
+     type_code : 15
+     code : |1-
+      // Summary: Converts a time zone to difference
+      // Syntax:
+      //[ <Result> = ] _ZoneToDifference (<sZone> is string)
+      //
+      // Parameters:
+      //	sZone (ANSI string): Caption of the zone
+      // Return value:
+      // 	durée: Difference information
+      //
+      PROCEDURE PRIVATE _ZoneToOffset(LOCAL sArea is string) : duration
+      
+      duOffsetDuration is duration
+      
+      SWITCH sArea
+      	CASE "ACDT"
+      		duOffsetDuration = "0103000000"
+      	CASE "ACST"
+      		duOffsetDuration = "0093000000"
+      	CASE "ACT"
+      		duOffsetDuration = "-0050000000"
+      	CASE "ADT"
+      		duOffsetDuration = "-0030000000"
+      	CASE "AEDT"
+      		duOffsetDuration = "0110000000"
+      	CASE "AEST"
+      		duOffsetDuration = "0100000000"
+      	CASE "AFT"
+      		duOffsetDuration = "0043000000"
+      	CASE "AKDT"
+      		duOffsetDuration = "-0080000000"
+      	CASE "AKST"
+      		duOffsetDuration = "-0090000000"
+      	CASE "AMST"
+      		duOffsetDuration = "-0030000000"
+      	CASE "AMT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "ART"
+      		duOffsetDuration = "-0030000000"
+      	CASE "AST"
+      		duOffsetDuration = "0030000000"
+      	CASE "AWDT"
+      		duOffsetDuration = "0090000000"
+      	CASE "AWST"
+      		duOffsetDuration = "0080000000"
+      	CASE "AZOST"
+      		duOffsetDuration = "-0010000000"
+      	CASE "AZT"
+      		duOffsetDuration = "0040000000"
+      	CASE "BDT"
+      		duOffsetDuration = "0080000000"
+      	CASE "BIOT"
+      		duOffsetDuration = "0060000000"
+      	CASE "BIT"
+      		duOffsetDuration = "-0120000000"
+      	CASE "BOT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "BRST"
+      		duOffsetDuration = "-0020000000"
+      	CASE "BRT"
+      		duOffsetDuration = "-0030000000"
+      	CASE "BST"
+      		duOffsetDuration = "0060000000"
+      	CASE "BTT"
+      		duOffsetDuration = "0060000000"
+      	CASE "CAT"
+      		duOffsetDuration = "0020000000"
+      	CASE "CCT"
+      		duOffsetDuration = "0063000000"
+      	CASE "CDT"
+      		duOffsetDuration = "-0050000000"
+      	CASE "CEDT"
+      		duOffsetDuration = "0020000000"
+      	CASE "CEST"
+      		duOffsetDuration = "0020000000"
+      	CASE "THIS"
+      		duOffsetDuration = "0010000000"
+      	CASE "CHADT"
+      		duOffsetDuration = "0134500000"
+      	CASE "CHAST"
+      		duOffsetDuration = "0124500000"
+      	CASE "CHOT"
+      		duOffsetDuration = "0080000000"
+      	CASE "ChST"
+      		duOffsetDuration = "0100000000"
+      	CASE "CHUT"
+      		duOffsetDuration = "0100000000"
+      	CASE "CIST"
+      		duOffsetDuration = "-0080000000"
+      	CASE "CIT"
+      		duOffsetDuration = "0080000000"
+      	CASE "CKT"
+      		duOffsetDuration = "-0100000000"
+      	CASE "CLST"
+      		duOffsetDuration = "-0030000000"
+      	CASE "CLT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "COST"
+      		duOffsetDuration = "-0040000000"
+      	CASE "COT"
+      		duOffsetDuration = "-0050000000"
+      	CASE "CST"
+      		duOffsetDuration = "-0060000000"
+      	CASE "CT"
+      		duOffsetDuration = "0080000000"
+      	CASE "CVT"
+      		duOffsetDuration = "-0010000000"
+      	CASE "CWST"
+      		duOffsetDuration = "0084500000"
+      	CASE "CXT"
+      		duOffsetDuration = "0070000000"
+      	CASE "DAVT"
+      		duOffsetDuration = "0070000000"
+      	CASE "DDUT"
+      		duOffsetDuration = "0100000000"
+      	CASE "DFT"
+      		duOffsetDuration = "0010000000"
+      	CASE "EASST"
+      		duOffsetDuration = "-0050000000"
+      	CASE "EAST"
+      		duOffsetDuration = "-0060000000"
+      	CASE "EAT"
+      		duOffsetDuration = "0030000000"
+      	CASE "ECT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "EDT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "EEDT"
+      		duOffsetDuration = "0030000000"
+      	CASE "EEST"
+      		duOffsetDuration = "0030000000"
+      	CASE "EET"
+      		duOffsetDuration = "0020000000"
+      	CASE "EGST"
+      		duOffsetDuration = "0000000000"
+      	CASE "EGT"
+      		duOffsetDuration = "-0010000000"
+      	CASE "EIT"
+      		duOffsetDuration = "0090000000"
+      	CASE "IS"
+      		duOffsetDuration = "-0050000000"
+      	CASE "FET"
+      		duOffsetDuration = "0030000000"
+      	CASE "FJT"
+      		duOffsetDuration = "0120000000"
+      	CASE "FKST"
+      		duOffsetDuration = "-0030000000"
+      	CASE "FKT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "FNT"
+      		duOffsetDuration = "-0020000000"
+      	CASE "GALT"
+      		duOffsetDuration = "-0060000000"
+      	CASE "GAMT"
+      		duOffsetDuration = "-0090000000"
+      	CASE "GET"
+      		duOffsetDuration = "0040000000"
+      	CASE "GFT"
+      		duOffsetDuration = "-0030000000"
+      	CASE "GILT"
+      		duOffsetDuration = "0120000000"
+      	CASE "GIT"
+      		duOffsetDuration = "-0090000000"
+      	CASE "GMT"
+      		duOffsetDuration = "0000000000"
+      	CASE "GST"
+      		duOffsetDuration = "-0020000000"
+      	CASE "GYT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "HADT"
+      		duOffsetDuration = "-0090000000"
+      	CASE "HAEC"
+      		duOffsetDuration = "0020000000"
+      	CASE "HAST"
+      		duOffsetDuration = "-0100000000"
+      	CASE "HKT"
+      		duOffsetDuration = "0080000000"
+      	CASE "HMT"
+      		duOffsetDuration = "0050000000"
+      	CASE "HOVT"
+      		duOffsetDuration = "0070000000"
+      	CASE "HST"
+      		duOffsetDuration = "-0100000000"
+      	CASE "IBST"
+      		duOffsetDuration = "0000000000"
+      	CASE "ICT"
+      		duOffsetDuration = "0070000000"
+      	CASE "IDT"
+      		duOffsetDuration = "0030000000"
+      	CASE "IOT"
+      		duOffsetDuration = "0030000000"
+      	CASE "IRDT"
+      		duOffsetDuration = "0043000000"
+      	CASE "IRKT"
+      		duOffsetDuration = "0080000000"
+      	CASE "IRST"
+      		duOffsetDuration = "0033000000"
+      	CASE "IST"
+      		duOffsetDuration = "0053000000"
+      	CASE "JST"
+      		duOffsetDuration = "0090000000"
+      	CASE "KGT"
+      		duOffsetDuration = "0060000000"
+      	CASE "KOST"
+      		duOffsetDuration = "0110000000"
+      	CASE "KRAT"
+      		duOffsetDuration = "0070000000"
+      	CASE "KST"
+      		duOffsetDuration = "0090000000"
+      	CASE "LHST"
+      		duOffsetDuration = "0103000000"
+      	CASE "LINT"
+      		duOffsetDuration = "0140000000"
+      	CASE "MAGT"
+      		duOffsetDuration = "0120000000"
+      	CASE "MART"
+      		duOffsetDuration = "-0093000000"
+      	CASE "MAWT"
+      		duOffsetDuration = "0050000000"
+      	CASE "MDT"
+      		duOffsetDuration = "-0060000000"
+      	CASE "MET"
+      		duOffsetDuration = "0010000000"
+      	CASE "MEST"
+      		duOffsetDuration = "0020000000"
+      	CASE "MHT"
+      		duOffsetDuration = "0120000000"
+      	CASE "MIST"
+      		duOffsetDuration = "0110000000"
+      	CASE "MIT"
+      		duOffsetDuration = "-0093000000"
+      	CASE "MMT"
+      		duOffsetDuration = "0063000000"
+      	CASE "MSK"
+      		duOffsetDuration = "0030000000"
+      	CASE "MST"
+      		duOffsetDuration = "0080000000"
+      	CASE "MUT"
+      		duOffsetDuration = "0040000000"
+      	CASE "MVT"
+      		duOffsetDuration = "0050000000"
+      	CASE "MYT"
+      		duOffsetDuration = "0080000000"
+      	CASE "NCT"
+      		duOffsetDuration = "0110000000"
+      	CASE "NDT"
+      		duOffsetDuration = "-0023000000"
+      	CASE "NFT"
+      		duOffsetDuration = "0110000000"
+      	CASE "NPT"
+      		duOffsetDuration = "0054500000"
+      	CASE "NST"
+      		duOffsetDuration = "-0033000000"
+      	CASE "NT"
+      		duOffsetDuration = "-0033000000"
+      	CASE "NUT"
+      		duOffsetDuration = "-0110000000"
+      	CASE "NZDT"
+      		duOffsetDuration = "0130000000"
+      	CASE "NZST"
+      		duOffsetDuration = "0120000000"
+      	CASE "OMST"
+      		duOffsetDuration = "0060000000"
+      	CASE "ORAT"
+      		duOffsetDuration = "0050000000"
+      	CASE "PDT"
+      		duOffsetDuration = "-0070000000"
+      	CASE "PET"
+      		duOffsetDuration = "-0050000000"
+      	CASE "PETT"
+      		duOffsetDuration = "0120000000"
+      	CASE "PGT"
+      		duOffsetDuration = "0100000000"
+      	CASE "PHOT"
+      		duOffsetDuration = "0130000000"
+      	CASE "PKT"
+      		duOffsetDuration = "0050000000"
+      	CASE "PMDT"
+      		duOffsetDuration = "-0020000000"
+      	CASE "PMST"
+      		duOffsetDuration = "-0030000000"
+      	CASE "BRIDGE"
+      		duOffsetDuration = "0110000000"
+      	CASE "PST"
+      		duOffsetDuration = "-0080000000"
+      	CASE "PYST"
+      		duOffsetDuration = "-0030000000"
+      	CASE "PYT"
+      		duOffsetDuration = "-0040000000"
+      	CASE "RET"
+      		duOffsetDuration = "0040000000"
+      	CASE "ROTT"
+      		duOffsetDuration = "-0030000000"
+      	CASE "SAKT"
+      		duOffsetDuration = "0110000000"
+      	CASE "SAMT"
+      		duOffsetDuration = "0040000000"
+      	CASE "SAST"
+      		duOffsetDuration = "0020000000"
+      	CASE "SBT"
+      		duOffsetDuration = "0110000000"
+      	CASE "SCT"
+      		duOffsetDuration = "0040000000"
+      	CASE "SGT"
+      		duOffsetDuration = "0080000000"
+      	CASE "SLST"
+      		duOffsetDuration = "0053000000"
+      	CASE "SRET"
+      		duOffsetDuration = "0110000000"
+      	CASE "SRT"
+      		duOffsetDuration = "-0030000000"
+      	CASE "SST"
+      		duOffsetDuration = "-0110000000"
+      	CASE "SYOT"
+      		duOffsetDuration = "0030000000"
+      	CASE "TAHT"
+      		duOffsetDuration = "-0100000000"
+      	CASE "THA"
+      		duOffsetDuration = "0070000000"
+      	CASE "TFT"
+      		duOffsetDuration = "0050000000"
+      	CASE "TJT"
+      		duOffsetDuration = "0050000000"
+      	CASE "TKT"
+      		duOffsetDuration = "0130000000"
+      	CASE "TLT"
+      		duOffsetDuration = "0090000000"
+      	CASE "TMT"
+      		duOffsetDuration = "0050000000"
+      	CASE "TOT"
+      		duOffsetDuration = "0130000000"
+      	CASE "TVT"
+      		duOffsetDuration = "0120000000"
+      	CASE "UCT"
+      		duOffsetDuration = "0000000000"
+      	CASE "ULAT"
+      		duOffsetDuration = "0080000000"
+      	CASE "USZ1"
+      		duOffsetDuration = "0020000000"
+      	CASE "UTC"
+      		duOffsetDuration = "0000000000"
+      	CASE "UYST"
+      		duOffsetDuration = "-0020000000"
+      	CASE "UYT"
+      		duOffsetDuration = "-0030000000"
+      	CASE "UZT"
+      		duOffsetDuration = "0050000000"
+      	CASE "VET"
+      		duOffsetDuration = "-0043000000"
+      	CASE "VLAT"
+      		duOffsetDuration = "0100000000"
+      	CASE "VOLT"
+      		duOffsetDuration = "0040000000"
+      	CASE "VOST"
+      		duOffsetDuration = "0060000000"
+      	CASE "VUT"
+      		duOffsetDuration = "0110000000"
+      	CASE "WAKT"
+      		duOffsetDuration = "0120000000"
+      	CASE "WAST"
+      		duOffsetDuration = "0020000000"
+      	CASE "WAT"
+      		duOffsetDuration = "0010000000"
+      	CASE "WEDT"
+      		duOffsetDuration = "0010000000"
+      	CASE "WEST"
+      		duOffsetDuration = "0010000000"
+      	CASE "WET"
+      		duOffsetDuration = "0000000000"
+      	CASE "WIT"
+      		duOffsetDuration = "0070000000"
+      	CASE "WST"
+      		duOffsetDuration = "0080000000"
+      	CASE "YAKT"
+      		duOffsetDuration = "0090000000"
+      	CASE "YEKT"
+      		duOffsetDuration = "0050000000"
+      	CASE "Z"
+      		duOffsetDuration = "0000000000"
+      	OTHER CASE
+      		duOffsetDuration = "0000000000"
+      END
+      
+      
+      
+      RESULT duOffsetDuration
+     type : 458752
+   -
+     name : NotifyWindow
+     procedure_id : 1760455001112151862
+     type_code : 15
+     code : |1-
+      // Summary: Notifies the window about a change of count
+      // Syntax:
+      //NotifyWindow (<nRSSStreamID> is 8-byte int [, <nUPDSelection> is int])
+      //
+      // Parameters:
+      //	nRSSStreamID (8-byte integer): Identifier of the stream
+      //	nUPDSelection (integer - default value=0): 1 to update the selection, False otherwise
+      // Return value:
+      // 	None
+      //
+      PROCEDURE NotifyWindow(LOCAL nRSSStreamID is 8-byte int, LOCAL nUPDSelection is int = 1)
+      
+      PostMessage(gnWindowHandle, EVT_COUNT, nRSSStreamID, nUPDSelection)
+     type : 458752
+   -
+     name : FlagRead_All
+     procedure_id : 1760455001112217398
+     type_code : 15
+     code : |1-
+      // Summary: Flags all the posts as read
+      // Syntax:
+      //FlagRead_All ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE FlagRead_All()
+      
+      // Runs the update query
+      IF HExecuteQuery(QRY_FlagRead_All) = False THEN RETURN
+      
+      // Clears the array of counts
+      CriticalSectionStart(EVT_COUNT)
+      FOR ALL ELEMENT nCounter, sIdentifier of gaaCount
+      	// Don't count the count of favorites or tags (that are used to flag and not to read)
+      	IF sIdentifier = FAVORITESID _OR_ sIdentifier [= PREFIX_TAG THEN CONTINUE
+      	gaaCount[sIdentifier] = 0
+      END
+      CriticalSectionEnd(EVT_COUNT)
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (RSSStream.RSSStreamID,1), ptoMainThread)
+     type : 458752
+   -
+     name : FlagRead_Folder
+     procedure_id : 1760455001112282934
+     type_code : 15
+     code : |1-
+      // Summary: Flags the streams of a folder as read
+      // Syntax:
+      //FlagRead_Folder (<nFolderID> is 8-byte int)
+      //
+      // Parameters:
+      //	nFolderID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	None
+      //
+      PROCEDURE FlagRead_Folder(LOCAL nIDFolder is 8-byte int)
+      
+      // The folder must be valid
+      HReadSeekFirst(Folder, FolderID, nIDFolder)
+      IF HFound(Folder) = False THEN RETURN
+      
+      // Browses the folder streams
+      FOR EACH RSSStream WHERE FolderID = nIDFolder
+      	
+      	// Configures the update query
+      	QRY_FlagRead_RSSStream.pRSSStreamID = RSSStream.RSSStreamID
+      	// Runs the update query
+      	IF HExecuteQuery(QRY_FlagRead_RSSStream) = False THEN CONTINUE
+      	
+      	// Decrements the array of counts
+      	CriticalSectionStart(EVT_COUNT)
+      	nNbUnread is int = gaaCount[RSSStream.RSSStreamID]
+      	gaaCount[RSSStream.RSSStreamID] = 0
+      	IF RSSStream.FolderID > 0 THEN gaaCount[PREFIX_FOLDER+RSSStream.FolderID]-=nNbUnread
+      	gaaCount[SUBSCRIPTIONID]-=nNbUnread
+      	gaaCount[NOTREADID] = gaaCount[SUBSCRIPTIONID]
+      	UPD_Counter_Today()
+      	UPD_Counter_Yesterday()
+      	CriticalSectionEnd(EVT_COUNT)
+      	
+      END
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (0,1), ptoMainThread)
+     type : 458752
+   -
+     name : FlagRead_Favorites
+     internal_properties : CAAAAAgAAAA+D5HJZ7jO8XZqZwAHcbN26KGm9doHYaRFC4rkUDHAB0672VmP4+Fkwc7j4cCIXrGse4XgmmTxUO8XnB7PlqEUcWfb5LhGP/Lv8B4he3YftKMI4+YN+Ne8nnDVjlPuj14LMFphQo9Mge4yGoHl
+     procedure_id : 1760455001112348470
+     type_code : 15
+     code : |1-
+      // Summary: Flags all the favorite posts as read
+      // Syntax:
+      //FlagRead_Favorites ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE FlagRead_Favorites()
+      
+      // Runs the update query
+      IF HExecuteQuery(QRY_FlagRead_Favorites) = False THEN RETURN
+      
+      // Reinitializes the count
+      CountInitialize()
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (0,1), ptoMainThread)
+     type : 458752
+   -
+     name : CountInitialize
+     internal_properties : CAAAAAgAAABHMQaNLZW3coCbUFzZjboZ2sffnJ+YXIEPfZ7cvMHp6TdCcIT1bn3ddjWz+gAuU4TlKFh4Jl7/09ee3f73yUXdFCjBLIghMRO5u6+l1dPvI2THFd5d2e+j2rtSDnU1cduKleKvLAr+JiiKu+A=
+     procedure_id : 1760455001112414006
+     type_code : 15
+     code : |1+
+      // Summary: Initializes the count treeview
+      // Syntax:
+      // CountInitialize ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      PROCEDURE CountInitialize()
+      
+      // Deletes all the entries
+      DeleteAll(gaaCount)
+      
+      CriticalSectionStart(EVT_COUNT)
+      
+      UPD_Counter_Subscription()
+      
+      FOR EACH Folder
+      	UPD_Counter_Folder(Folder.FolderID)
+      END
+      
+      FOR EACH RSSStream
+      	UPD_Counter_RSSStream(RSSStream.RSSStreamID)
+      END
+      
+      UPD_Counter_Today()
+      UPD_Counter_Yesterday()
+      UPD_Counter_Favorites()
+      UPD_Counter_Tags()
+      
+      CriticalSectionEnd(EVT_COUNT)
+     type : 458752
+   -
+     name : FlagRead_Yesterday
+     internal_properties : CAAAAAgAAABe73HpRxj+cbaq50BnsRM26AGmNbonoaSFi8rkcHGgR84b2ZnvA6HkgY5jIaBIPnHsW0XgOkSBAH/njC4/JhGEwVcrdEjWj6J/QI5x6wYPpHN4M/YdSOcsbgAFnoP+f07boCrxkt8s4Q4SemGF
+     procedure_id : 1760455001112479542
+     type_code : 15
+     code : |1-
+      // Summary: Flags all the yesterday posts as read
+      // Syntax:
+      //FlagRead_Yesterday ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE FlagRead_Yesterday()
+      
+      // Configures the query
+      QRY_FlagRead_Date.pPublicationDate = Yesterday()
+      
+      // Runs the update query
+      IF HExecuteQuery(QRY_FlagRead_Date) = False THEN RETURN
+      
+      // Reinitializes the count
+      CountInitialize()
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (0,1), ptoMainThread)
+     type : 458752
+   -
+     name : FlagRead_Today
+     internal_properties : CAAAAAgAAABe73HpRxj+cbaq50BnsRM26AGmNbonoaSFi8rkcHGgR84b2ZnvA6HkgY5jIaBIPnHsW0XgOkSBAH/njC4/JhGEwVcrdEjWj6J/QI5x6wYPpHN4M/YdSOcsbgAFnoP+f07boCrxkt8s4Q4SemGF
+     procedure_id : 1760455001112545078
+     type_code : 15
+     code : |1-
+      // Summary: Flags all the today posts as read
+      // Syntax:
+      //FlagRead_Today ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE FlagRead_Today()
+      
+      // Configures the query
+      QRY_FlagRead_Date.pPublicationDate = Today()
+      
+      // Runs the update query
+      IF HExecuteQuery(QRY_FlagRead_Date) = False THEN RETURN
+      
+      // Reinitializes the count
+      CountInitialize()
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (0,1), ptoMainThread)
+     type : 458752
+   -
+     name : FlagRead_Tags
+     internal_properties : CAAAAAgAAABO/2GZd9LcMe6CD7gvCauu6JHWFSqXGfy1m9oU8MHwt/Yj8TFXW3HkabarOfhwdiksGwWg2gQ9vGsbSHJ7+sU4HZufCKxCK967NBrldyrT2B88V/oRpDOoimTx8s9CI/K3VC71ltvKkf4CanGV
+     procedure_id : 1760455001112610614
+     type_code : 15
+     code : |1-
+      // Summary: Flags all the posts associated with a tag as read
+      // Syntax:
+      //FlagRead_Tags (<nTagID> is 8-byte int)
+      //
+      // Parameters:
+      //	nTagID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	None
+      //
+      PROCEDURE FlagRead_Tags(LOCAL nTagID is 8-byte int)
+      
+      // The folder must be valid
+      HReadSeekFirst(Tag, TagID, nTagID)
+      IF HFound(Tag) = False THEN RETURN
+      
+      // For all the posts associated with the tag
+      FOR EACH Association WHERE TagID = nTagID
+      
+      	// Flags the post as read
+      	FlagRead_Post(Association.PostID, False)
+      	
+      END
+      
+      // Reinitializes the count
+      CountInitialize()
+      
+      // Notifies the window about a change of count
+      ParallelTaskExecute(NotifyWindow, (0,1), ptoMainThread)
+     type : 458752
+   -
+     name : UPD_Counter_Tags
+     procedure_id : 1760455001112676150
+     type_code : 15
+     code : |1-
+      // Summary: Updates the counter for all the tags
+      // Syntax:
+      //UPD_Counter_Tags ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE UPD_Counter_Tags()
+      
+      // Browses the tags
+      FOR EACH Tag 
+      	UPD_Counter_Tag(Tag.TagID)
+      END
+     type : 458752
+   -
+     name : InitializeData
+     procedure_id : 1760455001112741686
+     type_code : 15
+     code : |1-
+      // Summary: Initializes the data
+      // Syntax:
+      // InitializeData ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      PROCEDURE InitializeData()
+      
+      // Defines the file directory and the cache directory
+      gsFileDirectory = SysDir(srAppData)+["\"]+"WD RSS Reader"
+      IF InTestMode() THEN
+      	// In test mode, the files are located in a specific directory
+      	gsFileDirectory = SysDir(srAppData)+["\"]+"WD RSS Reader (test)"
+      	// Informs the developer
+      	ToastDisplay("Caution"+CR+"In test mode (Go), the data files are located in a specific directory!", toastLong, vaMiddle, haCenter)	
+      END
+      
+      // Defines the cache directory
+      gsCacheDirectory = gsFileDirectory +["\"]+ "Cache"
+      
+      // Defines the data directory (with creation if necessary)
+      HChangeDir("*", gsFileDirectory)
+      fMakeDir(gsFileDirectory)
+      
+      // Modify the structure if necessary
+      IF HModifyStructure("*") = False THEN
+      	Error(<§@15939788000396920004§>, HErrorInfo(hErrMessage))
+      	EndProgram()
+      END
+      
+      // Create the data files (if necessary)
+      HCreationIfNotFound("*")
+      
+      // Creates the cache directories
+      fMakeDir(gsCacheDirectory)
+      fMakeDir(gsCacheDirectory +["\"]+ "stream")
+      fMakeDir(gsCacheDirectory +["\"]+ "post")
+      
+      // Creates the directory for post preview
+      fRemoveDir(SET_Global.gsPreviewDirectory, frReadOnly+frRecursive)
+      fMakeDir(SET_Global.gsPreviewDirectory)
+     type : 458752
+   -
+     name : Archiving_Post
+     procedure_id : 1760455001112807222
+     type_code : 15
+     code : |1+
+      // Summary: Archives the current post
+      // Syntax:
+      //[ <Result> = ] Archive_Post ([<nPostID> is 8-byte int])
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post to archive
+      // Return value:
+      // 	multi-value: True if the post was archived, False otherwise
+      //
+      PROCEDURE Archiving_Post(LOCAL nPostID is 8-byte int = Post.PostID) : (boolean, string)
+      
+      bArchivable is boolean
+      sReason is string
+      
+      // If the post can be archived only
+      (bArchivable, sReason) = Archiving_PostIsArchivable(nPostID)
+      IF bArchivable = False THEN RESULT (False, sReason)
+      
+      // Deletes the cache from the post
+      Post_DeleteCacheImage(nPostID)
+      
+      // Configures the archiving query
+      QRY_Archive.pPostID = nPostID
+      // Runs the query
+      IF HExecuteQuery(QRY_Archive) = False THEN
+      	RESULT (False, <§@15939788000396920005§>)
+      END
+      RESULT (True, "")
+      
+     type : 458752
+   -
+     name : Archiving_PostIsArchivable
+     internal_properties : CAAAAAgAAADsF4ju+oADMYrKZ1XKdktid5RUjIrTpf6w2lS1NZwK64YTsQTBkjB9IBg6+M6WNY5s3Lz1No41UxiUrS6kZIw9N4h6omxKb2oGXuooipu0p7QJ54/7XOH+iifCPPESbNFhQNddoteDvM4JJCPiXk+ySznNRN5LDrW++7q0Mx+NgPzG8FQdXMOeWnd5nxKaw96QNsG8V3w=
+     procedure_id : 1760455001112872758
+     type_code : 15
+     code : |1-
+      // Summary: Defines whether the current post can be archived
+      // Syntax:
+      //[ <Result> = ] Archive_PostCanBeArchived ([<nPostID> is 8-byte int])
+      //
+      // Parameters:
+      //	nPostID (8-byte integer): Identifier of the post
+      // Return value:
+      // 	multi-value: True if the post can be archived, False otherwise / Reason
+      //
+      PROCEDURE Archiving_PostIsArchivable(LOCAL nPostID is 8-byte int = Post.PostID) : (boolean, string)
+      
+      nPosition is int = -1
+      
+      // If the current post is not the requested one
+      IF Post.PostID <> nPostID THEN
+      	// Stores the position
+      	nPosition = HSavePosition(Post, hSaveItems)
+      	// Reads the requested post
+      	HReadSeekFirst(Post, PostID, nPostID)
+      	IF HFound(Post) = False THEN RESULT (False, <§@15939788000396920006§>)
+      END
+      
+      // Don't archive:
+      // - the favorite posts
+      IF Post.Favorites THEN RESULT (False, <§@15939788000396920007§>)
+      
+      // - the posts with a tag
+      HSeekFirst(Association, PostID, Post.PostID)
+      IF HFound(Association) THEN RESULT (False, <§@15939788000396920008§>)
+      
+      // In the other cases, the post can be archived
+      RESULT (True, "")
+      
+      END :
+      IF nPosition <> -1 THEN HRestorePosition(nPosition)
+     type : 458752
+   -
+     name : ReplaceWildcard
+     procedure_id : 1760455001112938294
+     type_code : 15
+     code : |1+
+      // Summary: Replaces a set of characters identified by "*"
+      // Syntax:
+      // [ <Result> = ] ReplaceWildcard (<sSourceString>, <sStringToReplace>, <sReplacementString> [, <nOptions>])
+      //
+      // Parameters:
+      //	sSourceString: Source string
+      // 	sStringToReplace: String to replace. This string can contain the "*" character
+      // 	sReplacementString: Replacement string
+      // 	nOptions (default value=0): Replacement options
+      // Return value:
+      // 	ANSI string: String with replacement
+      //
+      PROCEDURE ReplaceWildcard(sSourceString,sStringToReplace,sReplacementString,nOptions = 0) : string
+      
+      
+      sReturnString is string = sSourceString // The string that will be returned
+      nPosition is int	// The position of the first block
+      nPositionFirstWildcard is int // The position of the first wildcard character (we only manage one at this time)
+      nPositionEndBlockSought is int // The position of the end of block (the block found after the wildcard character)
+      sStringBeforeWildcard is string		// The string found before the wildcard character
+      sStringAfterWildcard is string		// The string found after the wildcard character
+      
+      // Searches for the wildcard character
+      nPositionFirstWildcard = Position(sStringToReplace, "*")
+      
+      // Retrieve the string found before the wildcard character
+      sStringBeforeWildcard = sStringToReplace[[ TO nPositionFirstWildcard -1]]
+      // Get the string found after the wildcard character
+      sStringAfterWildcard = sStringToReplace[[nPositionFirstWildcard +1 TO ]]
+      
+      // In the source string, search for the characters found before the first wildcard character
+      nPosition = Position(sReturnString,sStringBeforeWildcard, 0, nOptions)
+      WHILE nPosition > 0
+      	
+      	// A position was found, search for the position of the string found after the wildcard character
+      	nPositionEndBlockSought = Position(sReturnString,sStringAfterWildcard, nPosition+1, nOptions)
+      	IF nPositionEndBlockSought > 0 THEN
+      		// A position was found, replace the string by the replacement string
+      		// Replace in the string
+      		sReturnString[[nPosition TO nPositionEndBlockSought + Length(sStringAfterWildcard)-1]] = sReplacementString
+      		
+      		// Recalculates the position (remove the entire block that was replaced)
+      		nPosition = Max(0, nPosition - (nPositionEndBlockSought + Length(sStringAfterWildcard)-1 - nPosition))
+      		// then add the size of the replacement string
+      		nPosition += Length(sReplacementString)
+      		
+      	END
+      	
+      	// Searches for the next position
+      	nPosition = Position(sReturnString,sStringBeforeWildcard, nPosition+1 , nOptions)	
+      END
+      
+      RESULT sReturnString
+     type : 458752
+   -
+     name : TP_rssDeleteStream
+     procedure_id : 1760455001113003830
+     type_code : 15
+     code : |1-
+      // Summary: Starts deleting a stream (and its posts)
+      // Syntax:
+      //[ <Result> = ] TP_rssDeleteStream (<nStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	boolean: Stream ID/Number of new messages retrieved
+      //
+      
+      PROCEDURE TP_rssDeleteStream(LOCAL nStreamID is 8-byte int) : boolean
+      
+      
+      // Positions on the stream
+      HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      IF HFound(RSSStream) = False THEN RESULT False
+      
+      // Browses the posts of the stream
+      FOR EACH Post WHERE RSSStreamID = nStreamID
+      	
+      	// Deletes the cache from the post
+      	Post_DeleteCacheImage(Post.PostID)
+      	// Deletes the post
+      	HDelete(Post)
+      		
+      END
+      
+      // Deletes the stream
+      IF HDelete(RSSStream) = False THEN
+      	RESULT False
+      END
+      
+      // Notifies the window about the update
+      ParallelTaskExecute(NotifyDeletionToWindow, (nStreamID), ptoMainThread)
+      
+      RESULT True
+     type : 458752
+   -
+     name : NotifyDeletionToWindow
+     procedure_id : 1760455001113069366
+     type_code : 15
+     code : |1-
+      // Summary: Notifies the main window about stream deletion
+      // Syntax:
+      //NotifyWindowDeletion (<nRSSStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nRSSStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	None
+      //
+      
+      PROCEDURE NotifyDeletionToWindow(LOCAL nRSSStreamID is 8-byte int)
+      
+      PostMessage(gnWindowHandle, EVT_DELETION, nRSSStreamID, 0)
+     type : 458752
+   -
+     name : TP_rssCheckStream
+     procedure_id : 1760455001113134902
+     type_code : 15
+     code : |1-
+      // Summary: Starts retrieving the posts of an RSS stream
+      // Syntax:
+      //[ <Result> = ] TP_rssCheckStream (<nStreamID> is 8-byte int)
+      //
+      // Parameters:
+      //	nStreamID (8-byte integer): Identifier of the stream
+      // Return value:
+      // 	multi-value: Identifier of the stream / True or False according to the validity of the stream / Error message
+      //
+      
+      PROCEDURE TP_rssCheckStream(LOCAL nStreamID is 8-byte int) : (8-byte int, boolean, string)
+      
+      MyQuery is a httpRequest
+      MyResponse is a httpResponse
+      
+      // Positions on the stream
+      HReadSeekFirst(RSSStream, RSSStreamID, nStreamID)
+      IF HFound(RSSStream) = False THEN RESULT (nStreamID, False, <§@15939788000396920009§>)
+      
+      // Defines the URL
+      MyQuery..URL = RSSStream.Address
+      MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+      // Interrogates the URL
+      MyResponse = HTTPSend(MyQuery)
+      IF ErrorOccurred THEN
+      	RESULT (nStreamID, False, ErrorInfo(errSystemMessage))
+      END
+      
+      
+      RESULT (nStreamID, True, "")
+     type : 458752
+   -
+     name : HTTPRequestRedirection
+     internal_properties : CAAAAAgAAACvib71mb0fcvBL8MyhlXJp0of/jC84nFnnlWb0rBGJURcayFwtVmWtdnVzysj2G0TNOFjYxn6DVyPyuSr7VTHRmKw1oByNlffF7xuR2V9rl/i7uVKR9WNnlk8+qokRLU/eGXZjAAZy7uDyE0g=
+     procedure_id : 1760455001113200438
+     type_code : 15
+     code : |1+
+      // Summary: Performs an HTTP request by browsing the redirections and returns the URL actually found
+      // Syntax:
+      //[ <Result> = ] HTTPRedirectionRequest (<sURL> is string)
+      //
+      // Parameters:
+      //	sURL (ANSI string): URL to check
+      // Return value:
+      // 	ANSI string: Final URL
+      //
+      PROCEDURE HTTPRequestRedirection(LOCAL sURL is string) : string
+      
+      MyQuery 		is a httpRequest
+      MyResponse 		is a httpResponse
+      
+      // Defines the URL
+      MyQuery..URL = sURL
+      MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+      // Interrogates the URL
+      MyResponse = HTTPSend(MyQuery)
+      IF ErrorOccurred THEN
+      	// Identifies the error
+      	ErrorPropagate(ErrorInfo(errMessage))
+      	RESULT ""
+      END
+      
+      // Checks the result code
+      SWITCH MyResponse..StatusCode
+      	// 200: Query successfully processed
+      	CASE 200
+      		RESULT sURL
+      		
+      	// 301/302: Document moved/to be redirected permanently/temporarily
+      	CASE 301, 302, 307, 308
+      		// Retrieve the redirection URL and perform the load again
+      		sRedirectionURL is string = MyResponse.Header["Location"]
+      		RESULT HTTPRequestRedirection(sRedirectionURL)
+      		
+      	// Other cases: server not accessible, internal error, etc.
+      	OTHER CASE
+      		ErrorPropagate(MyResponse..DescriptionStatusCode)
+      		RESULT ""
+      END
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_SansNom1
+resources :
+ string_res :
+  identifier : 0x1593978800039692
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      en-GB : The stream format seems to be invalid
+     index : 0
+   -
+     text :
+      en-GB : Unable to add the %1 folder
+     index : 1
+   -
+     text :
+      en-GB : Unable to add the %1 stream
+     index : 2
+   -
+     text :
+      en-GB : Unable to define the stream version from its content.
+     index : 3
+   -
+     text :
+      en-GB : Unable to modify structure of files
+     index : 4
+   -
+     text :
+      en-GB : The post cannot be flagged in database
+     index : 5
+   -
+     text :
+      en-GB : The post cannot be found
+     index : 6
+   -
+     text :
+      en-GB : This post is a favorite
+     index : 7
+   -
+     text :
+      en-GB : The post owns an associated tag
+     index : 8
+   -
+     text :
+      en-GB : Stream unknown in database
+     index : 9
+   -
+     text :
+      en-GB : WD RSS Reader\
+     index : 10
+   -
+     text :
+      en-GB : WD RSS Reader\
+     index : 11
+   -
+     text :
+      en-GB : Hidden\
+     index : 12
+   -
+     text :
+      en-GB : preview_post
+     index : 13
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

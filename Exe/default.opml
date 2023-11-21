@@ -1,0 +1,20 @@
+﻿<opml version="1.1">
+<head>
+<title>WD RSS Reader</title>
+<dateModified>Tue,  6 Oct 2015 16:15:21 +0200</dateModified>
+</head>
+<body>
+<outline text="Forums US">
+<outline text="pcsoft.us.windev" xmlUrl="http://forum.pcsoft.fr/en-US/pcsoft.us.windev/rss.awp"/>
+<outline text="pcsoft.us.webdev" xmlUrl="http://forum.pcsoft.fr/en-US/pcsoft.us.webdev/rss.awp"/>
+<outline text="pcsoft.us.windevmobile" xmlUrl="http://forum.pcsoft.fr/en-US/pcsoft.us.windevmobile/rss.awp"/>
+</outline>
+<outline text="Forums ES">
+<outline text="pcsoft.es.windev" xmlUrl="http://forum.pcsoft.fr/en-US/pcsoft.es.windev/rss.awp"/>
+<outline text="pcsoft.es.webdev" xmlUrl="http://forum.pcsoft.fr/en-US/pcsoft.es.webdev/rss.awp"/>
+</outline>
+<outline text="Forums BR">
+<outline text="pcsoft.br.windev" xmlUrl="http://forum.pcsoft.fr/en-US/pcsoft.br.windev/rss.awp"/>
+</outline>
+</body>
+</opml>

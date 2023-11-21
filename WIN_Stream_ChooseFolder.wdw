@@ -1,0 +1,595 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_Stream_ChooseFolder
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_Stream_ChooseFolder
+ identifier : 0x286e647551925db5
+ internal_properties : CAAAAAgAAAD3+UrobuahvQPNuMXkNlP/jdo2z0aoIAsZjMRocme0ySylAWzcKUvkBcAZJxjRGwprvRrJaNl4PZ/SdCd4cL3cl1MwynDuf7cVauqN07M5aCYAZE2EQ5DfMPMPxg6BHTPgeIYS9X9LNY0leYufkw+smVxJZ/wACX/OxX+rb7aJoZnPECTDzMMCc/1I5RRSjnvfUnlxQXIVxM8DdXqVMdyrVG8x6Nso+bRICtqKVxLuMEKa+pnhs64oS66JeJYtDeBeWS6+01pw/8Xno6hrl8K4QqowbOd72KzdC9punB9iHHQzZ4SrlbboG6F8+lVYZtfkhAVu3aADvY7056gk4me5+OpzLnsDYDHg6yAgCATWo4VHRe8X64/3S5/6am0NTGHJ83R+VhR2D4sHBXdXVIWlWb1J2gaaEh+IpP8nd4HixIVnGMiLTIF4VGWZ4NYWtuPbVad8OXZZKXNrzR7FTbdm6p46SR+sbn910DQYtLb9+KKLGcutSp9tapfu6zXjnUd3wFIv3mJa8SbJcXrw43fS51a+A32Tx9M7oFJn3ZoKLhNUQn+rRQKeRJ9leJ0fz2aLsroVAK1e5G6BrBAWQpSlUnu73NdhIC5vtLDhNTWJLBQhPKhR48BmdnFmczZ7hoWhBLIVhbO2V0BPFB2ir5knnXztYnQtz/sBvL/WLeVfAgFLbQiopUk3IWr2MqXIdUe0N30ZDC8gzgUrzLyNRqE+bKsC/PjJ0JGgyUSHZhxFGfe7V3FR75c1Frjtm/9DzTMm5Zn0EPKv0el8/g1G+mLBeNSzEG4lXtOD3V+aWv7es/nq7fKY0cvsnTItf5ig31sRIB3sn93TcU9+larOypJQo82pYEvAjP/yCiOo
+ properties :
+  width : 370
+  height : 392
+  widthClient : 368
+  heightClient : 360
+ controls :
+  -
+    name : STC_Explanations
+    identifier : 0x286e647551935db5
+    internal_properties : CAAAAAgAAAAnB8mF1ZFASjwd/atkf4eNwnMTAUMgLRV2cKp4/sOz1utsYrtYcIQaA1EQCfYSeRsSjWckdvKf8PKQYRioUoQCSM9UZbUmdjsm/i4argc15VF9jXVzweYLR6XdI+qkmO4iE4L5c7pQyEDlrax3E8nYb8YOM3BgKNZsyS+iRpfpvrEQFgQBEFkqVuxbWrT+oEO1wqVDrrCSLytKdkTjUODE+dQ0GcOsqbvieqDHqq7GHdatSxZCvtN4jks2uLj2RT6vxobhgOMu8iJAbVnK3FScTSr5YSEtjHtCdks6oCxUtl8c5NQQhVE1c4Xplx7t5VAS8y05pFrllvJzUF46RV0TZpFPJ47mKnl360Wtyv1JHIJay1lwgKGfiSLLP8vurcXm+ae3l7o5j7lCOLAh5mWtoIVRqVjVHF6s/X/tYi1LF74ZhNEX8L3k6nGTx6msHqi+ZfRYegUzKnNdwCKMRlf2auPd15re7902aanP+8nXGjbQvJ862MMHD4WWgq2CYdVQdPW8J4++4XnAnGgvoraShbK4Kz1HwR7qyp5JFh2Adi7xTtZ4lUw6ssJIKkjEpdUqOVuZWo2XGXDw+huaeittUPDQv4OK9Wmt4Tgv29x//2CSJEwbMg0UdIhGJsj/GPZZ2vNv50pmurn/KRZL2/Jw0nbSuRH+coxQGvWF6T5TDUE1iOj+XFCR1xY89G+yA9Rr/PXTQdXt+kFf3f1AVgWucSF2fGDc1L1lAzomPsYPyOyCdqIpAPfIntOWIm4aQgR6GBSw9EzMYdGIC+1iRt9+bOQ25luNG10gGbNkaKj2Me5D22n06NnS6SrBlaPXPUn66f13vX8sFnzOMT6NPyoNlJEvjRsc1zB2GPXPYXQZhIcL7TN+hmcj30s=
+    properties :
+     x : 6
+     y : 6
+     width : 356
+     height : 21
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+  -
+    name : CTPL_Folders
+    identifier : 0x286e647551945db5
+    internal_properties : CAAAAAgAAAChU5HrSgMgjB2tW/WMksVgqVS0X7lXgtRkqxXoF9tcUZAx3zBlupZ5TIr8HZAR8IWuPJbbAEFe89faP4sFcKzSzVi1kUEqsmg9LqpNrsg8+p58/9EZByAwz8SiGH7r/va9KHJglFE9cyBfK2rUUIhIkygCWagTlCw8Sxa79mmlq2ehJWBepL+TIjooktlTo9gN9FLVgNnbLECdGqrz/+bVYKrqxlbWaKj38I1xHXx6Ym3Lf6hK7VS9mti3yLw8+0AcZAjeVLrJpK7EXKnnCWHnUe9O8KID0fMJkJMGY5oxoSlmqCJU/Boovh3XFuEBwxSVSn4Bi9b+JSJSed/p+WqEuhmk9fBsVo2XUleR1kS2SrlOWfzzfXNulMGuRCBVcu6OFvqifv/JNqWlyHHSTe+enRehmv7rgO/sNNdFD9/j0fGVugsG3Pyq9AeBk3HWSQFnd0GnjyZyIv0UEz06BGdrCCtJsjK/tAy8Ut7UoccCUvons6iA9SLy1rHg4/gEXzmIiP0q+5B0+FRSJ0+DEBjbRHjDqsUeTghnmaeer73K66zVPJ/yQIxHMhb0kwpaImI74OG0jB6AptQqrCQBt3ti4zNCQt1dIbQcqqjeu9hidzbcitPOy+qOvkMhYbDsLwJTrYWPBN0TUGllwq7Mm4+GV7ImLk1GykFKhTSHOHKZmWj4qCevnGNp99qbPUsZHdtDlvjED14BUD7PiSVrSnQ98XTPXY0PYcNNGrLP7mKiz0MBHXmgXCDxhbp5txNGMZMuAheCgPdu9y45gEK/wZQzolhm9VJhfgo575FxXxYFQxrGLNp7Got3wHDgz8rK4FP/nuHeQO3Tdzf/9v5QPf3G73ADc7InYKJaageseYU7o6bcgTC9kl7r1olTqGFObCbYlocf+/JNgTDQy8ZbNTqNs/IeefraO9uB
+    properties :
+     x : 6
+     y : 33
+     width : 354
+     height : 283
+    controls :
+     -
+       name : IMG_RSSDirectory
+       identifier : 0x286e647551955db5
+       internal_properties : CAAAAAgAAAAWk/54W1p353vI76JdJYTcGLU4Ayzzc2xG+ZCTo/zkSd2iMQHs/cMznGCAkWugAq0HTWbtAznnGwfyQWN/tagWbCB4MhlEgwYm9NDL0PIK37bjXfeG+L6uzOHdih7NGxOtm868kNMX/gnncCbbMe4bE/iCSeUZac4OFmY0AfQOO+36vXOs2QUMhTaKn+0fVwpBn+K6utHu2SCiiCO/WzWzUP11IN9BzKEy7l1Zx+lKJ41YES8bt6F6MQJ9JajqXOrKGLRRK+/ApfeblCXUwPXXDUiLnQThxStVZqfTOV5uU12yZY0d6A4nWJghGscrwi0WQiDemsb/blGnT4CvKkqHa2tQR48U1WgZx2y4a1321vcCyliEVVA5fSxdwO9aIWIm8+tG6xwr9mRlqRqFsHxEhPwLu53xwFbb9H0u+KhpiUhtdFzsFeSGnjaQovJ2JVDn2K6CxsWdN1Mv+PyyBo4gZtilryap0bXC+FlSrFWaM7bkWndEQ58pDB9mj+Xkgz9YPm168VGdllndsHQ+8GUv1E/pafmQMwW0hn76rMo4SOSlXwd901/ctNHMDO0wfEpI+iv1gTyA7fn4oNvppbt8c+bdq0beq2olVDHIvTFNOm750/bXGYhYTFjLKRQSUNORAA/QBb2YpJzJ5YVu+iko3xNZbTkuyziXGZI5oR+LzaCDPFcBezDMkYjBDqD4BO6i0ZsO976Q6Txt6JUaJP9KeMejt5CnSuUbtmaCZNognutnOfkxovtOiCUNItQyoX8CDqEIRForeSSvo8g/KRCzn7A7xDI0JLRn86FhPM9hu5vX+THTqyiJ6LeG8r1RF+86qyZRpGT8xZJt2M730Y0p25L3ZdGz78+rnn/dvljaUBm6bXROHc4iV/Ce25lRF0W2lfg40AP8rV3FoRVdUlx8Petb8LBqwob9yJSvY/PZnhViVzapQFMtxdxOOhVWvyMWC/Tx9X6LZ3W4cR21oIjnmy90/bhppN8muzyw/s/qTMl9NPbE4bcAeg+pYHjNW/ScqPiknoYoVM6BxLB3H/g5geyzmPs4MaXEEfcYZQI=
+       properties :
+        x : 380
+        y : 14
+        width : 16
+        height : 16
+       type : 8
+       code_elements :
+        internal_properties : CAAAAAgAAAANAL3Ocx5UDbus7aEIoQ25suyUOYrJq/bvChgYAfnxLHMdQ2czfTOOsJfRdtHePqCseXCJVHQ2AhosLr8Gb/BpmvUL0UFjfnN+Ylt/dkX2ynhRrQTsm4CR13N6+RIBLrLXK/U15SQYMSF9LImi/uJNKt9Sfoo=
+        type_code : 8
+        p_codes : []
+     -
+       name : IMG_Closed_Directory
+       identifier : 0x286e647551965db5
+       internal_properties : CAAAAAgAAABNAEVwY011DdLeFBZdMsuT7tO3BQxHswf2wSZ7Vz+rAztc1s+K7gb7xe23ommnvF60eNlD2r42saMG+tRU2Y54VQwzvE+alUC0TtcDOY2h+QFUe8jQuicLZjV3vkLBRBshX4b/WCUva1McWLpwoBolRsYYLFuJ+oCkIh5V1axYxLk+zU1Nn286+PCDsdTRR3TbsmZ8NISF2YJWci7tVPO2dWvoGMIy7ejxV5D0/+xJG3QZGi9oOb8JSNPygOMpl9bqL0VjjWGyihcktxcx63wyPn2JZMVubVYG4ImE6gqlJeOPMUxN6/m/onGQJ57zOVq5H1B3uq7KAdTs85VJIjUAwmlF+QoHcicFxOF27nWPoBPEVvDFYIGKaui7h5pzuqAluSRmVqnz2T5+evhYNIQj+cGs12lUWsLyOr82Artp2fs+i6MvIgsSKmbFtyLstYwUTudSlocLZYX2DgY1fecVhKe89UQrXpwuSCxZxHkixYrCZUOJX3lRRkpdtDOYK3PS0F2+eK7Sl+KMf60WojT/8bNMX4tXCLt2+RqzbkdxIqWAhfIvOfLhCiT9tuKRkfBdnkl2i2vcdGXlgnFda5Ayz0dWk6WnzP8/h8fAUbVMNMVNjTbqsdK3doQn4PWB4iBpMUHDT5n+/ppIH62MaeZBsg+0fKEBBVZoCRC2i6g5IlB37VrRA/M6Ctn3vxG/mhNNrLs/UyjuKdstoYsAVAIdJSHJzxYqW6UObMkv8CtP/w+1lP8YRn+SxuO81ebNEge7rCEJy9oVXp+GaYFTCPkWv6OaJZSWjhCUAiH+rZksG5jg8QiBTHdXDToYM+UmAGAvKZUcBlOxWJj2v9KIxwH8/SkN+yzjm82icV6KecYJmKor6SMQEvivt+TAXgAkyqfz2r4S8cCSvNR8cWX3inIKzFJ8Te92YzxhNniYcaQr98UZ0jPNS7zmiIqrwShE1oe2Vu/YBfkEuS2fH0h/VDzrclZqFQgIRQg3o6Xn7PZmY0cDGVhNmm8HabfvZ3kYEljUvdNDKRWfrTPJFEexpx1nIR7cn3YPVA==
+       properties :
+        x : 381
+        y : 41
+        width : 16
+        height : 16
+       type : 8
+       code_elements :
+        internal_properties : CAAAAAgAAACJPdxYukz1BCSDbbJ7rSVdph32ofnfsUzIiAkFUSc5hOO1+gjS9laDNdE7K8+BhN9wIPcKSWdh9AQ4vhGCMBsWe3x9jRnr137wFr3uwdNZsF22dgB3gZ6kYM5hd6RRMYSF
+        type_code : 8
+        p_codes : []
+     -
+       name : TVT_Folders
+       identifier : 0x286e647551975db5
+       internal_properties : CAAAAAgAAADx+wOOfp2CIhwU35oJlQDWZC0C3ZfGe9ef7K3bd0kzuIH7SvMHjt3faAU608w7fbRd3qfzhAcZeoowto84LrH2Sb969xA9Ah6Eu2RqQRDdpsolQA1NIVhVq6HJcUDHCtRoQAp+raiQJ8b3mCRE6p42vXtLvX7gZ2NJuNTPbr10+CeZ0jpEzul32uL1ZvaiGbJjaHy6QE7rcXm0ibpk4+W9JZb+eTdkTzjHOuOFn6ai85cs77nyDgfpMdDaTT1UinFZvCcbjWH9ff2IaD3BjNezxjV+S8XrIYg35cBLsL4YgOI9EzadLDB7IHfEPAjEK1LEkk4sqYQvEo6Q4YdkY3M1oNJOONFajfHkhtL3sWGGxDZBtgZF22wd2CPPiDFGCWcbpinL5ZC7SoGQ2l7EzIt0B/jbbzC6sXxU/NQdVU4ZCgT+eE0Vdz1RiinYZ0LqaOI+KCCmx6DcKm8MAxSMoP4KfZ9hwBj0dSMQJOW/N4GiufW8wkxv51YDQXlom/Q7i92zQYEDiMmzo02xRpaostH3Ps5dVCeI4rFXsjmw1Gh1yepdqTikGl7cBiMHd8RgPbbdnA8DwweGhVikW+vP/eylKLZfBrV4fXxhZv59p2+IRfC9BaBblakxjH8znoQE/UNtA8GI2vCwr6zU6ffZvNgaOSKl0Mu08JNI0vNN1idvuvo2rMm+MkYZKs+fFdF8Yfg4SfksrwMSbQYX9SisMa5yKS7H/24WHpn2XtdQbz36BbZ5JAh63NNKoM5LIOSKdB2OxyKCrXSsaZGgEBoh4HyYTWa0ALzed9U6TaPUbyUxCVnuOK4I1/nUbE6OOzOtgHn43FiECCjnFww2GAXTWyMtXaAwJkYshWoK5JxUf+vho/v05yhhDDI9LY1liOPbstt/AJr+BcXx7T2CTF/HZr7az3e+suE3I/r3bixnAZ/43YbNRxk3O5hiWFEmgfShJ8vI95DJ74HNPBw10aYT5T7z1QIiqvf3ZTpQworeYuX7qo08lVZz7pNfsSqthTunv+qclFDqyz2BtUk5HTjS/esFMiuwD1GjLe53oS18RQFZ2xY6Qu23e/rxGlViPpJVLzbkWOEVJ8aefbAUieeGFg80w35+2JWZKqA+NFVY+xmmsE7w8K4aGrlBf27MQ3EH7tOkQfubR5qLSZqJCTz5x5tB5rwGzHcVjU4DWYXd8QV2OfCP56XtnZPIJujYUHhI21gjdclJzoo1fBzeq/yphOw/K3oI9UKj98+bcTK0UKkJ9rWc/jBsX6Oe/wvNIAymhBz+8osGLdunjXa6bVbJ921wEFBIT+xx4wnezbMia5w1OcyCuzhbYdrJEIyQjaCaVQkx/wVMeiayss7rVejXGPy2+hezErbL4jrvbI0MLrGi3/vdGkL5gVxz5DJADMJEMlwAvWd4CMV29XrLFW+3MIJPq7jXtcaCPg1XxzXLLXOObmTt9jy2kdQpJmBQ/oqAwtDGoxTxe4oTiw3ktZFLtVgtlCnn8EbIHPpEM4xVPdCuMcv5WVqrM7Haqd2lfJWup9NvI2NmNvaRIbfa3eqbXfSRwj/k34nUId+jNIVfpA5yUq0sjtzOfS7f//wTD+Ddtd5tRbHuzgJIjHZ+JVs6JPN+/6q2rRFpczFTOUH+gT8DQIhJATMV/WZWgzWdg/XYPcYOdmVDNRqqpBFxFK3Ttv0kMyjBLiCN9cfMydeDro1TW24cn656XLhZFx/Hs0aJmBmKrQEIouzutA2FN48PkWUrQGGYYYGUkjaPqBnXd1s/JrdQAcCDCzBOpKcK2c2xjLb3b+kQgfoOTfSYr9ZQPHuwCE/B2TLpFfYhMgt4EPhog+e68T2Ful24L63LFbeD0YxaEt51MIYIxVkq7ursl1/HIzJSro8B3YgP2l86Kj4rZUH1x0C1U4eASQzgKkwwgBAMUTaDH/q7kfLamzj2Cb9P/p7D3+7URuXIZUvh+WBZnGMfBb/cQASXpJbkwteSRWabO4qra1IOXB4S4J5Ymbn/8nMgVvR05QXs89dqgCiaiQwJrjCvWByLQI2pAii/fdEBNQskecOnGPQyG7CwaYNQIG+rjOcCYz+lG1uHs5KWBXS/KIvmJgxmy+qT9o3dmI9/Nj3wApCRKyUTcDvgsNDkyxBhM2FIRg6ZCcZ9Qq/zO8ZDu1MBy2i+g2x3IYqHT6OXQOmzd86wvYdH9UhpAuirSNY0+g/GdMSUd/NCif2lH2DGojKEwp15iP/sq0UoIdYO4xs8FO/rFZPNB8DFPv6Kt1hhRhx2d+PjwxPwXJrtSwun1SHxRAmh6zeVOtNXTheEglwQCWYF7wPxfFvkvAIaPbwMjyqkp/yYYgOlzZNGX95JWxOAsczjas/nio335ypnRP3rXrLAbVwT0AaB6cnoMH3gizvejAliA0veC8bz5A1SQfsZt9Nr/P9Nb1wiItGSQyioHX3eRL+7gEB+Lnc5Y4iIjKRImjgyu9kgnHp3wdoKQHqXJF8F9b7ewU1C8BktEtyYDntOOmJPIHPBPaLpX3z6+zMjRMw9yXd8y6zcFJa54gtWlgkCwGuycYYeyFpAH41zmLyviWXg7/Ryosk69jOqtdnidhtm9TN0qgMD3PTDntvPb9KgtCvAi6mmS+lvN73/M/62MPA08E8WT0zKnXHdYDedgaLazwWReheqtgq7ZdBHdD1oBR5QCijrPRmhGGSFaIS3jRO1tJBapyizUANVbQfN9t7ND49ypIkreClVI/KQAB0wxUL5UO2WJHYt/ezWen/xuL+IFEIqWW+FYX/u6zI9YLeNZT1BuWTaLFrO49bInFQbfRJKF8C9p4poGLamJCgtLM7BfczBgRFjHFR5UPZeODn8uQlyH7Deb28b/AntaS2KQHMgHhYuUdJUh8UaZWhvq0LzASOgLX1TKkbXjWhGQ/FuBoO1KB6x500hpOW8VtBsQ4QVQlGxkirEX1Yjz4VwCWCSNva0OCZqi/iBE/n9hvvJVk1c0DOOvu3jwwCqQ48psJm7NAuWOgwOKytUwNk6Mg6yUBfecVVMUkRokktaUeb/uZ8dmXVr4d5Ho07rzIVoB4sVI0x/CDhY7a5dWTOFrjVJEoosWWxvOSmKQfqAcyHfPHrRXWl2u/lYLKIlHGUquzLMuLS3DWHREZzs5KreyWTEDSqL2G1XVFlZYiaF3twftG6L5OsJSjsvhQURqFDH8bFVQ1HCTvQw0EhZT+s6si7JBT0TNc1pbzsRIgZGrQsJ2Q8KrAz50rtZP0Rt+9i8cgp1E/A3045mVFP4lCtEiICIXqOTmesYYE2otB0yOnK2B1XH4fAjoZCPd0rAOZpCrhINr5QzHZqCKwTkSb5NlmlDIq69Bo/sfszXFJQQG4Za7a6FcS3ehNptU7/jUCOfCi1JGePNvLi0bBYH0S6IyBIFDipFlimWOvB4GHXKwV+uQgPP5Vy4pIGxp5qILBY7o524/MB9OW+K3AU+dpPM9GyjB8S/NY6M+GH7CDFgBBhAS5V1PWigGG2qE7qw2kUIazvHJWd/ijFavwOYr8aUnbALer2aVju8K+jvZG9vVEyPDX1wWwooGv4ZJoZRetV3o2f6ej1+tLhuFBAopCBJbyoP6SSaMpFZQzk4aKnl3vBhGXfhoYTU0K7oMpViQclzwY1sN5Dvx6XLZeOtG+FlGwdYGujAvBU3KfxeEn301A2tC3BoaM3iCrXWMAD15gHWRHvqcgd2xcUcDphaKJJqFgxYVO4pwwBHOeF3PfRYtI+b1cr3X3mhw0Q5FXJga37wswqxIwTnumzQglLvAqu+uBRWdQ5a8UKX5FoBo5lERQ4T5xiPUsOaWsxdDvEE14cx8kbMVkm86rwhQ5GdmTL04rM3xoUvhbn3cbWI/M7XzV8yLdx7nI2dTwV0XslJJzygCWrfKX+Fqo45aVQKw/aHCI0fAcLHnamZL0805EgrJtmOflNsS0IyVvuiOhJQsGKXLR9Zr6XCLpBG7v/3DyuxlqfNV1Vi8ZqQdOD1r9WwwFRkXik0fgTW2mG8vMSmcsPxEXd02FVlTvZVXiRNzSvdZwCwlGHUMJCUfCxqiSPxSpE159qAx58Mfgs8fU3X1MEgOt13yakCOMmTa1PnUc9vrHRWpg9ma8aaonbh6STJi92GUYoHvSehj0SQLuOabujXd8Jx+2Nw5FsM7Cqqe2Mp9jgCNg0rkQBsxGmlowkDOJMC6ngEAnxtLo21+5yLybRVYcHLac6oMm/FsTjzwcCRE27yDHctF3QIRLd9lnP50AY4XH8tWpyVPM5704iTMI9g3tHvjHpoMR/QLUt5u/EU4Pbv/MpyOnKPgs81Xl1XDbCo1F3ZxRirbqyXToIYVH1PH5Vg1O4FJjCfm9GnRahrJ5OORcciutECvLOwvIPvfV9MHuKi/4ETraCmDwS143su/VIblwPD8/rhBcSKwZaYu5d8EFJkBUiqgcuZiok4QIZyT8YZBK28H09ChN3+jQXvkpaYYUZ6g/ilkRkVR8lU3tBrIvdJuulwDQThaR9gedsv4bFRLk6vpHyxXSMWa9ls3z9H69xDvr5yk7mRwFet0N5ZuvvUoap6NLHeKgBe5xvimtnNZ0aOo6PXsG+Ng4FjO/4hK6a9CHxrgTE7I/HBqLRoZFBFkMbgzXcw2ecS251PY5de15DXvK7sZ39TLwqGjNobvlIDgF7Qw5KCS0sgNfNhEGRV2H59Oy5rWAEhqxHi48CGnZVSe1LBKB55sQc+ZZWYtaEVcp8/nlp3sO7tROqwV3gESZcFvFhtX7zRal72+lj/8Gm2lAL+UQZe9ZXuNx8KQ8fTaqbZmJ4FPNkQYdelYrre/4iCEdd9f1USedHgm5whi8xnFr68uHoZfyZsMWRh/HqhMBFhvgkWuwj49sJCpfWAvZYG92xgfa+4qjBukeq1j1Vef66zmrJkMSxJkppDYM1tDuc9Omxwqdc2lwTNP9elwBayb0EgpbLo7ZvoW6nj7Ki/44Ewo48t8Hzjumk+p6/bIPYk/ffBonfdXHkKVYnYtZscbXRbAt4q2xWk4dNA7BGtSJ0Of9fBvHpi+3xhFB+Rcv5krht3FgH+w5LwDQfepzX6BRGPbu1JcqXzubsL7OJyn0nvZ1m4agtFsLB/3nAIs2ByNwCOqentlDo97XUyWXoDo8DkPkrcjxg+fjXzeCv+teAhrHfhch3BjjBZxGI47Q/o4wRILQdKTTTcm4Q09mWzxIBLocvPvkA+/GKff80TetBxCh7DsvKwFfDaoCr9EaIsBfEWhRuQTenygnyoJLoim4YwNZSzYAJY4yXxBJT309lKlXMvQ6vWLFTnDq2Cu6amu/i0v1yxuIdau+VRyYubG+JBwvd/EokdGtMPYNpIomY9QRHj+sA/rHrLKg247bbTTHBXJv1WVgjBwieh1L0yDEAY5UR4y3AxNvOYqGqnTgVpuqDnLmLN/ETPDswsCBTJgtFTCtkYYYAhHrfH1kw1ZHazx+UVKUvKCildzo0y09ercdYa2/SGXwYcarNE4XmGcbysDANeh/yxInSrelz/1igPj0nmpzHMojIaz/1tkPI3hyezwS2ana2M2UuVTuvb+OPeHMqrC/psFkiLT9sRjewnl+cO3B5bEDebcWEwjpuH5HvDYyckegQo3qaTxVP0spCgOaBVzjge0Ir1qDAvD/I8QiJ+XJNF9JP3YHJdiDna8y3mVdJ4NkSXXLpNFrQB61/AzdjDg8BDQBm8ShUENmIY1lskWZ7dRUc67vfKPBE75l3d4c96ZP8nE8tk8CjtL0GE0dZEiapVwdsbY3/xeQvoLbMPPp6lLDjItrJMp8i1TRWgVf1+KCUaKxRvoW4SSAoL3T8nD25xfCK7klN+z9hY5seoJjSze1ko+gZ3d+8Kzik+x2G43hiOcPIC5FIIfkK2Dpy6LOqkaBhILryYptATDkMtkNCjNBWJvW614cydjaZe8qq1H8eOVxEVCCdgjP6S2HmKtXg/P/AQeMdAMzTQ7c61lklccRpmc2Cm5V6v1227cxzhmgwyCqbI9TMHg69ArvzBYHG3lbAcJIyj1vqDiU2xGPzqKIebn2TRb8B9N8xrFR7Wsh8P7bk3hRavbiZe8q3GpEyysIzzWm4voN3D9YBklF1sLHAK1OXBh4wUrgvwumqfgAhViIKGIkC2vR7vHuOxz9lFC2VpDJYe5xsvQc+jeLIvVG2GyIKf6q8//cGbLe0vVs7nvcFqDlVzLeKU4NA68zflifJLXSy0sJBDOo4YjVF6so1zJPUUY/cOn8E055mZJkC/78JFjrF/v8hbwP0ERgV4Nn09t+YAzFg=
+       properties :
+        width : 353
+        height : 283
+       columns :
+        -
+          name : COL_FolderID
+          identifier : 0x286e647551985db5
+          internal_properties : CAAAAAgAAAA0/QhHm1ovV9PH7bqLw46KXJEnfulFUlfMUoINHkccD4N2c6jVWfV88IH7/kGNkH1l9r5aJvl5xeN9g5rZnry1j/Nu/OHAtDKnfrCmnCjlf5ezvRqWOItFFgCS+AjV9NGy+84MnRUVmzCAS+Cz4FDfpI459OX50IC2tIZA7NttPjVxekirKJ4w33oun0VYuprM2wX3OrTh3znRayOBh4n/wiZ4pLsznl71g/rDrhovipWxW2+7zzsJJFZ8IckkRHEdQX62fbzCIpDaF+Et7Zq+HsamhLGtQplt3+9Ke8jVNDuB1+XX2EMmGfuv6llPDnkp3Euu55kT5qkLpGhyCKXmKwh3HxP9tZo6/86TSayBaprzB86BKFElOqmh4fMGzzQpir7nMT05RYt2eIcdmSM=
+          type : 2
+          content :
+           internal_properties : CAAAAAgAAABDd64kG0drO3t9nxIto4KnfeKCpS0y2f4oWk743/W1em5AXf7vUQA+n202Hdk795oTVKFrVyOUiyIQ/uMaz3Rf+O7bZjGxuiftSz6je85ai2G2XZK1AopVasl2tXZzcGUKIlPIqLK5KKxPrM077zp90ct6LiS97rWOpBOI2YxqI88ParHcL1yyD1jE00pe7a9RdBW7+S+qJY8lZbdfTQz7NgcKjRF9Kh4Z1VGXtMbG5Zdz6yOU8VNhj6YRCMFfHYaroyMFajqg3aWV321MJ1df3960YayRPwGbd7cD6rSj4wfLV2iFmxcYg1ewTe9usDUXycBns2QuFFU1nh0a/jUvr24oAT/zAh+gGdRby7/3wncttjV2NIqYcaRVg/WJ4s7Sh2opVog2NBRIcfHlYhU/4V72+jnh2/D1UZa9+wFku0GH/RucHDOJQA+gmPMgqkWJ/zb47k4XK1aFe92kvMR5bpkPABR19YimHmJd+X01eOpVlxqqj1z+OauFwtZJRVWcA7G3VkCR8IDdN8RrYFhOo9BTmjDsJvybrMRJLwoDpW9QioVZtaYSqQrdBHrqSi0NKaRDlRps9yCiliHPLbrwQYV+iN6lTvDux1TRnNQ43PmkjJWdDIcRWt20DeOUe7IzcMdfSm4D1yqyCLA0wPfxU6VVhyl2mSLqu5zk/sYSNE4mzOtzMdVv3I6Kl8E2bCMJUEKyCdQvobIkgiGLb854Cc6E1bMy5xm2qghlL6/K5kZbXTuzRCcf1dr6x2ZiOqRAyhZfE8YnzskXPkPdBZYwkpcTu1C/yNtyniPfo8ld51tmZSGT6ZFuMLyQlzMM85sGE5irryh/Y6fEaqYG+Mls70YSluXxxiEAljBXK2DZzYx4eqnJZtc0eU5dGBL3W0Mo1RKfgiIsJulK7aKL0+jO0TX0hic7zQKaZbbB1TfpnbTeLhk=
+           type : 2
+          code_elements :
+           internal_properties : CAAAAAgAAABoHn2/GeuKHwuWHIFqih6ijRb/uMCWdpdPi5Ht918BfgVrpip4viBjr8ETY/DQzxy/l/5v7sr2getVg17XTTQxCu1evqoK2AF3bQSnuspguUSdbRlokK+3d9V4GAXwkGXk
+           type_code : 3
+           p_codes :
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 14
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 15
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 16
+            -
+              type : 276
+              enabled : false
+            -
+              type : 277
+              enabled : false
+            -
+              type : 278
+              enabled : false
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 17
+           templates :
+            -
+              name : COL_FolderID
+              identifier : 0x1557a68a04122659
+              code_elements :
+               internal_properties : CAAAAAgAAAA4Tk1viXs6T3vGLPG62u6SXUbPaDCmZge/OyFdR++R7pXbNproDhCTXyFTo/CwL/wPR64/3voGMVvFc65n3aShmn3uLjq6iLEn3fS3ihqQaZRtvUk4wN9nJwUoqJVAwBU0
+               type_code : 3
+               p_codes :
+                -
+                  type : 276
+                  enabled : false
+                -
+                  type : 277
+                  enabled : false
+                -
+                  type : 278
+                  enabled : false
+        -
+          name : COL_Caption
+          identifier : 0x286e647551995db5
+          internal_properties : CAAAAAgAAAACS6LlecAQCPzYlWTgVnkeHFuBouBn6u0WOMRNquiQgXvmimZaNPf/Dudv2vjNBc8kRh7HZqBYiTKUsxq4T9VpzFT9Yl1i+cGJ4837YT3segIPEYt8FsxsvJ7nojMWwGaRlmOkZDP6QhEuO9HWWWQw8cddd83eMHZNrxXnXV0xUDRkKUDsjI9qhcrLPVAh9kVP3yQ1rvvNtync5/RLwHIGVnMmeeoW0WVKsYhP8jILQ68YPNHiBDwFWUmPqRWy4QVuxdWhEPPOymVDtqTMnGBqZlzZPyNLoelZywGa+5TokZwAjHcWoq8fAXkXgQ/4QSBb/nBHMh4CCk31ZGpqyBtQdRrwITlVqe53VTUSqfDHVPsZTVwPi4oNDU/+Z5Zkx/O6uA2WmxvoudN4J3GcXKhG+8XwXP3m
+          type : 2
+          content :
+           internal_properties : CAAAAAgAAAAR6FLByX8fv5rMZ2XyourqdXF610hIWmiXTN4BZ7N25yzHrZMIqTN2bK9uYVD3ORd4FW8pV4PePKHJQAGKtcyv/7cpTzMb9GxFFQM9E0gY59OtrwApyfF/Dy3CoBlIEF8j0x3dAhcSNhNazlYGkme7gwoji+qNWqVnD5u2nORHQolbhADUHp8VpkUv6lBifNqGPKhQzeLwNT6fhJhIGwXEwKnv1mSdTZ7Zu/1YlqLGOve2kSCP4MABkSpnprsiDoXNvfHyJ2weGPtZ+RLMa3qvOf5kVo51NkE5ip+2Hr0bDlMFcKBk/0DhNaEnlb24JcYfLeZ6m28xDsdk1jlM/IzXqcE8wX7f2wcN8QJz11bGvbR2huOAD8VXENh63oQ09mOrWlIQT1uRJD2DcH6g4RMamVErMMteD4XCq3qH4uEeu0bOHwbmCZeLr9UMGf0Y4TJSLsH27xe3RTlvQ5cVK3ruCM4JnzEgSj/TqBIuzJJZ8vpoqVP3Oj1B2n1L68VCIRsquuVKP7/UxTvDrwmeFVDU2fszzZlbXS3C4u7I7EUrH4G5UCLC3JdlwqSnszMhMu99oDCsyg2TbOfgKOSWdmBAgViIP4ugh/v7Y9ycc+1SfItp5hDug0Qkm5UG2pTDeQLJgacWeU8mIPWYwI+ftesr+/w7jMJNRBdhKeoJy8GqOkTVCpKmNqY+PUz2Lrbhiuv5URzR8H2aWr30HpQI2gqeR8GEDK5PsNAHdrxwAsQY9k5IkV74Hyq4GCbWjv+BCGw63TjOeDnC40C7SoA+7Ipm3khDtoE+GzxdeI9OLBAH80FDFRZm7uB3o8rovBYh8S+MvjDceqWgYsC88J91MQGiKysOGeS6/E/Ojbij7tg3OKezN7NZk+z+yxb4BSBFyPbPho4OSGytvstz
+           type : 2
+          code_elements :
+           internal_properties : CAAAAAgAAABoHn2/GeuKHwuWHIFqih6ijRb/uMCWdpdPi5Ht918BfgVrpip4viBjr8ETY/DQzxy/l/5v7sr2getVg17XTTQxCu1evqoK2AF3bQSnuspguUSdbRlokK+3d9V4GAXwkGXk
+           type_code : 3
+           p_codes :
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 14
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 15
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 16
+            -
+              type : 276
+              enabled : false
+            -
+              type : 277
+              enabled : false
+            -
+              type : 278
+              enabled : false
+            -
+              code : |1-
+               //Runs the process defined in the template
+               ExecuteAncestor
+              type : 17
+           templates :
+            -
+              name : COL_Caption
+              identifier : 0x1557a68a041326a8
+              code_elements :
+               internal_properties : CAAAAAgAAAA4Tk1viXs6T3vGLPG62u6SXUbPaDCmZge/OyFdR++R7pXbNproDhCTXyFTo/CwL/wPR64/3voGMVvFc65n3aShmn3uLjq6iLEn3fS3ihqQaZRtvUk4wN9nJwUoqJVAwBU0
+               type_code : 3
+               p_codes :
+                -
+                  type : 276
+                  enabled : false
+                -
+                  type : 277
+                  enabled : false
+                -
+                  type : 278
+                  enabled : false
+       type : 35
+       controls : []
+       code_elements :
+        internal_properties : CAAAAAgAAACXO9peiHo7XkrV09Ch09frVFM8fwdVL852Qk1tLf/17BdVcnA2zpJf6S13k9OZEMfypv1w15Gjtj4OhP+QglmUDcojUw8twehulDtoewmjfotkpFIh3/B2NhQnqZZPM4qL
+        type_code : 89
+        p_codes :
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 14
+         -
+           type : 35
+           enabled : false
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 15
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 16
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 19
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 20
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 21
+         -
+           type : 22
+           enabled : false
+         -
+           type : 24
+           enabled : false
+         -
+           type : 23
+           enabled : false
+         -
+           type : 25
+           enabled : false
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 33
+         -
+           code : |1-
+            //Runs the process defined in the template
+            ExecuteAncestor
+           type : 36
+         -
+           type : 230
+           enabled : false
+         -
+           code : |1+
+            // Runs the process of the move button
+            ExecuteProcess(BTN_Move, trtClick)
+           type : 66051
+        templates :
+         -
+           name : TVT_Folders
+           identifier : 0x1557a68a04112659
+           code_elements :
+            internal_properties : CAAAAAgAAAAnq+pOuErrDjqFY4BxoydbpAOMr/fln37m8h1dvQ8FHKfFguCmHgJP2Y23k5N5cCfCVi1AB8Ez5m7+9E8gEskEnVqzw59d8ZjeBKv4y9lTrlu0dAJxj6CmZsRXeaZfI/ob
+            type_code : 89
+            p_codes :
+             -
+               type : 35
+               enabled : false
+             -
+               type : 22
+               enabled : false
+             -
+               type : 24
+               enabled : false
+             -
+               type : 23
+               enabled : false
+             -
+               type : 25
+               enabled : false
+             -
+               type : 230
+               enabled : false
+    type : 43
+    code_elements :
+     internal_properties : CAAAAAgAAABe0Zwjh5EZ5v17DuaQjkeRXD5qvinkd0l/9Nvxdtb3dclXxKNfE4tI9Lw9k8CjQIWpWgLGncyN/yE/AsDg1PqLyCi5fBAvouPQdvGf91q2WP483giAOLFawuSabpNZgpCbvw==
+     type_code : 93
+     p_codes :
+      -
+        code : |1-
+         
+      -
+        code : |1-
+         //Runs the process defined in the template
+         ExecuteAncestor
+        type : 14
+      -
+        code : |1-
+         //Runs the process defined in the template
+         ExecuteAncestor
+        type : 234
+      -
+        code : |1-
+         //Runs the process defined in the template
+         ExecuteAncestor
+        type : 15
+      -
+        code : |1-
+         //Runs the process defined in the template
+         ExecuteAncestor
+        type : 16
+      -
+        code : |1-
+         PROCEDURE Assignment(LOCAL nIDFolder is int)
+         //Runs the process defined in the template
+         ExecuteAncestor(nIDFolder)
+        type : 43
+      -
+        code : |1-
+         //Runs the process defined in the template
+         RESULT ExecuteAncestor
+        type : 42
+      -
+        code : |1-
+         //Runs the process defined in the template
+         ExecuteAncestor
+        type : 17
+     procedures :
+      -
+        name : RefreshList
+        internal_properties : CAAAAAgAAAC0L2rR3a8HPBfBmBweDMUT2kQAnMcCVV/BysORypKraWGjJMtLp+8Y7Bjuc+xHlKlJdADYmw6LyX/5IOpmTgBN9hqHnvb5+KUWDAeBkbDYfoS6XIoCvjvkWEpwUL0PVOZxlQ==
+        procedure_id : 1760454958149295541
+        type_code : 14
+        code : |1+
+         // Summary: Refreshes the list of folders
+         // Syntax:
+         //RefreshList ()
+         //
+         // Parameters:
+         //	None
+         // Return value:
+         // 	None
+         //
+         PROCEDURE RefreshList()
+         
+         // Clears the list
+         TableDeleteAll(TVT_Folders)
+         
+         // Adds the root
+         TVT_Folders..ExpandedImage = IMG_RSSDirectory
+         TVT_Folders..CollapsedImage = IMG_RSSDirectory
+         TableAddLine(TVT_Folders, 0, "Subscriptions")
+         
+         
+         // Defines the images for the folders
+         TVT_Folders..ExpandedImage = IMG_Closed_Directory
+         TVT_Folders..CollapsedImage = IMG_Closed_Directory
+         
+         // Fills the list
+         FOR EACH Folder on Caption
+         	TableAddChild(TVT_Folders, 1, Folder.FolderID, Folder.Caption)
+         END
+        type : 458752
+     templates :
+      -
+        name : CTPL_Folders
+        identifier : 0x1557a68a040f264a
+        code_elements :
+         internal_properties : CAAAAAgAAAB6ZdL5pI4cE/2g9aO6NBnNCKqXJkzTWm4LlXd5sDlYjghw0tFhudre8C4NOJT9OMy3QUK/jIdhX4veQ8JYuAMzFROlBCM10VM94rsn5OhfXid3CqrR4uPNje5LkavWJymwkunA4WkLtRB3EKcCBHK5KulQnCLl4DnR
+         type_code : 93
+         p_codes :
+          -
+            code : |1-
+             // Displays the list
+             RefreshList()
+            type : 14
+          -
+            code : |1+
+             PROCEDURE Assignment(LOCAL nIDFolder is int)
+             
+             // Selects the folder whose identifier is passed
+             nSubscript is int = TableSeek(COL_FolderID, nIDFolder)
+             IF nSubscript > 0 THEN
+             	TableSelectPlus(TVT_Folders, nSubscript)
+             END
+            type : 43
+          -
+            code : |1+
+             // Returns the identifier of the selected folder
+             RESULT TVT_Folders.COL_FolderID[TVT_Folders]
+            type : 42
+     procedure_templates : []
+     property_templates : []
+  -
+    name : BTN_Cancel
+    identifier : 0x286e6475519a5db5
+    internal_properties : CAAAAAgAAADtaSJAaAXfWtDMS/275sJFDKTRhHXT6Hr/eOjLFqwWXN0tMdhKw0QoN1TfY3zOUyQhWtaGoqg3CDgLN1+pa5QCdgXHvOf79aQR+PlGmi7uHtp6m0E4hegFpqoiGl28106PqcmgNVqSZtA1ghlyD2p1Tyr/S05kc/YOR/lA+CVHafojCpF5ITiB5WqEqgE+KeCjFXGDcg4dZfm4duEy7gdEKjKKIZzEdNUQvseqgjJuzprgYwX06aTnjLeKYN9eHo36QrFmY8zen+8S/URBuM9eOMqmokjcxVcyP3RavJ5YhdW1zQBkerg7bOocvrmQxKZev2AZhlcR6ZrxO7LH0BwYzrDbFDPBXKI1/TGI7WninT63KLiRysZaGTpmf0WksPWarIRGJpeJVXUY8e59nFJ3vAB+1r20VZT7XBFe8e4Z6TtoGqGLsVHBX3TO85XyLe8xv3eEaTwuH6LZer2XYmg8x/bPsQE72rVfHtbiqI9XItySOkiu9sanNZHDHd4PffU7UsjUkqpsnRNJpX8eHEAHIrUgpcl5fVUwqROWlc7UGOoE9BDAams20inJmJlerNMdQSLwo1ADYY42l2Kj1v5teyLCfCOq2P7g45ciG3JCfi+SwtIKE2e/805wHPkzPABvrvxc8L6jfAdoIa6a7GgA1lcLxyjaIXea7VN/TJsLUMPnzWf8XZXyEknMBnOsPAeXjjYDYTEsFA86+0f/yYeP2rQnj4LK8uqfHTqbKJvZl0hWEF1tkPz27PcPN+rdkGWuNQZIDiKZyGyTlHpWsXE1ZUHidBDFCBIAzbfaveD24GbDpgJSQdJQ7vLMcQZKl40DRrZQj+C3jhKHH2n/5QejjMAH5crRL22K/3RzykLTnozMGmegrV8K/Y7SPjIiElScwVIARQwAUV56+OOccdhuCvgVGMEhQ4f1y9fuZlE=
+    properties :
+     x : 262
+     y : 324
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        code : |1+
+         // Closes the window
+         Close()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Move
+    identifier : 0x286e6475519b5db5
+    internal_properties : CAAAAAgAAAB1dW8HwIuIHTURrKy8yJhobmfW80LWZvq/TtUhzbA4chmQFsF6+ZZ2zDRluAR2TpePyUpCe0vJfZP7Tb4H0Ubny83fJ7bnQ7auwtJXp7jvllwQr1t9AKVW2gXxtyE0njBZGdol4lYlKiKmgrRqDxUQSdbGD5uoT9lcJOsb+JE5NRVZUyxUs91DnrSN2DiQJqCI1CusTmw4dE9JDgeoCAabpsL3yFedRQ1MuEJqfk5KVvDKXmoJlerdMj4ActZAr4g6TThmKAST22iIJo5m4Ji0g5Ve/aRY1sqBF2Xjl7MxF+obOt90N0v7d1Yeo92yVzNXK+KUMYLvd0r2b3kvRAs66cG6oGaugZHXj4eygO5mX1Oz0K0oVMYfgBPAM3P2BXSKM1lonhzkyDc8nuchg/C+GO/6NPP2AjhcPfSWRqHXf88b9/spkpIYv4cktU8MA5Dh82J0+Ucv5Pegect9tw2wYFBQhl2B6Mq8fFfdmaVxy4lz5BlCM5g1iqXpy3WWGh1Nn2lcidvgJAgDy33xB+x5c7HLO8I0U5wQSm24dBT2SdMuSK/O0eZpKPSEGqEMsjjnm5IagSFhiFfJbMF7tmYEZopxTFOZSKGMjI70d57kyA86LHljCconFB1RDkitC81sDqWXdRlV3jXtHJ/pXatCfdIDChcRn2/9k6yENdiw6Coaj7DHyHZTcp8dU+MGkUVe89xmoXYWORFzZ4QtUYj2sUWbuw+DBkzmQoRrhPU4Q3Rj87oSDDxnMWVIh94Q6HtaQGJEt7CRnhUxYrQlrMRvm/4t9gsCeTRpKXEXl+C6ZkBPAlV+K+k0MnZfA5C+mOsVM7VcvFIPiq4fcJlDCDBMu8ooQaug9Afu1564diOkUmd6LXjfdkPUcaM05jIfu+c3H44n1fWXeMuxIxKp/b3KjGJQI9Epbg==
+    properties :
+     x : 156
+     y : 324
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // Reads the stream
+         HReadSeekFirst(RSSStream, RSSStreamID, gnRSSStreamID)
+         IF HFound(RSSStream) THEN
+         	
+         	// Modifies the folder of the stream
+         	RSSStream.FolderID = CTPL_Folders
+         	IF HModify(RSSStream) = False THEN
+         		Error(<§$0000§>, HErrorInfo(hErrMessage))
+         		RETURN
+         	END
+         	
+         END
+         
+         // Closes the window in validation
+         Close("", True)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_New_folder
+    identifier : 0x286e6475519c5db5
+    internal_properties : CAAAAAgAAABVgF1HxoI5r1byLHLCdB96KXQbNX6T9k6jIQg1av0WadJlozBtFy5m5scJtuo0b+dJrKTcSnZmWzJ5bkElda4d7i1yT67hCKgoW8YpbfrG9nQ0JF+ijGNENerwvp2l8FZdAlYj7gn9UpaSCvS+Q94A8mQQ48BSiEM+E+5YJXjztCJvb0WuaI9Yq4WuOgiwLJevkgQIhsF9kiaGOyVFh/eqIU9Cb13ZQFfP3ymnMEnCRIO45Ew4vVTFSpBS0ESkbw9DgUuYkDJK6ktG34OZrjEx6qivqFwmLRyFwaz2ONiNbI6UrpYJ/SoRZZhOPLcGCQLAjeb/1z7peL/2+Y5awKM/QyAHirIiLgZSuB7DZ5rWq1c49AfVNrl0/065w0F+6gzC6kcP9SFyAFBnnUb5dYB0gTYOIFRlL+bpKIj3zp0Ipm79mD18r5bSxLTnTUHHwH5TERFy48Zqnw7cru9Fsqlc8lyYXVNj0I965Q2tFRgHSWlhXeURjrCK9vvAmpIPxFVCefw6mS5IMOabYx99hpbEH8q/gdMukCcLrNRtqtxWzwrdrLLwk3fgmK/Z8TUB6SwjT3XrFqYPFsRcC0Fwp9N43mWtPw+eP/5UjR/hLz4Gwhht7CzBYWB17VDwdO6o0ZQqhLMfo7LdknBeVMTZybY059WSESa01LPJnv78JUAqR8YQ6Zc+FCPstJrbbxUrGVLUpRvHA5dTokca3Dp1xFuiESh1SK6uvKJAqhqWnpYC43aSgEhRt5rnU1gOtRpqjhGTWAmwFPvZ/uR3M3s3uWshuhYWIhC8//xuSgw1Vqiqpk+syKv5DcZ4r2LkPW1wxUPNyhrW4459wFT+d3TC/XWos6fmL8atueKlHGHwkcyywD2E/yfKhAJ1ljUvdbaryz0A+cEvPQWFOjhFe+4l/X/FTsW5qRafglHHqqdMv80oLkJdfEw4HnTqWL0xT4GLujsIjl52IWAoBktZD4L35p10eHC6U2WGtCyfMMKC5Vn/GIsVuBh7oyaP2ymAYBS0j2epKq7aovZW2w==
+    properties :
+     x : 6
+     y : 324
+     width : 120
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         sName is string
+         
+         // Opens the window to enter a new folder
+         IF Input(<§$0001§>, sName, [<§$0002§>, <§$0003§>], 1, 2, dlgIconQuestion) = 2 THEN RETURN
+         
+         // If the folder already exists
+         HReadSeekFirst(Folder, Caption, sName)
+         IF HFound(Folder) THEN
+         
+         	// Displays an error
+         	ErrorBuild(<§$0004§>, sName)
+         	
+         ELSE
+         	
+         	// Adds the new folder in database
+         	HReset(Folder)
+         	Folder.Caption = sName
+         	IF HAdd(Folder) = False THEN
+         		ErrorBuild(<§$0005§>+CR+HErrorInfo(hErrMessage), sName)
+         		RETURN
+         	END
+         	
+         	// Refreshes the list
+         	CTPL_Folders.RefreshList()
+         	
+         END
+         
+         // Selects the folder
+         CTPL_Folders = Folder.FolderID
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ languages :
+  - en-GB
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAACypDEH0GxaJtKF79VeAIAjSgrjWv6RS9WMtjPfjTRnoQmrMN6ZHIBn+uOdgfT3pOhzJBVzYZwK50XDHaBqHFhqQzutRg==
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      PROCEDURE MyWindow(gnRSSStreamID is 8-byte int, gnFolderID is 8-byte int)
+      
+      // Default return value
+      MyWindow..ReturnedValue = False
+   -
+     code : |1+
+      // Positions the selection on the default folder
+      CTPL_Folders = gnFolderID
+      
+     type : 34
+   -
+     code : |1+
+      
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      
+     type : 2
+ code_parameters :
+  internal_properties : CAAAAAgAAACwX0N6bUmrDhc2OFfhnW7CUO/b3mJ52NDCuL4CW0rnb8e28Bpz6ZvMCjYa84J7+7OvKEAqY4OlawgRqdS4RqoAQIkyJzkOp603XD64tY/6fmC243u8s2L9l35ResWXEqYUeHT5D37p6/Uh4BMSrNhOx0NgRyLOukG2oOrgCrBTBpf549YfoXVyGA==
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x16177364003e6202
+  internal_properties : CAAAAAgAAADe37AnYfubgdhhDpzNtG71Y6ExeP2k5LULptjhgs1zUBaAu2QTNn9Z/CjDMnYfAWFDQcurBcIF
+  strings :
+   -
+     text :
+      en-GB : Unable to modify the stream folder
+     index : 0
+   -
+     text :
+      en-GB : Name of new folder
+     index : 1
+   -
+     text :
+      en-GB : Add the folder
+     index : 2
+   -
+     text :
+      en-GB : Cancel
+     index : 3
+   -
+     text :
+      en-GB : The %1 folder already exists
+     index : 4
+   -
+     text :
+      en-GB : Unable to add the %1 folder
+     index : 5
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

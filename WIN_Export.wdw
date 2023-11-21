@@ -1,0 +1,473 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_Export
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_Export
+ identifier : 0x286e6473517358d3
+ internal_properties : CAAAAAgAAAAVVuOcF4RqIie6S4rtcTCC16PldfBJZ+5X7AkaoiQIfoe9zbczyajxwmGb92zsuk5JzMOpdOm40T/HohLI/qgAtMC+Yxukt1tP40ru0w0Q9Bd005+zrYq/RztOTaw4qga50A1gAdRuBfBl54FSFN+aje2iWmaXd/TXvWOItbWbx65X4Tsrk4FM8Zg8bis7NP1GPDZL4+tVznMraxH/i7JHfM9NOwJouWgipf7nGE/RBaa0Rh624KotXfFHzKVkN7wwjXM1YWZCnTIjmWQDPHuUdc4zmsonP3JDVN6j9q5z6ldm3/iLrQxjUM7E6Lvf/fvdkOGP0eHW9pdhqVgmL9T3w3ZIMHyClZt4JDWpt01fgRELzVv5O/USPgZGxTArMQwcJW9ay8Jt+5U9HMAI6cliU5MBhaaZml/t+k9Hy6E5X6gqgirfqYju3IesLf1mHmwNJR8+OZlM0ACY675cW2HoKUEo32fRVerUTytIxLb+32a5DHAqZTAF7TrO6JSyI2nviN4n0/GHgJeEkenpVSGZyMSRU6RC6s8PkEReXazsvG4T0x9UED2Redx4fEn0bM+tzujvnD/MiZz/ejUgN0mCoAPgo8V9VMIgE1qYli9JSAvmRPpY/ayQOofgDrtaxFQba+yDIk3/aW8GgMqOD9td1PY3e5zG9kRG8bDYJew83C5st3821xZqnNjVEtQ3RW6gtsy6c1UF+dacr40FVaR+r5BwMg/JTTa6QSZwyuz/Jczkp132gf22Duu9aCSy4bpm3IZB4uk=
+ properties :
+  width : 646
+  height : 453
+  widthClient : 644
+  heightClient : 421
+ controls :
+  -
+    name : BTN_Cancel
+    identifier : 0x286e6473517458d3
+    internal_properties : CAAAAAgAAAB96ZzpQ/aXZNnXOFasGhFfUz1jIlblvgyazMftQpjhBLJmyuDbbMDuUDxD6UuGNrbI9/LN4rR12jjULeCPDxZjrTgHh7CRgGz/xoxMvGVj6Em9RyuOPEWX9Jjmi3aKBaZeQACi5AnJ3HUJojyTCzTc2XY7O30QnJXyznFJpk4E63jzXQdeJwBOYYTq1Sis2c6LT0VhupA7HJN3WA6HKZ8SFkZbjfkDCUS6vThekzogYuQeolu1nAFQocNQeJty5LexIi4nDOBjW0XWhv3vQHix6DDYFr/wRXZNY9Uhkl02lmesey+oJu7eGwvzoP+DpiUFRI/6747peXbHaPCHzu6a0GX+fwNu6ihkle1Tzd1wyNFTvMpW3tMlfy+GBw4RSHczO13BQ7tp+s56GCRq3byf89XAodY831/i7cHNBUNl4yCpyQcCvwLJacqhXslUyxpllrQ5cQfoaiiIYx4ELa8sLRC8qFbCCLxM5ojOWkjoK1POn0yoe2V5xd4D9gLVIiTwUtvEDCL1uj3vXeNXIxy+/GmoKx4k6kZjJrXoBwHcRlvNvVINqTlhvCj9+5+aS6Ev9bUudyMRhfSNXFJ/4E65FfhdUXFfM1mY3fGYjJV2Oy6LlJQ0fsvRwT95TNiUtSO72/DdYQ7dsLATt284qqiCtMbPmHdgOlKki2HsioxC0MrYdJXgRnHhND010mtt+6xC16ddZ0jD3jZRlPfbfpS7alJF6luOY3vJxAW7SVg1g5hxi3ipLPKW3QmkimFWM5iNY9XJG2hkGKO3gAXJoNXlYNzA7XasA+F8ZiJVjLNi1U4BWbApVbnBDthwwaTsjd4NihMvkO5q77qre26qlbjLT10SkR69eqUC27AW/3emCJUct8dF2drzN6XOSRVfIu1+LJ02Tx3BPxJRQZ/L55GOV6ws7DXFaCg8KAuVLMoyyNdq9g==
+    properties :
+     x : 538
+     y : 385
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // Closes the window
+         Close()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : STC_Title_2
+    identifier : 0x286e6473517558d3
+    internal_properties : CAAAAAgAAABjyJ9hL3Q4OJ604QBD/g1CVvCGxgj9hmT45p4X0B+FXxZeO2YgLQIp4BFsfO5G4fvWKjTKw8aVPIRaHm8LXs2zt5/JPWmqfcu8s1/YABUKrd3V6VtAUjZgohkTvndiyQPMOcZ6nEU5NXpwDy5ik6H71cnPqqQf/EpOTwqhnrnCt54jHqYcyOjdEMi8ApOqTatVm4ixV2fI5CaK2FIdQjNbzlN2+tBqs2RaHEsm89DqyXbazSwHIV3eoCrqVXB82xOpX6Z04FV4PbhT+sLqs/PJH4y/nLRSQPqWmhNm2kO8brUcPZZjm9zWV5DJu9wzwsPOqZ+M6AXr+jsmVUCOMJ9YnBMiIvKcY1wYuZyJeFeE8OYk0WAe5MiLajZo38in86UfVmWLRfAE4HOM1kPrqupen6YAcHUZFlfAcny7ikH9i7yDAnV/iehAzQJM7u87J2UP6E1cYO/sS7ylHiXjDdf4Z8WYKy83nWdMZOy0URvIvunUHDBzlA1xI6zKddg0mlzBvEd00yTEL8c7T3WyASBc7xYHkMevDz8wV5+F1ANLnNU5bhk=
+    properties :
+     x : 30
+     y : 18
+     width : 620
+     height : 47
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+  -
+    name : TREE_Export
+    identifier : 0x286e6473517658d3
+    internal_properties : CAAAAAgAAADiYjFbYAegdQIXkiX8AZjvjwiA/fr2g6Vn5nM9DS7QOAx+udLt7H88iviEtv3dMMzgspxfYZXu0ZNbaZZSFl8QN416Gk8y5pmR8gLLEMblsGd3cP9Yn5pkfa4exAz4lnRfu95MqcHe3DQqoJe0f7O49S84xjVXNbNjgeJVykPOo4c2uYZPoNrX0glhXhc3/myTBUlBbB5WvYbgoUKOBGC5+2dqIssAXPs740cb6iZz01bTlwXc1Ss+2qxdYC25vM2J62Ul39nNwl4TvAa2vuSPs+zc+m/kQpzCPiiaoEOz4nceSvXoEMOcmM1bP6uhQPdsLdL83kHjTKzQr7OcbV1hNI7RZzKwHgGY1YvlOsKUM1scPKRC6pvtUZ3h0AO9ZKlq8AAgZCxtI7I6CGZhQQYWmhyCSis0CUwudA1ltBRk5Vl4SEthibfElw9/TJ4p8O8JpC9V/aF2uy2wrM9D7q1HIcE6uClLq6gBeewpCblTjZNsIeUhI5msyA23dfQVsTUsZ3clP0aTFGa8eIidKyaJGd5Au0B3vw7DdI7IGPIl1Qrg9voC388Ur3jFojUPG9nuDOJFg/S/S4uoRVCuGe0A/yfIAe1aNRchFUEA4rQEghO732kC5qMYkvgsphtXuEFopQ9fsm72U5oXgQj9INcXogBmy1GKh3igbxScCwxYQU1UiFddDC6hJG1fgQf7f0ZWCPuJ0EqGwYKxvhoLSja/vitjlXFffL+BnJQGSU54pM+j7HXritfXD1c//3IZJEbWQYf5y6L7hzgeWLm5pDG4BaKlw8+OwcxM2KF8JizRbuNW/O8nxWAeUvUl6Hr3WERg+Y3/4xPIIoT9+LuV+5XjNmxGySck/ChhsscFgIz2ZRDTxfHTxAE7KrhNSnB9i9XsKf+WOCFWWV9CTWiCPJI5ErcWwnXV3nAJly6jbERDn/UNr7tN3AUIpkXZkJxhr7TWrTvCMbO/VX5GR7ePF5+ViolU2H/9Yi31Y5DU+mXAmCyqz4rKNtoZbTghmLnC7uOt2/bRhYW9VwhLepxELwClaqui7ZRrPYHz3PcuSdPgxzUG5xLh0QM7n07yn/rAZSm/p3Eljo0WF6i3ifIOJ+zuV2bL+q/8iOGV82NDKJ2xIIeJ80HhM/lddrrNmTuD3fQRLIcxNsDXptQfNqk69WwOFkvxVcTmMIfVHAfDy4e/YaR21HOWbRIvGJUhHJUwg3CdEOg6hK9FCHyec+AqrdxN5VIgN60TqrllTLasybCurUjWYGltSzUeOE+FJNRQF+MIqCueQ+AaVGpZWRnQv9J6eZ7JojF7KJtP2qm1htosXKUqQYiXk4xDXlkfnH0jgGHKpRwRDbX+QoaKkpvWYKVhhJgbHUjd4uRuuunbMdEOiWiW9M4UVq05xVB0SAoBYCTRtldoGJHmlnMdPqU=
+    properties :
+     x : 18
+     y : 81
+     width : 514
+     height : 291
+    type : 19
+    code_elements :
+     type_code : 25
+     p_codes :
+      -
+        type : 35
+        enabled : false
+      -
+        code : |1-
+         
+        type : 18
+      -
+        type : 19
+        enabled : false
+      -
+        type : 20
+        enabled : false
+      -
+        internal_properties : CAAAAAgAAABEtfNH0okt9zbBB59RgY/XtqDAF64YfTJ07sI/mdG3JAAwpyUmOsM1rEWxFju7H17+cOYmNYTpGoj4IamgFTyy8vLH1U+Fm1KQhUNamXYySrpLSREog8uLeIU2VomgBAnaalho15eJl9OSMQjpPLssK63WPNE+AqVUifVWt9A=
+        code : |1+
+         // Retrieves the branch that was clicked
+         sFolder is string = TreeSelect(TREE_Export)
+         // If it is a folder, adapts the checkmarks of children
+         IF sFolder [=] TAB THEN RETURN
+         
+         // Browses the streams
+         sStream is string = TreeGiveChild(TREE_Export, sFolder, tvFirst)
+         WHILE sStream <> ""
+         	
+         	// Checks the stream
+         	TREE_Export[sFolder+TAB+sStream]..Checked = 	TREE_Export[sFolder]..Checked
+         	
+         	// Next stream	
+         	sStream = TreeGiveChild(TREE_Export, sFolder, tvNext)
+         	
+         END
+        type : 17
+  -
+    name : BTN_All
+    identifier : 0x286e6473517758d3
+    internal_properties : CAAAAAgAAABXeO3vFyJQsAsm6ieJbesYOfU5RyWshKzNtR704uBfJI0uTaAb+bb0i9B3fZIrEyVnZiE02Nu+2isxWXqvFw3L32jfU/NxHcF2r2FG/fdrTXcgsmdCDd1mImlbTuNfNBuPx0asYpHdHveR95O6xHzF5NWj1vAxxkxQrWt2trob/yWrBaEue7EkPb4I4mOXUPCMTYSHWnRy6FOyFmf11/fRbDVgKCXFYmhiOKbv7ZOq13T0/BVQlLyUzS4rJuyvJQ6S4+JPFt9T5FFgE3/yTRgVS0Daj/aBQ2aIPETLIDPv+BoL1n7ojO5MZut6b57uRZGRSd1KeseyMF/KsEeDwo6hlD3RuRKoz3zH5/OlzrS5svJM4/QFHFTGvlI4GznNOEFtVYi/XxqcVroX2DbQE9QT14YgrdWfGbAwELnd8MJUfZ4/oaXhlweCHgvNjZ/VzAuiZrejetnnMdmVfqkHglh8gzuK++2hlrEK0CuUiVFWhiJBnVl7BHnT6mBDdR98qbY1wQgeDDkLsroFUqvCNwhKfx2jR83BIEvnYnPfS5ClFkvBsvDWWpu1hEtKS43mqwErfVBGupxr/mIqF7OFZ+03T+cqp4yRWULyUk9Sptmqt8kNq1/QMpFXcG/K89Yg5qhdC10Q8z4TodPrCWpweFY6hDpZeYv09ND3wuCdN9bWzemaYA7Ops0EJcJEGLgmDs9GZMZHNvTFZdKqX8oRSs/GFjkILhKIuj+EJM6+XnQkHdPshkyxvtTDfO0YmYQFOLc6nJCzVCRM547tGBlbjK3WZLPeKL54hhu8qTOIYQ4Fs9v2LR8TlJFQYhkIDWf7ar0nJ6vwMP0oqP75w4STjiIMx1NGxHA=
+    properties :
+     x : 538
+     y : 81
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAACK9b5Oq14NaEcmuwZu88Tb77jdcVChXG5lO/eLadv+AxvosD3h2fcXktJTKXFeN8izaJM7jx/j4oH21D9pKnGVdsGkMRzAgZ7/1xQqD9oPZ4yr7hfnV8sZ2eNBYB657JMITw2RueM6UTrTew==
+        code : |1+
+         // Checks all the nodes
+         CheckNodes(True)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_None
+    identifier : 0x286e6473517858d3
+    internal_properties : CAAAAAgAAADr6rsa5LfHKDCm+7JAzsWEP5GF1tzD+E5MB6u5lkgl3BD6hnIWICT8Wer4fp8+cIXZWMqEg/+7Qr4YlaLk5oK33hxwMb6a/vXDuLVY7pfS5k/H+Cp9R/N0PFclqAEeBdFTsSEokX3wVInXCZT8wIt6u6VpgQpJdkaSl0FlHyNhTLeBaeQfFfkp4H0bqyAlKm2xrWWcALf/LC8F2XmSOgyZ2k9ZoExPtViFgNbLfj+vHrFRzn0oOOnCEj8bgXnZIBXEN+SglLR8godo7E6pG+yydXajBOpGv8ZNcVaZxcumefYX1ZcrsSnojcvH9zReaaQ/kfnOz/VOzHN8BkmzhIEGia3A5Fcn5FB4QcRGjBioUG9mN09QDZ5pu8jkvB3u6u4zfPRGwuwRv5dqPge/9GR+lzEPGnpAtIdSBmnQ3oBZczgz1o7fm35MfY5Kz8exB2FXQMo26O9m3dCwM8uLeP/QZM+Nys8frRfPYcq0Q1XNutmb2ESr7gYzoWMU9QGGDqZAH+XPkEW4ov9WbQlIc4WGaj0q7hNTJ//GLXQ7TyY22h7pO2UmBjSLw05rN2X8xMcMiTsByiQ6Dt0ZKN0v1/phxJ/BNtRFsGq5ZfS8aukLuZYlPOAG3P4Fc84Tv9xAUU5eQQr17wxuuZKucsD02nsY1WAoFM8KU+5AF1PzO5LP8U6yoVfYoF7ERGU12rpk1y/wqh7qwmyk9w87OvSNDBAMe/mnmd787yffGz88xPbx/fDED8UrPD17XEE2AowigFQad4SFjcvQqCy39IiUfYtn6PJu7hkDYqhe/5Nj+pEdNgFJV7eGN8c7yHP4DNJWTHadSO2EzUJBdPYzIoVLylVJG4g2vxKN
+    properties :
+     x : 538
+     y : 117
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        internal_properties : CAAAAAgAAABKtXZQVT6tyBc2O8Y+U4Qrb3itwYAR7D6lOwdbCYsOwwv40B3BmXfXwoIz6UG+99iTSAPLvxfr6ul+HLcRYvlt/smcKdS4aYbHv1xCl1LX3/QTRk+/jxPhYQupGEZxdGsw94UpEXtg6XqTuw==
+        code : |1+
+         // Unchecks all the nodes
+         CheckNodes(False)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : IMG_RSS
+    identifier : 0x286e6473517958d3
+    internal_properties : CAAAAAgAAABQAace+4Q65SL0257Kv2F4agr6GoQmfBWlFbndxvBFkU3rsINrI7CtKlomgCqj4iCqVHxHFf2G8kSlHAmHfncPvzorlN93zFtbdWlYv8HVT1AwpOnPbQJwv9UDtNUJqnpn90XFbDVFxRIrr3S1qlUgctzrUkKOJ0T9uCce5q8mwGiDLfG7Kllze/6l26sGRvrYgBknXL9aMUzbOfuNpmovovd3dLKBE6+hlE7n1zx0eeHxKkKgTdiUdzvUDFaTY40MNtv/ilHZrsRe+7sJcZqbicN/PnfpZpozQ1TKGB6byTcv7MX5W+WWg5Zc++oDctzo/f8DXDLiXBepQkbxthQ8CWkHOMCyErM3vAUcYGSBdxwTTVAQSIdXO+u2+ThNVlCsSnL7kIRX4Ie2+eoTjDVo/nZLjkCTb39jLifAL7nyHXwGX4DEbXoYfIw7grksUwmvEEAq3xs0xW8EWLAlhk7G06P7L23FgETl259L4jNptqf0u8ovxYrb0xb9rJ2zwEAUCblpHdRpImyyIPoM5b8ZC30yfYW7Gn656NiCxQ46kqf6e0U1+8ftewLS82NOmPH+qHWr29dsR5EYaKB1nED+BMj32T51Uqo4P8mJNcC0hlSxSvR4rFux9z+ZJ1Q5F49o8ytPK1mAkfVgImW+MJj5inXhp5HV8Y2o3S6Wzc/x12p5l5Qm3sOfhM8jktpkxPR6XgST+v3X/KWwAuXcpo7Da3X0+ADkKKIuq7NybiIjrEhJmg5B1yoyXdIhppOP0dc9/Jkr2/Axce/WHtJqi6vTgzTHjzX7qo5wk1XNpNc54cbRWamdI7b4pWi/v7EReKcADBCduVy2o8VR8uOlmU7xIbxPy36SNjJDR8TbW9XE5Iym1fVDVmZ8RiwnCsPk
+    properties :
+     x : 699
+     y : 76
+     width : 18
+     height : 18
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : BTN_Export
+    identifier : 0x286e6473517a58d3
+    internal_properties : CAAAAAgAAAB2IgVLAegvzYsHJH4CA1E8zGJkrFvXK87cgWb+l5YSKv4AiXBOiV5gSN+KV4A/fji/Iio1V31RUYT8uM/Hla3VG0tUX+xUs87KL64B/Skkv1MV3VMAqWyYTecpfpVxiHyXr+Juf9B25Lsa7BM9y/vKeCYr3amoKpYMpv8ga60VhdTsFehfBlPn10C6hRDa2iuwl5//nHeJg14Q3AnmhDq+85HbNy3/p5JzBQKFRB8Ce7FaGCF+vNbBRuk2+x3aOppIg4tIRo+aw16cxBuJg0iN3sbXZkE6CNPxzdD+hINEHV2KvhVDf8fksgpvbEZwOaWmYdo/l2gW04AEmFkjMdlyDTXX0cPDjEXKNi07WWJcQ3PfwLzcLasT+IcdypU4Zn+esfPCqIYFTs7CoRooutjJL08YECc4XXKEmYqGguS4aIfDRDsezSAgAnXrf21hxe6yDfYTk9GmmWuKsIIfT/E8aZ7+RPp4B+s2RWLFNaTAjY6YwxqX3yRbTabrECP6E8zDcO5kl/kzK2VVVDZCxxFPS7dosvfdOoPevUna4Sya2sv73+eoipecRdVBI1/JaTu1VqehZFSXFG36u2bXO1TBKJTiMhPgRfy4N8hZgIb6Iy4xTIGOZCKsbIu4Yony/+KUSKv8Pt8AJ5VBy9kxZ9owRlhRQrCXQGRbFDF/y4anTCLHt1xtEXXLM7FEBX/HY/NG7g0k9iihAfk1yHslqVQBp+64QG/ySjMf7JrI9e5hHK5rai5rqGMJ4vINsdgcdItyjg8+V3rJu0aijqfKncdT70Tht8A2kM/A/rSOjw853D9bCvdZ2uEgUzNAbJ8Oo5TwIEdW5jSvHNuWhXxJj5mKGPmDcTxIGtbpeL+ZUmHWJOU4kpmp3aC5Zz8mU18IorKOi9LGKHfPFR73MJQ7zwgbGTZ3cF6lxM3uV04uytth
+    properties :
+     x : 432
+     y : 385
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAADpOiw6teSe5rfwmTYgGOE8aYx7JZetTL8ODMNk1HEqrSDbfrbXJqqiMI39R5ufZ4oziYrBRdaUvzMU5XfYpNXtJEZ949hsjGwlduwJ9G1LZ/Y2xhfiUBmV7ZXuXuDBlf7tpfMuchmGNRJ4cQrG2aUd5iN37/r4DJrXxmiX+Yd+ch1uZ6muXYBL14J4WgprX6f+snYAL8fR7m3jEFsNRPlr3wTACnALufYp8Sj/qytmpwd+IU8YOHa+JHM6uvUVUnMyou8O3ZW48SIM8AIvLsrZj0ZqGFn5zWtuWAUCcTAPXNjfd7JwAZBfW0OD3pFBCukwdboey7Tx
+        code : |1+
+         bAtLeastOneCheckmark 	is boolean = False
+         nFolderSubscript		is int
+         nStreamSubscript			is int
+         sExportedList 		is string
+         sExport 			is string
+         
+         sModel is string = [
+         <opml version="1.1">
+         <head>
+         <title>%1</title>
+         <dateModified>%2</dateModified>
+         </head>
+         <body>
+         %3
+         </body>
+         </opml>
+         ]
+         
+         // If the "Subscriptions" folder is checked
+         IF TREE_Export[<§$0005§>]..Checked THEN
+         	// Exports the streams without folder
+         	FOR EACH RSSStream WHERE FolderID = 0
+         		bAtLeastOneCheckmark = True
+         		sExportedList += [CR] + StringBuild("<outline text=""%1"" xmlUrl=""%2""/>", Replace(StringToUTF8(RSSStream.Title), "&", "amp;"), RSSStream.Address)
+         	END
+         END
+         
+         // Browses the sub-folders
+         sFolder is string = TreeGiveChild(TREE_Export, <§$0005§>, tvFirst)
+         WHILE sFolder <> ""
+         	
+         	// If the folder is checked
+         	IF TREE_Export[<§$0005§> +TAB+ sFolder]..Checked THEN
+         		
+         		// Stores the identifier in the list
+         		IF TreeIdentifier(TREE_Export, <§$0005§> +TAB+ sFolder) > 0 THEN
+         			// At least one folder is checked
+         			bAtLeastOneCheckmark = True
+         			nFolderSubscript++
+         			
+         			// Reads the folder
+         			HReadSeekFirst(Folder, FolderID, TreeIdentifier(TREE_Export, <§$0005§> +TAB+ sFolder))
+         			IF HFound(Folder) = False THEN CONTINUE
+         			
+         			// Folder caption
+         			sExportedList += [CR] + StringBuild("<outline text=""%1"">", Replace(StringToUTF8(Folder.Caption), "&", "amp;"))
+         									
+         			// Browses the streams
+         			nStreamSubscript = 1
+         			FOR EACH RSSStream WHERE FolderID = Folder.FolderID
+         				sExportedList += [CR] + StringBuild("<outline text=""%1"" xmlUrl=""%2""/>", Replace(StringToUTF8(RSSStream.Title), "&", "amp;"), RSSStream.Address)
+         			END
+         			sExportedList += [CR] + "</outline>"
+         		END
+         		
+         	END
+         	
+         	// Next folder
+         	sFolder = TreeGiveChild(TREE_Export, <§$0005§>, tvNext)
+         	
+         END
+         
+         // If no folder is checked
+         IF bAtLeastOneCheckmark = False THEN
+         	Error(<§$0003§>)
+         	ReturnToCapture(TREE_Export)
+         END
+         
+         // Builds the export
+         sExport = StringBuild(sModel, <§$0004§>, DateToString(Today()+Now(),maskEmailDate), sExportedList)
+         
+         // Opens the file picker
+         sFile is string
+         sFile = fSelect("", "", <§$0001§>, <§$0002§> + TAB + "*.opml", "*.opml", fselCreate + fselExist)
+         // If a file is selected
+         IF sFile ~= "" THEN RETURN
+         
+         // Stores the buffer in the XML file
+         fSaveText(sFile, sExport)
+         
+         // Opens the directory in the Windows explorer
+         ShellExecute(fExtractPath(sFile, fDrive+fDirectory))
+         
+         // Message for end of process
+         ToastDisplay(<§$0000§>, toastShort, vaMiddle, haCenter)
+         
+         // Closes the window
+         Close()
+         
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : IMG_Closed_Directory
+    identifier : 0x286e6473517b58d3
+    internal_properties : CAAAAAgAAADDhgxAG+hLP/jMOI+xvSZSP6UEYTcXKrEO21oAZj9lg+oQGlm8IPfDPjxP3HgGnRX/CX94k10JPPkLK7UPRlHILtshRjecFTkIcUgziMITTza8xJu11IvuubCnzRjr298voZu8ZAn0wvIQOlYBmDXhmBpi5KebI/Xn22FoIXvyMzX1eOwNKep/khdNLWWD1/hAFNWS+Aur2Hp+ASxlYcDJ21IOFQTDqmjnQJYHwFwfqhdaULpnIdKxH3wacw2vqMTj1lvXavFPcqCGR4VT0VJoNxpQaSqgHQJ4+8wDYt8lazTg/nvVBrGTLg5c3rRAUEDBX3DQgOt0PbH1Mk7x8ElV4zk30WveD9rMkWdLomdpWkNbsmi2hptixaaxFv0hlLJGiahMYKkFBy6JEJd9BH1agTkKzuLHzgxGCYXPRFiNy5KyIEJCKq3tJ0o5Asm2k8wCG5TFURbA0twlCseMEc/LvhaI9NjF2OcyECU9erNoShwPp75LFDC8OCO/cj0bKxNQcs5NVhHDuD91MajVtJaaahJqeWHuGZGjRdu7WnxvRHka91TM+HMFkMDOiQj3JC0v+Bjl7jFDk37vmXCdCHRrKfaSrN9ZxXBTg2KrDmFr/dcXi/SkpSPZUcbGuI5udmQMsiS/yMf9uBCuv3g9Vkd6rCU6toCfQBaxqmFK3L0o4hlQm4L1YV8Spe/rNoJyTozLtVapeX1ws0W1BJlDE7Bcw+/epBP69zE+RDut1iXfkUPnwUZ+NZxOnhoBz26iqn9FjYYMClHc6GRxrzXPUYSiVBttsOIRyevGHujLDks6r3hxUQo+UXtLnLUitVGa6yn7hJDJyeaRnRzHFSNnQhQNBf5qmYiwq6QJM2q+3+/Zg9bk5+H2KVO3len1ZuDufWXVGuJNt1pWvx9Ajr/0GpYvxC4+
+    properties :
+     x : 700
+     y : 106
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : IMG_RSSDirectory
+    identifier : 0x286e6473517c58d3
+    internal_properties : CAAAAAgAAAD2HlZZ25qwueOXSfr9I1oBgz0mlPqbPi6TIipmcJbCqzTedtNuUH/ea+0ENHx50/pfDjs4AGxTgfESaOvafsfYgIJmsUUyR/gDHpxmZrWAU1LIlG3PBQHYpALLBY/jA04TnopwQjMEdqymJ26yJa6HIjjCsqhQaJY65wmrXX2k03KHEOTaK25IxB2ihVYBpvTa6KBJuxaHU7lsQzPy+kWk+bH/qwRSidpeuNGHHJLxMqmXqHnz7T4xeFWh+F9W7AzvwmhTbK0491MQbD4ZeOtQVfJcRaTJzLQhjxEBgpN6n93qy4dc3CLGQIi/6mouTUWJOMEv0WbuoYI4IMFABmc3qpCWmivRM7FEw9WlsSMxpgZ602oHYKSX5N9I26QL7F7wFSjzt3GbIwHq40e/IRd3ygGRrgHv9AKXxNC+XN0Mcax6V8DwejG7FCNkDbhckSXvaECZh/FXkYJI1Dmb6nbSnbbKLqefwflKVvDgVODggHX5tcJwXH8dyxVVxC6TfIQYNVOqGhiP5d8lDFs7F78Sb1BUngz/6Udx8wgpidEv5ZXQM8QpaYitp6mKi22xjhjr3IAItg2YPi3WN2NBMs6jgeDAg3CDVEJxIO9GZppDfa9RYWZcOoC0jxZTO00kiL5jfikerL+/3kMv4AWze+6UedqeoBqyxLAGYdM/COCXyM4ofrbBM2+Tj9Kxa5VwFZV9De+aMWzYqxI+hGqnPpIa2yON+e9fQbIKUgfffrhyhmNTC5RLkmTAOS3aGIhwqAU3tWkrAobyxs7cH+kkI94IWWinkffVdjKZGAGet6FJprX+Di34IWgOWpNLgBBBigJedytdnalDD4usxwaEbBRQ/dM7MW4Cf+cN+ZY7TmvDOsiai5c+2STbvlu4IMudtFQbsaYvd5/uW7WdvXKv9RVtLLmRttd1dPM2SSqx
+    properties :
+     x : 700
+     y : 134
+     width : 16
+     height : 16
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes : []
+  -
+    name : SHA_NoName1
+    identifier : 0x286e6473517d58d3
+    internal_properties : CAAAAAgAAAA+pUbNdY6doDNjSNLv3mZ+Z68IQVjHsqxHg7nkWkgxkhoxa/wKwYCnZzarJCanO4nXL6cSPR0OG8MwsvuUzKgnXtWO54NaT4YDfP5cHyJCZDY8REaks1EKPy5I/PV1Kwhe2whknO+3jalDnyzl3BRqzmjLJFsviiKiysUleR5naW+69+FHIEYHjfPhSqKV9NYw2sYW2fEtuJkaUjfcPQhcinI684681Y9Z0XwfPbG7kQK6kkayWp5fkTUk/XTielWospCl5bSLjpp1LImutfuMauppnKccdYgBwbAPakGtQCBxXOmC30WUEdP1sWXp3i0x1rg7+lPjUIx9rvnytLnpNNu4QLiVHCJ1PLyo9WLPLgHJCZGyWcNXE6hQymyXShnpbv1eQ0qd
+    properties :
+     x : 18
+     y : 18
+     width : 6
+     height : 45
+    type : 20
+    code_elements :
+     type_code : 32
+     p_codes : []
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ languages :
+  - en-GB
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  internal_properties : CAAAAAgAAADxkoTezmETaB1NtNnk0VEmnKPyMQz70zVkcXMPLfQbSASJMnwm3Zq1mPAKCxUx7tYJnZCyX6uHqmUwxY7D2HSSJZZA1oSNxHhNUrtgqPQQePkWkjkAgupyQBgWalfbbmVrt/CihdOpV7JL3nAv8ZR4Oc94DMX9qYJaUggYKGrn3Nlf
+  type_code : 1
+  p_codes :
+   -
+     code : |1+
+      PROCEDURE MyWindow()
+      
+      // Default return value
+      MyWindow..ReturnedValue = False
+      
+   -
+     internal_properties : CAAAAAgAAAA+OfrE11oFWEP+cy5S96z/28AB/RSFBC7ZgzejVU+2T3foPDnNDReP7rqbeTXiL5RXAO8/I401ND8Qoi0fYEO7qJP6J+res1BFKcJgRYDpnX7F1P01nSVrJ72v/vyv7qGSWQufr+nUXe4HLw==
+     code : |1-
+      // Fills the treeview
+      FillFolder()
+     type : 34
+   -
+     code : |1-
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+  procedures :
+   -
+     name : CheckNodes
+     internal_properties : CAAAAAgAAABCbWeKiETl/PaWoSHs9DMs17InAeg6M03yGNmHd7B6bMJmOmxsdnapTvfIZ3z/7V91Mh4uPKL5sOS9fBAMmnDEC86/cT5I3voFslLPJ6jVk56MZFv0ikkCbczcHRIiBkPPijCPt/m90mfsIg7dyi2413EQ+AnTniGb2sxTHHPlfMm3TsPDkdQdhLvYGVwTC5EfbN1RW545f3KvH8MYVgLMvLTPuA==
+     procedure_id : 1760454949559228627
+     type_code : 14
+     code : |1-
+      // Summary: Checks/Unchecks node
+      // Syntax:
+      //CheckNodes ([<bChecked> is boolean])
+      //
+      // Parameters:
+      //	bChecked (boolean - default value=1): Value of the checkmark
+      // Return value:
+      // 	None
+      //
+      PROCEDURE CheckNodes(LOCAL bCheckmark is boolean = True)
+      
+      
+      // Browses the folders
+      sFolder is string = TreeGiveChild(TREE_Export, "", tvFirst)
+      WHILE sFolder <> ""
+      	
+      	// Checks the folder
+      	TREE_Export[sFolder]..Checked = bCheckmark
+      	
+      	// Browses the streams
+      	sStream is string = TreeGiveChild(TREE_Export, sFolder, tvFirst)
+      	WHILE sStream <> ""
+      		
+      		// Checks the stream
+      		TREE_Export[sFolder+TAB+sStream]..Checked = bCheckmark
+      	
+      		// Next stream	
+      		sStream = TreeGiveChild(TREE_Export, sFolder, tvNext)
+      		
+      	END
+      	
+      	// Next folder
+      	sFolder = TreeGiveChild(TREE_Export, "", tvNext)
+      	
+      END
+      	
+     type : 458752
+   -
+     name : FillFolder
+     internal_properties : CAAAAAgAAACRVLQlEEJMvb26/b84IefJwHstkSezLweBE3XoG/UeSERCoTwsuUxChRp0aS49Qtj6ujsH6oQ2XZA/QlpQ3EqLZiS3tsEP2TWuHjzSG3InDm8ClK7LF/3ElmRAALHXtw4Tp4KOdJjNZPa2hhNwE0TNnUhQ9fSUivdW7qzMq+jup0lUGOisXKzrTavsnouQe9Y5rk+ILlcURwPaQtRA6r69pGA=
+     procedure_id : 1760454949559294163
+     type_code : 14
+     code : |1+
+      // Summary: Fills the folders
+      // Syntax:
+      //FillFolder ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      PROCEDURE FillFolder()
+      
+      // Clears the treeview
+      TreeDeleteAll(TREE_Export)
+      
+      // Subscriptions
+      TreeAdd(TREE_Export, <§$0005§>, IMG_RSSDirectory, IMG_RSSDirectory, 0)
+      TREE_Export[<§$0005§>]..Checked = True 
+      
+      // Adds the folders
+      FOR EACH Folder on Caption
+      	TreeAdd(TREE_Export, <§$0005§> +TAB+ Folder.Caption, IMG_Closed_Directory, IMG_Closed_Directory, Folder.FolderID)	
+      	// Checks the node
+      	TREE_Export[<§$0005§> +TAB+ Folder.Caption]..Checked = True 
+      END
+      
+      // Expands the TreeView
+      TreeExpandAll(TREE_Export)
+      
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x15a3bf59287af91d
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+  strings :
+   -
+     text :
+      en-GB : Export completed!
+     index : 0
+   -
+     text :
+      en-GB : Select a file...
+     index : 1
+   -
+     text :
+      en-GB : OPML file (*.opml)
+     index : 2
+   -
+     text :
+      en-GB : Select at least one folder to export
+     index : 3
+   -
+     text :
+      en-GB : WD RSS Reader
+     index : 4
+   -
+     text :
+      en-GB : Subscriptions
+     index : 5
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

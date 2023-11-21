@@ -1,0 +1,177 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_Folder_Properties
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_Folder_Properties
+ identifier : 0x286e64725143542f
+ internal_properties : CAAAAAgAAAAXNbETSqcS1MZDUPpDIRv7j9c4R85Vi0+bkoPH4JgbjgtcDpU343v55gEnDetlchgiu98yw/2a1wBjDuEtc6n50cw9IcKewcwV4gpFZ24kyF0rKO7Yj2jEIfneROOKNpBe809mI5osh5M2MYizXkvjQsLx+h+GzWeyJwQ/jQEoUHA9fZA14gPBuK9u8HEWtJqVqBCHGD7nE5UnLmkA8RtufED6nPbTkMlY2vwlVZg0lYWsymvbnTGc5IdnCN140ApxVM0h+zw/L0TtVEH/MISj62WamNhZHBwH8UjXodGwQduzBK87FydipcequXQzWVj1TZypo26AxWOxj3wno7OO3mnw/fSfK0KtZ87P/vGTPcF+1wxnk1jcAmkRvDBEnqiCPGKLutVannPEWJ18D1bWHFLKBdhxQ2bZnR+qB7ew93mBD+LZp19HqEwaGI80UUBeDMQyU5f7sSzN/4eU07LgZrRtMbNNXPPS/oP3Wijdn5E+s+6Szc/SZbnAC1iIZM9u2cMzPaO8Bztv6VqJD6A7y10kweyeHgE+cFeuKavKL366o9wPmzYo/Tmqd67V/iIIfUccNLv85hI/QH9MDbnwQPr2jW/UzHPtl610A15RrDo//VYAL2V752sLUK0xNcjiEohjqmeY9tMLvXUhbB7OLIP3doFgsWqt7xARkc5bkIA52xzve+3z0pQjUm4QjWWDL4/G2PxGHGBk1HCLtYpUHzRb6IFyklcOdkJ3Lqv+EZmUUodi1QklUKYUxhKfaeHtw2hkKwZMJOUUXejXtA1fcxgU
+ properties :
+  width : 369
+  height : 113
+  widthClient : 367
+  heightClient : 81
+ controls :
+  -
+    name : EDT_Caption
+    identifier : 0x286e64725144542f
+    internal_properties : CAAAAAgAAADmCTzt6vc51K3Y1ZFt8/d9cNZBDLumCpiZV+EqMWZmcO8PYLnbEhpcZ3+aW5Zf2SHfFQkc7oWH7KnU3JfPCBzrHb2dBQ/iRRlXfVU1Ij8Z/NSb2hUznmcKRPmntWlsFnkdNFWThTokZmByT/uWd9GiirgicuqDuqYDgJ+HBGYgdHUfAGGp5lrHoeMht7c8tyIvttSbtYfaUfwldkdSiR4ytJdstT6Jr+uyMHuq3Ev8DsSstxaSa2f3p9MJ6eci7ftDo3IX1VnR9OaaOo74RQcjULXQDh8g2pShJCtuajCG1YgJsqo4MnZ4lU7tNsmAveL/gAzXQ/auOGlzrI0ei0wp58UZH3tzHR57iD8PGHz4oc/DYdnpKWW5n/dJuFO1Ig2VHtuio/q9iia8AkIhdevjCAzr2NaUOql/633s6fSGR0Nz3wknDXHm9IkckGYHj9UKgBQQUltlA8x+X+Jhnnw8jwnmwnSeBMuUsk3NskZEmgnAa7NoXOOQq6ZJX/PAZWyGtSFfPY9nCwogC5rltMOr526UwqHVvvEChSWvOe5t/dhGSsY4b5s39PBXcKrq3Nc/z/B9E5rx7CbPojK1C7ResuhYaUnJLO14SK0p4rC046xm0QJXvsJGT1mSfzpNd1umCESnLN1kWY0np3CLV0W+lPC0iUQsMltMwqFyXTKYSwE4T4bZa9VlUZxtLqZoveJszUO58mnAkeQQkLhOZPDHSHjWB77V/npr+pA0YqI4F6vt3rCwZmYEgNlvHndyXnXqJ7cOMAjCxIt6SJ8os9dzjFm2I2KcOu4mymIj5wgN9iR8q3N9C04U7eXYh776gZTJ8Tu3f32EwHPWiAdKLErhAFuCJ88BJXPVJCpbV34kgujv+LJdyNU9Xtb3MiejK6J3hga7fk58pAmAw4XugAN2xN69YQVeeebKS6U1qng6fbVpFEBD3Y0YnwcHi8fbF9fsq2a6AxRR/NqogO4z0CqH2/VU/Ac/GBqklg/TDecNjFmXcnn/XiCQInBipTs+CyfdLYAEbqYWKfC8Ln83REOWGQ/oJ6R0Isif+6kiKjjRsF5hDisAnaX2F/xoqTTDgcdV1ACUVVrOt70u1kUEwvzrtAf3+YMoYlsfsKXLzmu7QV0MQGIB1CAguFcTdtEd2/Ni
+    properties :
+     x : 6
+     y : 6
+     width : 355
+     height : 34
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+  -
+    name : BTN_Cancel
+    identifier : 0x286e64725145542f
+    internal_properties : CAAAAAgAAACR/N5mQcuWSykyfy3Q5w2mCOToZAehin5aNTBp0Tp6jlSuf3wy84OT0QXxlCuWwe994EpcErKRUYSxKDqetAiHjONV7AW2eqyqcoP8EC+EhP8EuTyW1yci76FRBdI5uXrSWzrAbetkSlk42bQO0cGdUUhPcpxptlpoBChbijbmusrjowoVfL3MZjWU3F4+u6GKliivBnQPK2eicCHBI6fe+kSGUbkOhc+vOq7zmxc50Dnupzlt0nTbPmGSvQ9j1rwRJtJRaHTaYixO9vh6fmqCcyF/l/vo5WzKG35nt73E/4yow0XAxsnZctnqZcy4bQHEFblUwKxZIHNKMSaGS60KB4JDxQuBQxpcIgs6BLK2xWTk7wwB1jLp0FBuDFRzbuUrqW/gXQdUCS0yyVLul2ZXj4u3WaZuq4HvpS8Bp5P0aOfn2QT5dppJoLjOSlGJllMbP21Dg6ZQRrkNS/3oJZO9YlH+7ZbcmUjNY0DL1sCiM6W5RMsJisf8GtqqGq49F5lHhcwIl4zBaP+SeYOYR18jh/TT3aTcDbxnSe60rRkbDkJuHuClV1r1GLxZSFAKSpcAB3oehJ/XfM2ipMey6Wz5MJ7bgfbWQq0qupeKtB41U8lJfh7dXBf6jw+b0QenBkvpK2rtFe3E5xHgLJ/B6lGxydRQAIaFMoPGFvOmSxcFAFbvr61HltGkAa/udbLycFNPq7BPVvzlPWWNY1VSQwlXRNY3KW9JzxigZw1Ro4GIWzucvAgWXpnC8Ng+XKDghwARQ+/5XvRo7e44RGu4r6ZDES1OjLQtleZr6SAabZ0pD/2x6JrML+LdpPf3K6ajQYAUMvYWU0wX6R3bYqdr32Z3l1w+djyp00lBk0K2n1jN6VjHYWhUtNQQmO4VKt5jLx+NmKfBN6zAJHjztozttQBLKzojdXrcX7iwoHjMfnzG
+    properties :
+     x : 261
+     y : 45
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        code : |1+
+         // Closes the window
+         Close()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Validate
+    identifier : 0x286e64725146542f
+    internal_properties : CAAAAAgAAACLzeHJuGtOpXBTxtFrMhdjuzmfv7L8OHBSJm3Yy0lcTpuvxmxT+mynUumcajRsnLvkicufCgO3VTRSfUJLH0/9z7deg7h5ajJODZFskNKexErHAfJJXH3XYQvR1PIeFqXG9MUIpxvv3bT2UJDFxq45nHzAvO2wgP1bBNwGEvGirG01pw/soT9FPXl7VUdPqjlRGzpgcPhLcwqA/EPUXPf/JsM8ftK/E6sZlG84nxC9IAfXq3fZlAipx60cwVICuojdQuErqWKhi8nDqx6oKbXyfem0ZjUibjz6gUecKk4Co/te7P10vhUgpu/HXziJHeuLSpRdk64Z61q5FkihfS6jbPMNCAjpDgBtve7pdcWSIGvKQS38MMjI+9L3Vn5w826T95+MuOMetlJPkOvKmxm4XW93BdPbWRsnEZcxfZSoyhuXkxihMiVEN9TJtMdu0z29XfcnCD4Q1WK6TMRfNuycMvO3coYrSA/9APlO/3lLsu/XQqlPxog9H//a+8Nbkytunwtkxo+3UsostxhQqSuAil+/V83EcJJ7oOGTeUcVix5+y8h2dZYn8ZwvsdWbjwQ6FEZexJDM+mjGR8RKPvWB++9F1YBGjAkKvnX1hflx0J/5WaeXuIHrrXS+AcY8vtmMAT217TYxxzztbvL6LhQIAT8nAcBAfxRzg7aZ/iVXZvBiZQVv/dSQpelp/uqoYUPKpxPmzaPpilaqB+pNF+VnmaE0+zeQ1a3vAx2XuEl8EjYcbSgzsp03xEGkY2efb2msXRhjTc6NC7AX0xKEQqYkgOHj6E56ADJuV2U21hLAm5QYoks5OAZEDvpv+WEiHvzUHYLVd0sMo33R0tOqcxEhMvyENZ6P+9SKCLxCUPyB89kTq4lOomB2pPeVeuqG1O5WLtipmoMOgC7QEYX5tX9COYTXNG5beHvVBldM
+    properties :
+     x : 155
+     y : 45
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1+
+         // The caption must be filled
+         IF EDT_Caption ~= "" THEN
+         	Error("Enter a valid folder name (not empty)")
+         	ReturnToCapture(EDT_Caption)
+         END
+         
+         // Stores the folder information
+         ScreenToFile(MyWindow, Folder)
+         IF HModify(Folder) = False THEN
+         	Error(<§$0001§>, HErrorInfo(hErrMessage))
+         	RETURN
+         END
+         
+         // Closes the window in validation
+         Close("", True)
+        type : 18
+      -
+        type : 161
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ languages :
+  - en-GB
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      PROCEDURE MyWindow(gnFolderID is 8-byte int)
+      
+      // Default return value
+      MyWindow..ReturnedValue = False
+   -
+     code : |1-
+      
+      // Reads the record
+      HReadSeekFirst(Folder, FolderID, gnFolderID)
+      IF HFound(Folder) = False THEN
+      	Error(<§$0000§>)
+      	Close()
+      END
+      
+      // Displays the stream information
+      FileToScreen(MyWindow, Folder)
+     type : 34
+   -
+     code : |1-
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1-
+      
+     type : 2
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x1613e8e90a626768
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+  strings :
+   -
+     text :
+      en-GB : The requested folder was not found in database
+     index : 0
+   -
+     text :
+      en-GB : Unable to modify the folder information
+     index : 1
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

@@ -1,0 +1,387 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WD RSS Reader
+ major_version : 28
+ minor_version : 0
+ type : 4097
+ description : WD RSS Reader
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : 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
+ configurations :
+  -
+    name : WD RSS Reader
+    internal_properties : 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
+    configuration_id : 7097297099278129188
+    type : 1
+    generation_name : WD RSS Reader.exe
+    version :
+     major_version : 22
+     minor_version : 37
+     internal_generation_version : 115
+     autoincrement_version : false
+    icon_filename : .\RSS.ico
+    language : 2
+    telemetry :
+     status : disabled
+ elements :
+  identifier : 0x4acda708001d3bb9
+  elements :
+   -
+     name : WIN_Main
+     identifier : 0x4592c6250259a4b5
+     internal_properties : CAAAAAgAAAArJxN3tPG54u6xqcRMrqK5Tziaqh7fx06OV4R6tHGlG5FvAJSyUOUlz3RuSsoG8uYuNg==
+     physical_name : .\WIN_Main.wdw
+     type : 2
+   -
+     name : WIN_Import
+     identifier : 0x4592c6f70313da9c
+     internal_properties : CAAAAAgAAACjn5uPPGlBWmY5IQ7d+O7m6+Smdkqz64Cug3QSfJkF8/HP73uZqm2tR/zm0lKOal6mrg==
+     physical_name : .\WIN_Import.wdw
+     type : 2
+   -
+     name : WIN_Stream_Properties
+     identifier : 0x45941bce0119488e
+     internal_properties : CAAAAAgAAAAyCGq+jfqy7ffMV95mqQU11Jsj68E8MC5KSHhbP9bGYqoUWm6uE/scmI13QcE/O60XHw==
+     physical_name : .\WIN_Stream_Properties.wdw
+     type : 2
+   -
+     name : SET_Global
+     identifier : 0x459397920020be5d
+     internal_properties : CAAAAAgAAAAlF5N/eIV98FYqGM1auFeWsCxwUtjtfv1EFheRMAS9SlMLvRbW5UVMwtALtJ97xC8g
+     physical_name : .\SET_Global.wdg
+     type : 7
+   -
+     name : WIN_Tags
+     identifier : 0x459522f8013347ea
+     internal_properties : CAAAAAgAAACc+vQgn8Rsf/XPflAGI+A1dMWTC0snZ0CO/9ER8gOJb1GxVWLMNcMbmo8J978xyT+JiQ==
+     physical_name : .\WIN_Tags.wdw
+     type : 2
+   -
+     name : WIN_Export
+     identifier : 0x45a3bf59026af93c
+     internal_properties : CAAAAAgAAABj31tPfCmBmqZKfPJizbUqr96mblzuYuCChDWKNfCifoaubA1uVFV+BzymEpJOKp5m7g==
+     physical_name : .\WIN_Export.wdw
+     type : 2
+   -
+     name : WIN_NewStream
+     identifier : 0x45a3ce51035971fc
+     internal_properties : CAAAAAgAAAAjHxsPvOnB2uaKy+5ZOnPsldag8MQOmn+OsVF9hr/XOZ8NzaSyCeg+x3xmUtIO6t4mLg==
+     physical_name : .\WIN_NewStream.wdw
+     type : 2
+   -
+     name : TPLC_ChooseFolder
+     identifier : 0x45a62d0c003680ca
+     internal_properties : CAAAAAgAAABk4kxoVwwkx52IS5JztC1ZMHOPB6mWqPdOR41fNcBc9MAuvMRti2HcwmdRr3dpEYdx8Q==
+     physical_name : .\TPLC_ChooseFolder.wdt
+     type : 20
+   -
+     name : WIN_Folder_Properties
+     identifier : 0x4613e8f3044d906c
+     internal_properties : CAAAAAgAAACIhvCsG0Do8/5PCFunM6l3rBl7swiR1ep0Kfgw9QEL/fPPucdxS2hwm4N9ezu1TUONlQ==
+     physical_name : .\WIN_Folder_Properties.wdw
+     type : 2
+   -
+     name : WIN_FirstStartup
+     identifier : 0x4613d001022c2035
+     internal_properties : CAAAAAgAAACOlOY6Cbb+MTiNsj/78P9aLG0rg0xNnI2sig2Ck3OZT+FxwOBbr9IyWcE7hQ3DvzGbmw==
+     physical_name : .\WIN_FirstStartup.wdw
+     type : 2
+   -
+     name : QRY_ListPosts
+     identifier : 0x461525ea01beb786
+     internal_properties : CAAAAAgAAADWvD5iQT52ecBHW7gk7HZTus15qZaAo3l2pf6u3qpqRvIYkpU4iRF0oZkD/YV7B/nDQw==
+     physical_name : .\QRY_ListPosts.WDR
+     type : 5
+   -
+     name : QRY_NbFavoritePosts
+     identifier : 0x46151cc50143fe72
+     internal_properties : CAAAAAgAAAAjHxsPvOnB2uc6FWbZZsDOzb5I2GfR3JRWPW89rfubtQPpr89xSC3XxHxmUtIO6t4mLg==
+     physical_name : .\QRY_NbFavoritePosts.WDR
+     type : 5
+   -
+     name : QRY_NbTagPosts
+     identifier : 0x46151891013e966e
+     internal_properties : CAAAAAgAAACtqYWZJhMbxJ0kt3y7834E20riitul7aaiFm4+oBjyxnauvuhHst99vmZQqGiYYFC4uA==
+     physical_name : .\QRY_NbTagPosts.WDR
+     type : 5
+   -
+     name : QRY_NbUnreadPosts
+     identifier : 0x46150f1601398be3
+     internal_properties : CAAAAAgAAAD6UCJmRQIqNTyDodhc14acXO+rA0jSx9aKmDQooPgczGD+hYayF79gXcU/uXl3A/XfZw==
+     physical_name : .\QRY_NbUnreadPosts.WDR
+     type : 5
+   -
+     name : QRY_FlagRead_RSSStream
+     identifier : 0x46169bb60202def6
+     internal_properties : CAAAAAgAAAAhHRkNuufP4OkxgN9CbYT2iegwqKG7fPhKyLC8puIwOLAg0A7hGZ3CynJsVNwU7NwkLA==
+     physical_name : .\QRY_FlagRead_RSSStream.WDR
+     type : 5
+   -
+     name : WIN_Stream_ChooseFolder
+     identifier : 0x4617737c011bc0eb
+     internal_properties : CAAAAAgAAAC7l+MnhMFpcn/0EB1PtGgd0XwouAOgZYmiVu6NHggKxnL+j7F7Rsb5HAT++ro2wjaepg==
+     physical_name : .\WIN_Stream_ChooseFolder.wdw
+     type : 2
+   -
+     name : WIN_Post_ChooseTags
+     identifier : 0x461793fb011a029f
+     internal_properties : CAAAAAgAAAB60KLmxYKqtbw1cRFcWCeCyqtxaWoXyIeyUpf8Oe2vuTOjHNZH8im63UW/Ofn3g3Vf5w==
+     physical_name : .\WIN_Post_ChooseTags.wdw
+     type : 2
+   -
+     name : WIN_Parameters
+     identifier : 0x461b6b8901100cd1
+     internal_properties : CAAAAAgAAAAsKgQQr9RcD9pD56muiOcy8KEvx/CJOdmKHB1WR8/FW60lSETbJjNUp58Z568h2c85OQ==
+     physical_name : .\WIN_Parameters.wdw
+     type : 2
+   -
+     name : QRY_NbPostsNotReadSinceDate
+     identifier : 0x462deaab013b0658
+     internal_properties : CAAAAAgAAADjX9vP/KkBGidyU+w9cnTosd6ExG/RStyuk5GLR3Et6xUfH9dRsOsvhLwmkhLOqh7mbg==
+     physical_name : .\QRY_NbPostsNotReadSinceDate.WDR
+     type : 5
+   -
+     name : QRY_LastPostDate
+     identifier : 0x462de84b0097c0fe
+     internal_properties : CAAAAAgAAABXM7/jwL319kPePeDMliQMa3pi6ttNkoF2gSI6tOQ2shraIq7qHk2LIBiCfgb6hnpCwg==
+     physical_name : .\QRY_LastPostDate.WDR
+     type : 5
+   -
+     name : QRY_ListPosts_Receive
+     identifier : 0x4631f01e047659c1
+     internal_properties : CAAAAAgAAADUsjx4Rzx0d8Jx6MYj2CQ2hPXTu/a4IduCHm0/0af1E/3l2AF0UI5qr5cB/4d5AffBQQ==
+     physical_name : .\QRY_ListPosts_Receive.WDR
+     type : 5
+   -
+     name : QRY_FlagRead_Date
+     identifier : 0x4631f01e047859f0
+     internal_properties : CAAAAAgAAABQroiUE0jg+0blbHq3XpzNAlEJwXosSkqKuOx49KTwKNBSQofw3BLuIxuFczOtVUu1vQ==
+     physical_name : .\QRY_FlagRead_Date.WDR
+     type : 5
+   -
+     name : QRY_FlagRead_Favorites
+     identifier : 0x4631f01e047a5a2f
+     internal_properties : CAAAAAgAAABq4FK2dTJ6pawfCuQRgjea2m0ZiTYgfVOqEF4OfgqKZpK4W/+OfrAMDTWvCYlHM6Vv9w==
+     physical_name : .\QRY_FlagRead_Favorites.WDR
+     type : 5
+   -
+     name : QRY_FlagRead_All
+     identifier : 0x4631f01e047c5a5e
+     internal_properties : CAAAAAgAAADPSyd7yPW97vtqhROYe/gWURDo8Fnj42lSStBUvvqYoBiIMLrHBTmXmIB6Rs4C/vLaWg==
+     physical_name : .\QRY_FlagRead_All.WDR
+     type : 5
+   -
+     name : WIN_Themes
+     identifier : 0x46336e5203775b5a
+     internal_properties : CAAAAAgAAACtrxv3wP2VcY66b8yw4i9RNftGt1oRO+HerHRkLQb5kSsMfsXpCeDNoTiTLBfzTLeo
+     physical_name : .\WIN_Themes.wdw
+     type : 2
+   -
+     name : QRY_Archive
+     identifier : 0x463b3b2100b97509
+     internal_properties : CAAAAAgAAACloY2RLkvj/HUS5hywTFdZ/7wK0m3HCHpSKic9oee3Qbs19g+/QVAjFg6IcDCgWEiwsA==
+     physical_name : .\QRY_Archive.WDR
+     type : 5
+   -
+     name : QRY_ListTags
+     identifier : 0x463ca90900acc8cf
+     internal_properties : CAAAAAgAAACppZH1Mm9HaHEfil7Ms4i5IUzoSPW/NBlWneaG1KTuEjbaNwGUbC1IEgr0zFSMdGSstA==
+     physical_name : .\QRY_ListTags.WDR
+     type : 5
+   -
+     name : QRY_ListPostTags
+     identifier : 0x48760861004f77e6
+     internal_properties : CAAAAAgAAAB10V1BfttTDN+ljc52gIvQpyYOppf5uw1WbS6aXDzWyjqKWh0zzXSsqJ4Y4KBQKJhg4A==
+     physical_name : .\QRY_ListPostTags.WDR
+     type : 5
+  other_elements :
+   -
+     physical_name : .\description.rtf
+   -
+     physical_name : .\Description.gif
+   -
+     physical_name : .\ihm\DefaultPost.jpg
+   -
+     physical_name : .\ihm\Develop-with-WD.png
+   -
+     physical_name : .\ihm\logo-stream.png
+   -
+     physical_name : .\ihm\logo-title.png
+   -
+     physical_name : .\ihm\picto-black-subscription.png
+   -
+     physical_name : .\ihm\picto-black-folder.png
+   -
+     physical_name : .\ihm\picto-black-opened-folder.png
+   -
+     physical_name : .\ihm\picto-stream-heart.png
+   -
+     physical_name : .\ihm\picto-stream-heart-favorites.png
+   -
+     physical_name : .\ihm\picto-stream-share.png
+   -
+     physical_name : .\ihm\picto-stream-tag.png
+   -
+     physical_name : .\ihm\picto-stream-tag-add.png
+   -
+     physical_name : .\ihm\picto-left-subscription.png
+   -
+     physical_name : .\ihm\picto-left-today.png
+   -
+     physical_name : .\ihm\picto-left-closed-folder.png
+   -
+     physical_name : .\ihm\picto-left-opened-folder.png
+   -
+     physical_name : .\ihm\picto-left-export.png
+   -
+     physical_name : .\ihm\picto-left-favorites.png
+   -
+     physical_name : .\ihm\picto-left-yesterday.png
+   -
+     physical_name : .\ihm\picto-left-import.png
+   -
+     physical_name : .\ihm\picto-left-not-read.png
+   -
+     physical_name : .\ihm\picto-left-parameters.png
+   -
+     physical_name : .\ihm\picto-left-tag.png
+   -
+     physical_name : .\ihm\picto-left-standby.png
+   -
+     physical_name : .\ihm\picto-menu-none.png
+   -
+     physical_name : .\ihm\picto-menu-copy.png
+   -
+     physical_name : .\ihm\picto-menu-folder.png
+   -
+     physical_name : .\ihm\picto-menu-edit.png
+   -
+     physical_name : .\ihm\picto-menu-email.png
+   -
+     physical_name : .\ihm\picto-menu-facebook.png
+   -
+     physical_name : .\ihm\picto-menu-flag-read.png
+   -
+     physical_name : .\ihm\picto-menu-new.png
+   -
+     physical_name : .\ihm\picto-menu-open.png
+   -
+     physical_name : .\ihm\picto-menu-refresh.png
+   -
+     physical_name : .\ihm\picto-menu-delete.png
+   -
+     physical_name : .\ihm\picto-menu-tag.png
+   -
+     physical_name : .\ihm\picto-menu-all.png
+   -
+     physical_name : .\ihm\picto-menu-twitter.png
+   -
+     physical_name : .\ihm\picto-rss.png
+   -
+     physical_name : .\ihm\picto-top-refresh.png
+   -
+     physical_name : .\ihm\picto-top-refresh-mini.png
+   -
+     physical_name : .\ihm\picto-top-display1.png
+   -
+     physical_name : .\ihm\picto-top-display2.png
+   -
+     physical_name : .\ihm\picto-top-validate.png
+   -
+     physical_name : .\ihm\picto-top-validate-mini.png
+   -
+     physical_name : .\ihm\selected.png
+   -
+     physical_name : .\ihm\selected-no.png
+   -
+     physical_name : .\RSS.ico
+   -
+     physical_name : .\RSS-New.ico
+  analysis : .\WD RSS Reader.ana\WD RSS Reader.wda
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ report_and_queries_enabled : false
+ common_generation_directory : true
+ languages :
+  - en-GB
+ code_elements :
+  internal_properties : CAAAAAgAAABFE2Gy28roTJ0qP0QbUHdeJOr5dBn71jS9q0qCATVxXlRNRRHoTZb3aSo8Kllbf3hJiZa57QGhzZx1yle5QDJIlzm5wLQs9Su3f1x+kiK8FWtY2/ZzqsW03Sd6a5LE0lcdjhhf6YVAAubKTb9zctFrCEZ0bCOmuuAzPNH6
+  type_code : 0
+  p_codes :
+   -
+     code : |1+
+      EXTERN "WinConst.wl"
+      EXTERN "KeyConst.wl"
+      
+      Message(<§@00000000000000000003§>)
+      
+      // Initializes the data
+      InitializeData()
+      
+      Message(<§@00000000000000000004§>)
+      
+      // Loads the options
+      OptionsLoad()
+     type : 196608
+   -
+     code : |1-
+      // Saves the options
+      OptionsSave()
+      
+      // Clears the directory for post preview
+      fRemoveDir(SET_Global.gsPreviewDirectory, frReadOnly+frRecursive)
+     type : 196610
+   -
+     code : |1-
+      
+     type : 196619
+   -
+     type : 196621
+   -
+     type : 196627
+     enabled : false
+  orphans :
+   -
+     name : WD RSS Reader
+     identifier : 0x4acda70800293c74
+     code_elements :
+      type_code : 159
+      p_codes : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+rad :
+ internal_properties : CAAAAAgAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+  strings :
+   -
+     text :
+      en-GB : "<HTML>\r\n  <BODY STYLE=\"font-family: Trebuchet MS, Arial, Helvetica, sans-serif;font-size:10pt\">\r\n       <BR>\r\n       <CENTER>No publication is selected</CENTER>\r\n  </BODY>\r\n</HTML>"
+     index : 0
+   -
+     text :
+      en-GB : images\cl_category.gif
+     index : 1
+   -
+     text :
+      en-GB : images\rss.png
+     index : 2
+   -
+     text :
+      en-GB : Creating the data files
+     index : 3
+   -
+     text :
+      en-GB : Loading the RSS reader
+     index : 4
+custom_note :
+ internal_properties : CAAAAAgAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==

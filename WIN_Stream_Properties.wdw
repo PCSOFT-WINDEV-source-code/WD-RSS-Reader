@@ -1,0 +1,358 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_Stream_Properties
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_Stream_Properties
+ identifier : 0x286e647651ca6258
+ internal_properties : CAAAAAgAAAAUoy4f5+8iYDjKRYNA0lw6W8DhWamIb28ojH2Z23Q40LW61N9VTi9gecglBQ830J0Lps2Yv9JJyFMebZnLYcmlYStczAgBWv6r59aZ9gSj3WP5tqdM4BFs2N8kJSOFxIcM8ct2QR3NXNsVIVs1BZnMvCHH5azsF09TPLzZlQUTKoYzdmNHa0UFVe1eeBKcZnKvOYa7DVVA4PfZCdy/Nqrw0GAxFq1amvVWYCJ7ikRxIPSyR7P5d2RmOpvdpYgdtxsm1jGiZSBcKcEgl4da82kv37KttdyvAlvgFK8pVeDOwvGppAhJ7oHgl4YhS/sUNmzCACesp7jNf/SURfXifYsLeK3p/+M1iqb+BQnAsSFTM+baskDc6kjjrIdKrHQn+YAZ2mGMEqO3D/kDfu0LnWeY4b3UGS0XRN3ChR+qSPG/PewaoxjsO05IazgoVjyKKGbtiVhKLD30nEmrAZPLl6eOT+spiZB//8AZcmsVKcbi73Ydg+atr1ITGJPi7em0XRNV0sM7HM1F2rADg4BAfQ/PPMQ6N8242VZR8C/CtKvlF+G/dYT+WVHRjNEIM5EPkWRLwMtUFxlfl8HeOntgV1vt2X1utc5rhpeNx9A7EdWtL7JZAAUAygN9QLaYtaETlwtmvIOcLp5CkT+C9ATElnjpHorpCrYQalnAYXq61D7W7ldFqsvt2kLz2pmNXjqWqZ2bZocU+bKgAi367HurHFNZhmkj1kTJzvGTrtpjACTqeqjkb+xPuAV0Yz7f/H0U+FAPJj3N9NO9BCrUU1zIhsk8cfgX7A==
+ properties :
+  width : 405
+  height : 231
+  widthClient : 403
+  heightClient : 199
+ controls :
+  -
+    name : EDT_Address
+    identifier : 0x286e647651ce6258
+    internal_properties : CAAAAAgAAACKvZbIrI+QsQQhw5LoW70xEYzr68XDDdmqqC98lb5G4aBbYCg8nM23OuB6tK4dArnM7fwGZPHMAYqNHnXwyAGpfWt4eD++xmj8dr1DT6nltdWZNbub9pg6iF4Ry/izT68VxXIK1tNX3UYLgdQeQqSVjmLbzKvZQj8Sjs5vS/kLPGtal7cP6zKw/GzVhidxTjpRR6RaUn8jBn7t30aWREU2HIV4NOb1mC3uDKyI27ZiRZZfwOGtA6RjHnTR3OGAt4/f55+F/5vzjR4gHQC+enb3BFVo7gCK8kWCH6rfuP8I0i0K/XmPDL7Mlfv+ngc8Icn1Z/3LEuFEPt1h+BWugV/n7TJ4zZ8BMwDX8t44BRsDyheAJAT4AlZOXuu+NIZ/cY6xiJWAhAVIVFL209s2sa/dSKzBUgLItdsDMCD3xFsi2KU5MV3FF9bHrt5FmT7XdXb5Wm7blXOWRAyH6nJSxqrtHRI34twDrCPp8gQjTTZKej1jtYNENtHu7XBscmTv10jA3UJcUx+P7xDDcQf6jn3v3Gc2Yposi2bfJ2N/4JlK7blem5noPf0QDllA3UOT98VKgfhne30THaNNj5QEknxULy1Lnv1Xw9rB8f9agVl/XgJcI8PD8FFmjdQ4iQWKuhUT4CnHXBXT6KUggVq5XjIFEGUxJru8tS5ZywMg5B91Uymub7h0IAoQzJ0rqZbK4h6dgLNj8fYfpzEAtsLF40fUg4mj0bRwbHFrwPjGIxHdHwWIV9aZb27L82FlXoN3G1ktbxv2M/Vkz9vV4NcgnZZdHJP5GRe/fojdnE29BvaXbW4dEH9xiHAhq+xNg0VQ1LcWoFN+FksisnmN4wrGvrDmgBV+Y9og0bf2fKHntSx1tkpgpnlTLKy05ShcHGYIy4jPzW5ZvRvsVf8qgTrWuSsEp0ZCZmVviMPbrPsb/IsyPGRog4LIloRNo2wTP7prd+/iHBsXOTDvvk45Y5n/1HZAxYn8X920tNbX2GMnJkxecNjlNBYFj7FtpyDgeMUfwLPJ/ZyZRUKWVcW2oMmN83D3RyV5AFfy1khtK2btfUuXCJwqjwlNh2UikzP8CANKfounz8zUysZPEk+eL76lLTtGOQl9UJUNgTFj57rZEXlz4rzele8XcLHNYUn+w8X9Jt0KIdoLonybWSRqudvHk7U25MGBGS0=
+    properties :
+     x : 6
+     y : 46
+     width : 391
+     height : 34
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+  -
+    name : EDT_Title
+    identifier : 0x286e647651cf6258
+    internal_properties : CAAAAAgAAABWWENBaFO8SR7QffmehqZ2p1BQGU6mssB0rbBxjl/G74loaR0TgbC7gD1ZqZmgVPe6uO+BKT6k6iIMaSs3YLh8ND4tO8BhGM+3Bq2I444QSMPO4T1NI279WULUTpWU9ZImJnGXi3g0jVENE33Vklz3J1VTQMlEhdrs2IiAqT/GcRjNa1TsnISYICs/ohyXqqJLQ2p61Jf/MOmMNMEvddNadB0yQQrVFFf6b/pOFlzO3dudV6kysPBJbHcpMJTJGWQQzNcjnp4l2nE3+PnsyUAV8ig5TaAGFzwgYyoXJqATAhJjRCv/KNYzPT+D4YpiLxguNTq8a+C0HSwPbXW3gXnhHJKIVhqiJ9I++sNkgs4lr6KOg66EcnQnhUbGAESU66dffvRPvyzOT6mFxVL7Oh8BqesM3uH3538ZnEosBRUNH3v/bXyJc74U0pM7zH0J3GSjQmJSuO/ZnuChi5lm0mDruqFvcVhquQ/CKrsHU82vus7RcDJ/AK5GSGm9qvmhWjBsHB4Zn5/SfBqiE2/F502ngXc9C66xrtM3gFzsahPaht2Tq5Ne9aa2YHUapltGhdpXELAcXCVuLea+ebGrUOEk9d04O4ZxuYGxPkdJ4G++PoyYkLDGJE0T7z3AygQ88xerGjIosYGn64vx2TkSPMXH9PdkKebSHy3nzAW7ZRmw9Xwj396YelYaCMDLIZfGAGb6kdZfZN/FcG3ro6InJhf2Y8xcCk3WN87vYRQRVXH0280vhn31UPWj1VQn9abPYF23Bbv8Fbpvx3BRGYVe3rzgf/pRY6+UCci0ZJp/gMujHsu6nlNhYdfpmvx4Cb01UPBznxMQvtA9rgoBCNwmrWCTtTw810QHOnUDgE6BccXzDU3RCm+Nf9kixBJHwqdoSg7712m8KG9oLu1/Y4lbZeTmPxTh8dhLDKSJrS1CY625apj0bl3PpObweWcR0tEdpNFWSO5m9IYpK6oG0Tqyjt3+ge+lbPAC1qPZccMwDbDL2OLtx9Ek3UOoW/0q3VykImPrL+xFHVT6XEwxBjR0xEbsLlPMQu2XOaJlwxW504xJ8Jomi3houbcJOBPoXKIKK6v6VKDZkZ0hJUzmej2THl9k0mzthxlbwaHY+vX71Sd0LYv10quz4cXYfIyG/lMP3909xQ==
+    properties :
+     x : 6
+     y : 6
+     width : 391
+     height : 34
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+  -
+    name : BTN_Cancel
+    identifier : 0x286e647651d06258
+    internal_properties : CAAAAAgAAADHz1NT7pFscIcpexof3ivh9usk3Kvc2j1NbACgWxttlaidy60seX2OesXmg86oYN6vVxOHB9f334bl7xqYdJ8041uR4Y77r0TJQ3lJ64b90aJYeUWROEbYRtvshhbuIk+GqJWYyj+ED8p78QtCaUFfj4YdhVoCm62m3PfH7o4ucC+Q/c7jVnQNsyiNCr0KB1Tke3TSZiAwR/Cr6A102NuiJ9Z3poCFRmS3Q79NbqDe03B1nKSTU4AACXwmKy8OXIdg4CJ0E3jQFwyj/aHK/Pz29B3SnulE71JaXPL1+9LLfSATc8BffgguK/rrwawykuH9icP1WZ19nvk7yrm/Jp4vNbMq3BgaBx3CPVdDT63ErtnUDCyYiXMXo9s9adLLKiksC5mM1Ev2l8mgWzseRdEI7FwL/juNTW7Ib2325VNz0/YYZox5CY913+aCiM2deqj069LTfpxQiWKKVA8Oe6xKRaJ6UZPc2b5njB+zPXb6Ja1hMY63AkgDrR7bI5smE/6N2nnaFmzNNomF7EjgTupOIWdCVtHKMlIf/b7hF5zIgJWHqddVlodchGI7C+qs+sgxI6NVnKmyGLaz03W/giXW532lkwSqjF9D6HKNP27WW6DnT2jC1hatbaOurqPht0DqVi9uqyc6zBHoW30rvGBsRBnVDMehHeLjPh6iO/0HucNadl5BCHo8IwQagOBIwaDunYgzCPCOFTNwjcopEgtqEwzafowEAedIVdm7L4TeZ4CmmqjEWDwpyQVy1lrN6oHpEKVzt9EHEsxcrSedTW/MROST2RpOALKcaoCsaNDwuGk5Uw94vmLG2j8wUSGSspkepL4iEsVP3KqOUrbThyvnlV7OeUULjOP95ZI9Xyk6C9hmNLE0WyQAX4mORkKrE527d2/hrOBaDhKtq8mIGEm1dztdW4XOB5pRgP8TRAJOTsxU
+    properties :
+     x : 297
+     y : 163
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        code : |1-
+         
+        type : 14
+      -
+        code : |1+
+         // Closes the window
+         Close()
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : BTN_Validate
+    identifier : 0x286e647651d16258
+    internal_properties : CAAAAAgAAACu5sz0A95hOOXYGTQYzw4KDqpe8v0Pj6NP60aarKt6rDlN1PBNYF2x5J8o+HR5nP9lMiKLqPBZQB3UxPoVvS5MvTLV7leMrYEs5c0ZqX+ZXkiGqhycB+WbTC62Vac7nJG3kPievFFVwSwlceWjls47woIKBwojYjebHkBJwztCzis3mTSUeJH0pZv9g7Pjdr27sH4f4yQbiQy+3skS+hcjew+f1Q15MtCAmU2IJnTR4tTb3Aj8BRFYqbH7AngatndWWNmlpgmynn1wy9I3OhLc2fIjtSJX/lcSkql+stbUpJyVCzWTib8hm+5npXAQ+UXlwKk8Q0oJ/BlyTRWuBh0EHTPNKCzzYI8/doXVsaxYaURKRVLanEP5Ony+wzOvup/DDA1MqN8Sd7jBrnI/56LY+eRB15WkClfy1I5f2GZ+vV2vk6NxxmlvBH15stdLM2K08HJrZgMGifxW6I+feTxwXXTAYRcq1+PbZwZF6aNU9jfqvZKjH3zoFodZhWxSPxnp6dwTkx80sZe9Nb66SoQl+MmQaZuulJrpUHkLfce7XQChUbbK2Zk+ZAfiVbt90400GnBc9UtrR8iyEB3hEyLBeH2wep9Ex0VU7+lsuaBggbNIw9ua3rqogCA9OH6RfgT+6E9zl/6DfIREoseRzFUWzG6uRYe5QmsPRoyh5P9JyvtaN8Z7TmUcqTnsc9WX4BebZeP00XpcD6sXNIX2Lr++rhJHas16t0/PZEySscDx/dMdYG1pM6DIXaLFwIJ0Ekb7JOkybuWGBbYtuUSWQLw28hsvFPKeqGrWJ018OKBM56Pha1pLJeVFtWnqZvSvlwPtDhlABsQHrPJWpwT7ggZcvxn3Wruq/OeDMWHVIQvmZkqEAsw7fX8HA37g0QMdvd3HY2VwrfilCSfpZjT0qhyVOs+KoTNe9fawIXJp
+    properties :
+     x : 191
+     y : 163
+     width : 100
+     height : 30
+    type : 4
+    code_elements :
+     type_code : 4
+     p_codes :
+      -
+        internal_properties : CAAAAAgAAADRo7T+f4UBxlGaV9isp7YfkYu+nAZXV4tZkOumeGVJGWvG+BjVclVxEkm/xuzSu9xBfChkBnpRhQUMj0D9Uy8TetLzZgZbU8VvAWmXu01xQWCKc0pv/kVUnxe8NxxM/O9OCm4Eo4XXFdr8LXY=
+        code : |1+
+         // Stores the stream information
+         ScreenToFile(WIN_Stream_Properties, RSSStream)
+         
+         // Modifies the image if necessary
+         IF IMG_Image..Modified THEN
+         	HLinkMemo(RSSStream, Image, IMG_Image, hMemoImg)
+         	
+         	// Updates the cache
+         	
+         	// Defines the path of the image
+         	sFile is string = SET_Global.gsCacheDirectory +["\"]+ "stream" +["\"]+ RSSStream.RSSStreamID+".png"
+         	// If this image exists, it must be deleted
+         	IF fFileExist(sFile) THEN fDelete(sFile)
+         	// Saves the image in the cache file
+         	HExtractMemo(RSSStream, Image, sFile)
+         END
+         
+         IF HModify(RSSStream) = False THEN
+         	Error(<§$0001§>, HErrorInfo(hErrMessage))
+         	RETURN
+         END
+         
+         // Closes the window in validation
+         Close("", True)
+        type : 18
+      -
+        type : 161
+        enabled : false
+  -
+    name : IMG_Image
+    identifier : 0x286e647651d26258
+    internal_properties : CAAAAAgAAAD2pLeLYwVq6A7IawGLRV/cc+s/S4gXgAbrZ5XFhyhWjY3mDvnWiIn6R7HzSxf39PYcjD08dOJdM/FNZ9RBWSc96fsLQ8sgGlJhKHF8HNz582VZILQFHLJLDUQwNYQEMaqwmLjrqBQ1Um7SHoNn6rARCYrSB1TF3PCN86LVbzDHh1ZxLCRf06MrmJMKg+TTGEl8QWDGjTT+CP8qmBw1QnB73kdH/j4cb4eXe2THxrg0EX/rdEWOCx15g3Lb3P4A32bc8kMG2cPWxYJGQB+H/+v9YCCCyGdVeLZgebwtQHTB9Pp7VYFmZZhiVub65oGChwHKfbAvcJVsVBQQEooR4pp5qMCTOskmpfXvU/zZxMcV26Enc204AuK7tpG6JDSWN9gni1dQGeR/YnHFU31/haZn0UFTVHwZ/WaSOmc6QVnqMa0tSo1TbrYvp1GcmoaPuIFwckMotkMscOU99/uDuA5MfvdCleRIZJHGWQoeJsuA+l9xu1XnrsJq+B3bH95aYPzvd4AkwGOkUFRWz9+RQOrHSZvESQdXJPZ+SzqGFYbgk1Sdd6pKcksIW21hQT+20K6WEPUyRYFwiy1NkB+tt5RSEpMgBfissmWDKRIWRKicA1cWZC/pG9SZb34nopaye99RsnQvjWmLPKjbUkAc1nvy03lmkSeeVtuqUxnZm+ZnKxJEPEUSN5CrvxoIGykN68k4agweqhaBDZ5sE+J9mHvwJyUY6BRDEwT9Owlx5Q==
+    properties :
+     x : 122
+     y : 126
+     width : 20
+     height : 20
+    type : 8
+    code_elements :
+     type_code : 8
+     p_codes :
+      -
+        code : |1+
+         // Opens the popup menu to choose an image
+         OpenPopupMenu(MENU_ImageChoice)
+        type : 18
+  -
+    name : STC_FixedImage
+    identifier : 0x286e647651d36258
+    internal_properties : CAAAAAgAAABD5t+Clm76CnQJ49FZk1hKDqfQDY5Ue4jLsI/d/GwJ9JrGY9aLoR6I5EGl8X7hKEeyhov8fumHFzoGF7AC5wHFsrJoCvem4q2Kh8mQf23F5HbAvYHNdXnGjObY8ao7Xoz8AJBJ2JlbvczL0ObSCw7lP9NDXgQjNRVK8ghDlNySlcQjJVEIorGJiwchsyVrwohnCcHzCCeLJoF33qSXordb44bBee2iUqdgMje55RNkQu9Ko3rkTeMovDcuUBOkbskWC4+6Td28Mj9898rQkY8eBQk/uFtQsiSE5+aqiG74OA5SHS+Wo8UfDxv5mKUOSb9p3iLvwQywIWGG/OjtQ4+7tt23+cMYjxrkhTl3Bia4J8xNwKKz6/th9eaN1yKsak5VOvTU1lG6c1qXt4rZb13DEoQc2s1bINxS995bH6MzEzGAvioOmmWNZUXX/A==
+    properties :
+     x : 6
+     y : 129
+     width : 110
+     height : 14
+    type : 3
+    code_elements :
+     type_code : 2
+     p_codes : []
+  -
+    name : EDT_Link
+    identifier : 0x286e647651d46258
+    internal_properties : CAAAAAgAAACHcnRhtjJrEwcdQnfu8L/jqRK+NayZeurkLFswSTfvPHP0nNjZS/a7QgUdkR+ZVnYYAKIJTO63DiUxk2DMF7nL2UIB9QA042B48IXoO9mlv/SRFzSKC31lc3DUH++uhEOGHXOCLr4BZy3YiSDGMmktCHKu6sHvmN1rb0sFBEr+sfHvZPvl0QkRO8RyR6J/L2YDRGxzQG/Bh4seOXDC0g9C+d2QJ0lciGz1h+BsKx8dp9qemeAja92vNSLhwsmg865MvB76WjtSHij6NzEygl4WK/ipJ2KE+WUCHvpK9Hapl8s+f6tHg5vEt7Oltz/lkPDCqvVjfjptLv7Z4UkO3vwgUXBxuKQ6Pc5admMOFUHe4k87he2iejoB3VlXfQ9WD6jUV+DaXCPwIG9kGq4wDsScTKT2m8KbM0vUCxkE298Lm71m2X0jj0Rlkgc+XuId1cDeyck+mmjc7UA11kB79+UlXh73vkh9oYBNJ71x/jKRxU0WNl7KcJJLSKOkzqk9GwCy01AE+1WRfXJtOe7S+oVmg2oaeedb0tKEL++PxqUUWYXJTSTSHGbYPakQwI8EezXl6OUQT+Qoo7CAQEzLSzz2kyxVQ9Q+79ZV5c33GWD26NPByAzkqqeRH2EzL2dItEnW1bKzc9CO3r9HDaxdb+xlPs04eosPUBsDv6ThwfoToQmo7RGlsQn9JtDxgtB2zvYqe0zDVzU8XbwKucCbiT7csgwyCvwgEn52R9qb1HKFMuCqQNSdXzH3z9Uc2krQX7JT67TYB/bOs1WscCKa4k4muIKigG4VnSkKCDZtoYC4MDoxlGHrl6BKJ4C/yV/5kyQo2y4eyCaV6crZeiMLhTjZzx/AAqsLXa13Gh/ibd6emj+fQEyocVc79Zc7RgmK4rHCIBlZoVFGNDOATgVFcCzqz0rhKrz4M+MBkM0P1UD0vIARVTg3MXv3zr07uDeZdYsQuIpRSgnFsuQwFwqMaRYS3FyBLIGu7+P9eGOGhu1RPCbth34MjcuhGRaOLLsoz0vEGQzNB15He5R3aRcA5FwzYOdqXOi70jvqN4OdQF6qxmmFs1IQjWc89IUyuheVJy8kCVDIZAMigsioTSfxa5PbjY+cMDkSGAhi9jC3TnzoKybo7M+auhBFG42lHt7D5H9l3iEb94SVEa4bzWn0kw==
+    properties :
+     x : 6
+     y : 86
+     width : 391
+     height : 34
+    type : 2
+    code_elements :
+     type_code : 3
+     p_codes :
+      -
+        type : 276
+        enabled : false
+      -
+        type : 277
+        enabled : false
+      -
+        type : 278
+        enabled : false
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ popup_menus :
+  -
+    name : MENU_ImageChoice
+    identifier : 0x286e647651d56258
+    internal_properties : CAAAAAgAAADJgXvp1PTBzO69UQtrVzkFXNJnD7yetGisVgxjF/9rpRX0a7sD8qPmsTvI0Ob9YI+LomzQX4xkFXeASzlkG2LIY6LG8ojaXnjx3v35GKmqB1XiICHRNsyQiesSTcNVEtmK4uKhuyIKMaqrMWQhdIBG+x4JdoFIDok93bJPzXFZoPeuVRKFHxJFLDLnSB5B4WluvBV/wILLRHcDeWOVQvJFQaF8pMh5jNyijGcvCiHmk7iXu7Ay+P4a9Ta1N3XdstzlU2BJXcLGpEkSEs/PIqRsg35zW0WQqPX12SyN18YZ+jMwyj2/ouNXiPVtxey423BKjY7SwrTszD/igsnmyihqf1FRcgXJoDzII5AycQqBua1IDJ6GIM3oGQc7/I0I+l1J1eIgHX3K
+    options :
+     -
+       name : OPT_File_name
+       identifier : 0x286e647651d66258
+       internal_properties : CAAAAAgAAAD9ApRPsgpeeUJiwPmMJL+K5OpM6mFm7J0ZYghqgplHETN9jn+ASWVdE20XdcDiGbGMu+aZxiJ2tKuVea3f2hsz1HH538HRtNFzE6/WW5MHonjE2MvuN4NUPlrEr+qXq3hgXEPaLYKAygibJssasq7KhZ4UFztKUQdU9a10pJ8nZ7JQwTeGFSbXqAAkgEwk0iaYzmdRM6doRtGc5lTPD4ucsr5xD3gSAvgFJJAvyO+BYYb89e92bQTL1brNkgLexlL7jEoQ93b6uzLmBygnMFh6Mirfm7SFontKz481qvcDgldmd/Wdj3cmKzeCsMoQh6NtJ3YSJMJX9dkGz21hHG0S2KH50F+VvG/ZaygyCc+8aVEcbVuZD3SY26Iv66/bWQvetiXJzVl/HNDe0nEx+hpxd8qb4EVQovaD9Hw=
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           code : |1-
+            sFile is string
+            
+            // Opens the file picker
+            sFile = fSelect("", "", <§$0002§>, fGraphicFilter(), ExtractString(ExtractString(fGraphicFilter(), 2, TAB), 1, CR))
+            IF sFile ~= "" THEN RETURN
+            
+            // Modifies the image
+            IMG_Image = sFile
+            
+            // Indicates that the image is modified (to force its backup)
+            IMG_Image..Modified = True
+           type : 32
+     -
+       name : OPT_URL
+       identifier : 0x286e647651d76258
+       internal_properties : CAAAAAgAAAB3eX1aj8+E/grcC0vzFNza7eXdvEhkb7T9vY/v5LY4eMtcN+oZ0rTKRSiHxk/UFNU9a7WwD1+A3WITtJgupKk3DzZwXh5BN/qbLLpk7V3IwRGQpB75oy2/e10MQR9GmBZxTcAVFkXb1Q1vm0NoNpB0054v1Sss3opZcJRtlQ81aYEmqvQiNfx1/Xrub0CQJhR9c6fFVJZ775KRtTHWD2ieMgt1qihEAm7G01zq1HBiiddGR6uaoMQmBbA3IcPIUKKYhPMod0d93zUcUSGGBdhK8tHYfAUJ8xpB7xPK0QSBXRusiBTWCnmv5dUHZ0aG3bxC9mZwNQBAtJQYioe9+PcHjfD2l4CjfScx4MQlUm6ZxESxfc+Z+isEY3VBcczvpod7GxSuC9HQZdyyRc8FIOX3ZycZglcpag==
+       code_elements :
+        type_code : 26
+        p_codes :
+         -
+           internal_properties : CAAAAAgAAACxg1Tfs+NIBpEaVxiEDw5fGWvu3BZ3BzOhmJOeGLXpMSv+oACNKj0RUpmPhhQq45yp3FgEJgp1qXHgy/yxj3vXvra32qrHVzkbdeUTH2ldpaT+Z24D2okIy8uYMzDYWENC3kLI51BU9PrcDVY=
+           code : |1+
+            sURL is string
+            StreamImage is an Image
+            
+            // Defines a default URL
+            sURL = EDT_Address
+            // Retrieves the clipboard content if it is a URL
+            IF ClipboardFormat(cfText) _AND_ Clipboard [= "http"THEN
+            	sURL = Clipboard()
+            END
+            
+            // Opens the edit window
+            IF Input(<§$0003§>, sURL, [<§$0004§>, <§$0005§>], 2, 2, dlgIconQuestion) = 2 THEN RETURN
+            
+            // Interrogates the URL
+            MyQuery is a httpRequest
+            MyResponse is a httpResponse
+            
+            // Stores the URL 
+            MyQuery..URL = sURL
+            MyQuery..IgnoreError = httpIgnoreRedirectToHTTPS
+            // Interrogates the URL
+            MyResponse = HTTPSend(MyQuery)	
+            // If the query is OK (return code to 200), stores the image
+            IF MyResponse..StatusCode = 200 _AND_ MyResponse..Content <> "" THEN
+            	
+            	// Saves the return in an image variable (to make sure that this return really is an image)
+            	StreamImage = MyResponse..Content
+            	IF StreamImage..Valid = False THEN RETURN
+            	
+            	// The return is an image, it must be stored
+            	sFile is string = fTempFile()+".png"
+            	dSaveImagePNG(StreamImage, sFile)
+            	
+            	// Displays the image
+            	IMG_Image = sFile
+            	// Indicates that the image is modified (to force its backup)
+            	IMG_Image..Modified = True
+            	
+            END
+           type : 32
+    controls : []
+    code_elements :
+     type_code : 26
+     p_codes : []
+ languages :
+  - en-GB
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      PROCEDURE MyWindow(gnRSSStreamID is 8-byte int)
+      
+      
+      // Default return value
+      MyWindow..ReturnedValue = False
+   -
+     code : |1+
+      // Reads the record
+      HReadSeekFirst(RSSStream, RSSStreamID, gnRSSStreamID)
+      IF HFound(RSSStream) = False THEN
+      	Error(<§$0000§>)
+      	Close()
+      END
+      
+      // Displays the stream information
+      FileToScreen(WIN_Stream_Properties, RSSStream)
+     type : 34
+   -
+     code : |1-
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1-
+      
+     type : 2
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x15941bc2003b1818
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+  strings :
+   -
+     text :
+      en-GB : The requested RSS stream was not found in database
+     index : 0
+   -
+     text :
+      en-GB : Unable to modify the stream information
+     index : 1
+   -
+     text :
+      en-GB : Select an image for the stream...
+     index : 2
+   -
+     text :
+      en-GB : What is the URL of the image to use?
+     index : 3
+   -
+     text :
+      en-GB : Validate
+     index : 4
+   -
+     text :
+      en-GB : Cancel
+     index : 5
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

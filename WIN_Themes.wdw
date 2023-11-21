@@ -1,0 +1,282 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WIN_Themes
+ major_version : 28
+ minor_version : 0
+ type : 2
+ description : ""
+ subtype : 0
+window :
+ name : WIN_Themes
+ identifier : 0x286e647f56b6860d
+ internal_properties : CAAAAAgAAAAhi8nFBNbGoERCv0OZSOMpNIhsDDkaPiOMYOlbYrxmvpFR+zO92rOYL6w7zvH6sDE45G94E8cvezHExLr69R86qk4o+7RDODh4MlVRsbQICLukwFPNlClXeTMXKj2jycAjWYWlVaqsTtxvys+z/djnXwmwe5zSXNKnBohMJStN//UwHeUl26XbUzMkEnKn5XtRvbESCoZuUrBbut/qZph1q590grB9k6Qht3bdXLrcz56PU5i6lT42X99LT1t73TcL0OtR9Mb8JmpeiYP/nRHchrfQXUC3PmFgnD5uaQfAz9atZXH1S4/JT1yTyzsjK6K8JMYPp428jnHXKK3nbWly4OaGzKOcyi8pPNSinSlTFJ9J2I/tq1dGq4BaxjO5dbAUMTr/SSUj66nSYGbiaiAbyUhYslJe2h0XAT07ERweesgZgccltgTMCMqmYYdLba17CMCxkcSKEAhXUSYoDkRN5wA1PuWGVzZWPgsyyhm3jvy2PQuyTvJdS5MkFNDB5m5ZPZeamfxnfqHLufvN/I48/CNKdohhJm1Pte6GAYEBv0jGduIk7i/hbbMuWF2QHovjhI4mSKzASjk0Er9X9ZFNZOS0ZCHI1PSWk044dszGdz+ZJlXHu+1xFwRc7IWEqV2bCwK/O+1FHbSRfkUlFAYkQ4pJBXGqwy2qVhwPajoC0WTMAFmFTd8Ps+ThZ5eJzbS/w8VdbHhWfo+H930+dzPbY90fuStFBVG7DacrlrUBUv1F/Fdq0FVYGEQ5/X7gHBjUEA==
+ properties :
+  width : 103
+  height : 171
+  widthClient : 101
+  heightClient : 169
+ controls :
+  -
+    name : LOOP_Theme
+    identifier : 0x286e647f56b7860d
+    internal_properties : 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
+    properties :
+     width : 103
+     height : 171
+    controls :
+     -
+       name : IMG_Color
+       identifier : 0x286e647f56ba860d
+       internal_properties : CAAAAAgAAABJuQpA7ERr5oMl4yBR5aTpd9etlkwlQRGikTQxQdcVnmnf8wZ60g3LoNPecyRzqIK268ZCvVf77BrWblI4zRXInClX1B34AbwE0hYf1Z3nLZyNEMaKUjgeQOYJ/O/6JdrCHmQA1FwU3WSGsIUiGZT9C7xUDiitXBwSXS9n08GBctsRhNp7K5oWxlCZhqrQDqk8C6lOQkEXHXIUMJvmMjHEoeJ0SmAKkP0ri0OikaffpImy8Oy0c0AYasmmf5WVz+VTclFj7VxtlaTJ4aGPu9qV/fy0esyZOFCSeI9+YZm/l/Al8QZ0SCXoIPTEgpJ8B8Ws/xOv9M2VJmWf0oYdCSxYIdxbLFnJ9K4hZfZ3xkTg79n6EYhX9yAsjJ7+irtYfyh2cEu79keCEhPIq+do0yZNJQ663UHz8RdnIqX3Zjlei8wUktRxMWFvL2F5Mqs6rBf7KHNEp297a/Ys1JIQhu8vVy8Tpdz1r9yaKwq8BTDTn589Nhao5yy3mpIOSG+Pyd9pBJ+rNPdGRGWy4nTqcTceZAms2GmrH5dcXIQVqxw2jrLrn1KNkz2OA7+IcIcAfG6tX2gzmAc6UT8zzRNlzNNDVXo6/++3QBinD2o0eunqT6aEL24SyG+sMqB9MzwnF+Ypi3LUOTXgw1CkmxrVvRiVbePsDrJwDy7qt6ij5nJd0K3kgeE0TvM2xrQMXhe8pzKYzkAY7RVS
+       properties :
+        x : 2
+        y : 2
+        width : 30
+        height : 30
+       type : 8
+       code_elements :
+        type_code : 8
+        p_codes :
+         -
+           code : |1-
+            
+           type : 18
+         -
+           code : |1-
+            
+           type : 152
+         -
+           code : |1-
+            
+           type : 153
+    columns :
+     -
+       name : ATT_Color
+       identifier : 0x286e647f56b8860d
+       internal_properties : CAAAAAgAAADvPnGqlLdiEqdlhfi4TXQTHDQDkiLfGeTpvWG8z+60LaJL8TRUUhjxSFYHe3PqcQ0w/1KKujeoH5Z6jQ+2HHjOL2rYYTXR7OLDVNDV8nLUq0QevEtH2/+YVemno8uqbBTBEAzBjooBEzCoqmSIDZbMDw2g9SOC0wg1khtIx6LqI55P7ok=
+       type : 3
+       content :
+        identifier : 0x2557a6730c34cc43
+        internal_properties : CAAAAAgAAADryTcE1wdYvD3vRXveAy878MY0tBGVtRJFCKec9ONjoMSjdXko/BUQ7/aa5td4J0QGwbNDZ7u6HVAmFeJiKUW3AIZke7mPEa6O3T80XKwyKxqdz/+IMzq1H7wKTkmLCftmXeih3L2wxA9F34R1rzMUewXfPfNhH+yFL0Z0QK0+gscBykmAbH8+KcjlpZVlWXf1O2O2UpXFTj2e+Oh2XQ==
+        type : 3
+       code_elements :
+        type_code : 46
+        p_codes : []
+     -
+       name : ATT_HTMLColor
+       identifier : 0x286e647f56b9860d
+       internal_properties : CAAAAAgAAADA0mQiwoDigMs2+qfC+MtFp3nlXrSN/62K27joG8fyNqKT00DCDTRFqvnrWipj4Lxo/lX1LdZ/WG+O8YYUbmQmfNegaRgvrv4xxTWPqqCuc1I29bPFiq5SDPo0+NKZqgG6+pmra9tIplw=
+       type : 3
+       content :
+        identifier : 0x2557a6730c36cc43
+        internal_properties : CAAAAAgAAADryTcE1wdYvD3vRXveAy878MY0tBGVtRJFCKec9ONjoMSjdXko/BUQ7/aa5td4J0QGwbNDZ7u6HVAmFeJiKUW3AIZke7mPEa6O3T80XKwyKxqdz/+IMzq1H7wKTkmLCftmXeih3L2wxA9F34R1rzMUewXfPfNhH+yFL0Z0QK0+gscBykmAbH8+KcjlpZVlWXf1O2O2UpXFTj2e+Oh2XQ==
+        type : 3
+       code_elements :
+        type_code : 46
+        p_codes : []
+    type : 30
+    code_elements :
+     type_code : 42
+     p_codes :
+      -
+        type : 35
+        enabled : false
+      -
+        type : 22
+        enabled : false
+      -
+        type : 24
+        enabled : false
+      -
+        type : 23
+        enabled : false
+      -
+        type : 25
+        enabled : false
+      -
+        code : |1+
+         // Stores the color
+         gsChosenColor = ATT_HTMLColor
+         gbChosenColor = True
+         
+         // Closes the popup
+         Close()
+         
+        type : 33
+      -
+        type : 230
+        enabled : false
+      -
+        type : 241
+        enabled : false
+      -
+        code : |1+
+         // If it is an exit from rollover because a color was chosen, don't modify the background (the new one will be applied)
+         IF gbChosenColor THEN RETURN
+         
+         // Applies the current theme
+         WIN_Main.ThemeApply(gsChosenColor)
+        type : 153
+      -
+        type : 222
+        enabled : false
+      -
+        type : 223
+        enabled : false
+      -
+        type : 224
+        enabled : false
+      -
+        code : |1+
+         // Retrieves the hovered control
+         sHoveredControl is string = LooperInfoXY(LOOP_Theme, liControlName, MouseXPos(), MouseYPos())
+         // Retrieves the rollover subscript
+         nHoveredSubscript is int = LooperInfoXY(LOOP_Theme, liLineNumber, MouseXPos(), MouseYPos())
+         
+         // If we always hover the same line/the same control
+         IF gnRolloverSubscript = nHoveredSubscript _AND_ gsHoveredControl = sHoveredControl THEN RETURN
+         
+         // Stores the new rollover subscripts
+         gnRolloverSubscript = nHoveredSubscript
+         gsHoveredControl = sHoveredControl
+         
+         // If no hovered control
+         IF sHoveredControl <> "" THEN
+         
+         	// Applies the hovered theme
+         	WIN_Main.ThemeApply(ATT_HTMLColor[nHoveredSubscript])
+         	
+         END
+        type : 66048
+ menu :
+  name : _Menu
+  identifier : 0x292573e513b5f221
+  internal_properties : CAAAAAgAAACCv199ARoPUfG3WAPSG9eefhOOjWMQrs8CrX6cGGGJPoSHWBq4PXhStOWc1YnAZMZ5+EFR1WTDn8CTOTiyLnXPpAR5X8rsRkPZrm1yZeYDDt4kRzDPLbUf4Sh/mD3kd1D8V2drCFLmjeQhgpw7GKGwHRga+ZdjSqXGIC3LD1RracZ230hOmUJTj+ABDW4IHrw4PflmVGgp8E9KnAf/gselRrzEY90l3Cr9N00QijFYYrbrl4qF4kdim1YX6jYT4ezQhbJsU84ENZsxzq+o0JVHYQ8rxck600VhGV04/ao=
+  options : []
+ languages :
+  - en-GB
+ popup_menus : []
+ message_bar :
+  internal_properties : CAAAAAgAAAAjFWXItEk/EPvcbGR+hALkgRfdOpVtIn+yZNxHnmSRFJegE/AnD2HbGAaMfhGCqfzkryHG9FVhjtF+iQYkZ59QBQ88Okhh0vjCoVhOagox2hvIqrJnU30QK15/ZA==
+ actionbar : {}
+ code_elements :
+  type_code : 1
+  p_codes :
+   -
+     code : |1-
+      //--- Popup window ---
+      // To access the popup control or combo box that opened this window
+      // you can use: MyPopupControl
+      PROCEDURE MyWindow(gsThemeColor is string)
+       
+       // The current color is used by default
+       gsChosenColor is string = gsThemeColor
+       gbChosenColor is boolean = False
+       
+       // List of available themes
+       garrTheme is array of strings
+       
+       // Rollover subscript
+       gnRolloverSubscript is int
+       gsHoveredControl is string
+   -
+     code : |1+
+      
+      // Fills the available colors
+      FillThemes()
+     type : 34
+   -
+     code : |1+
+      
+      
+     type : 234
+   -
+     code : |1+
+      
+      
+     type : 165
+   -
+     code : |1+
+      
+      
+     type : 177
+   -
+     type : 180
+     enabled : false
+   -
+     type : 230
+     enabled : false
+   -
+     code : |1+
+      
+      // Applies the selected color
+      WIN_Main.ThemeApply(gsChosenColor)
+      
+      // Stores the color of the theme
+      OptionWrite(OPTION_GUI_COLOR, gsChosenColor)
+      
+     type : 2
+  procedures :
+   -
+     name : FillThemes
+     procedure_id : 1760455001105860109
+     type_code : 14
+     code : |1-
+      // Summary: Fills the list of themes
+      // Syntax:
+      // FillThemes ()
+      //
+      // Parameters:
+      //	None
+      // Return value:
+      // 	None
+      //
+      PROCEDURE FillThemes()
+      
+      
+      // Adds the available colors
+      Add(garrTheme,"#212121")	// Black
+      Add(garrTheme,"#515151")	// Black (default)
+      Add(garrTheme,"#BDBDBD")	// Gray
+      
+      Add(garrTheme,"#E53935")	// Red
+      Add(garrTheme,"#D81B60")	// Pink
+      Add(garrTheme,"#8E24AA")	// Purple
+      
+      Add(garrTheme,"#3949AB")	// Indigo
+      Add(garrTheme,"#1E88E5")	// Blue
+      Add(garrTheme,"#00ACC1")	// Cyan
+      
+      Add(garrTheme,"#43A047")	// Green
+      Add(garrTheme,"#7CB342")	// Light green
+      Add(garrTheme,"#C0CA33")	// Lemon
+      
+      Add(garrTheme,"#FDD835")	// Yellow
+      Add(garrTheme,"#FB8C00")	// Orange
+      Add(garrTheme,"#F4511E")	// Dark Orange
+      
+      // Clears the control
+      LooperDeleteAll(LOOP_Theme)
+      
+      // Fills the themes
+      sColor is string
+      FOR ALL ELEMENT sColor of garrTheme
+      	LooperAddLine(LOOP_Theme, HTMLToRGB(sColor), sColor)
+      END
+      // Deletes the initial selection
+      LooperSelectMinus(LOOP_Theme)
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAAAspXRQsX4kpYpRJzI8SMGEUfXYJhQeqig0H9mPZLI9hoPnkeFEnSQ8t7JVd8VUY9eLyST/2DyAYB+9rK7lbHVOclfSdkhgAQ9dNjlmStKMpPl9
+  original_name : Modele1
+resources :
+ string_res :
+  identifier : 0x16336e460fc32c5a
+  internal_properties : CAAAAAgAAACyXVFaObH4lOGSEHJoZf1MD49w+XTw2LScZCP/urkWFwy+HYJdyQ3umA==
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe
